@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arnaldo Garcia - Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a0f1e;
+            --secondary: #1a2332;
+            --accent: #00d4ff;
+            --accent-hover: #00b8e6;
+            --text: #e4e7eb;
+            --text-muted: #9ca3af;
+            --border: #2d3748;
+            --card-bg: #151b2b;
+            --gradient-start: #0a0f1e;
+            --gradient-end: #1a2332;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(0, 212, 255, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent) 0%, #00b8e6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 0.5rem;
+            background: var(--secondary);
+            padding: 0.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .tab-btn {
+            font-family: 'JetBrains Mono', monospace;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .tab-btn:hover {
+            color: var(--text);
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        .tab-btn.active {
+            background: var(--accent);
+            color: var(--primary);
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Content Sections */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header .subtitle {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .contact-links a {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+        }
+
+        .contact-links a:hover {
+            color: var(--accent);
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.03) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.15);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .job-header {
+            margin-bottom: 1rem;
+        }
+
+        .job-title {
+            font-weight: 700;
+            color: var(--text);
+            font-size: 1.2rem;
+        }
+
+        .company-info {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+
+        .subsection-title {
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            font-size: 1.05rem;
+        }
+
+        ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .tech-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 0.5rem;
+            display: block;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .skill-card:hover {
+            border-color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .skill-card strong {
+            display: block;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent);
+            transform: scaleY(0);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.15);
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.75rem;
+        }
+
+        .project-description {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            padding: 0.4rem 0.8rem;
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent);
+            border-radius: 6px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        /* Hobbies Section */
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .hobby-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .hobby-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .hobby-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hobby-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .hobby-description {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Form */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(0, 212, 255, 0.05);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        .contact-text a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-text a:hover {
+            color: var(--accent);
+        }
+
+        .contact-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.25rem;
+        }
+
+        /* Summary Section */
+        .summary {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 5rem;
+            border-top: 1px solid var(--border);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-tabs {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .tab-btn {
+                flex: 1;
+                min-width: 100px;
+            }
+
+            .skills-grid,
+            .projects-grid,
+            .hobbies-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+
+            nav, footer {
+                display: none;
+            }
+
+            .card {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-header">
+                <div class="logo">&lt;AG/&gt;</div>
+                <div class="nav-tabs">
+                    <button class="tab-btn active" data-tab="resume">Resume</button>
+                    <button class="tab-btn" data-tab="projects">Projects</button>
+                    <button class="tab-btn" data-tab="hobbies">Hobbies</button>
+                    <button class="tab-btn" data-tab="contact">Contact</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Resume Tab -->
+        <div id="resume" class="tab-content active">
+            <div class="header">
+                <h1>Arnaldo Garcia</h1>
+                <div class="subtitle">Senior Software Engineer</div>
+                <div class="contact-links">
+                    <a href="mailto:arnaldogarcia7@gmail.com">📧 Email</a>
+                    <a href="https://linkedin.com/in/arnaldo-garcia-417ab458" target="_blank">💼 LinkedIn</a>
+                    <a href="tel:301-273-5116">📱 301-273-5116</a>
+                    <a>📍 Glen Ridge, NJ</a>
+                </div>
+            </div>
+
+            <section>
+                <h2>Professional Summary</h2>
+                <div class="summary">
+                    Senior Software Engineer with over 9 years of experience designing scalable cloud-native solutions and data pipelines at Amazon and Audible. Specialized in AWS-based architectures, including Lambda, Step Functions, DynamoDB, and Kinesis, with proven expertise in leading complex projects and delivering high-impact results that drive business value across multiple teams.
+                </div>
+            </section>
+
+            <section>
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <strong>Programming Languages</strong>
+                        Java, Python, Kotlin, TypeScript, JavaScript, XQuery
+                    </div>
+                    <div class="skill-card">
+                        <strong>Cloud & Orchestration</strong>
+                        AWS Lambda, Step Functions, ECS, CloudFormation, AWS CDK
+                    </div>
+                    <div class="skill-card">
+                        <strong>Data & Analytics</strong>
+                        S3, DynamoDB, Kinesis Firehose, Glue, EMR, Athena, Elasticsearch
+                    </div>
+                    <div class="skill-card">
+                        <strong>Machine Learning & AI</strong>
+                        SageMaker, Ground Truth, AWS Transcribe, Amazon Rekognition, Spark
+                    </div>
+                    <div class="skill-card">
+                        <strong>Frameworks & Databases</strong>
+                        React, Spring, MarkLogic, PostgreSQL, SQL Server
+                    </div>
+                    <div class="skill-card">
+                        <strong>Leadership</strong>
+                        Project Leadership, Cross-Team Collaboration, Technical Mentorship, Scrum Lead
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Work Experience</h2>
+
+                <div class="card">
+                    <div class="job-header">
+                        <div class="job-title">Software Engineer | Audible (an Amazon company)</div>
+                        <div class="company-info">Newark, NJ | July 2022 – Present</div>
+                    </div>
+                    <ul>
+                        <li><strong>Metrics Pipeline:</strong> Led development of a high-throughput data collection pipeline using Kinesis Firehose and Lambda, processing millions of events and enabling data-driven decisions across 4+ product teams.</li>
+                        <li><strong>Data Migration System:</strong> Architected a migration component using Step Functions and DynamoDB to seamlessly transfer user edits between manuscript revisions.</li>
+                        <li><strong>Audio/Text Alignment:</strong> Developed tooling leveraging AWS Transcribe to align text with audio, creating high-quality training datasets for ML models.</li>
+                        <li><strong>Custom Voice Edits:</strong> Implemented functionality to convert Virtual Voice Studio edits into SSML annotations, enabling real-time preview of AI-generated audio edits for end users.</li>
+                    </ul>
+                    <span class="tech-tag">Technologies: DynamoDB, Kinesis Firehose, Lambda, AWS Step Functions, ECS, CDK, CloudFormation, AWS Transcribe</span>
+                </div>
+
+                <div class="card">
+                    <div class="job-header">
+                        <div class="job-title">Software Engineer | Amazon</div>
+                        <div class="company-info">NYC and Silicon Valley | January 2017 – July 2022</div>
+                    </div>
+                    
+                    <div class="subsection-title">Product Graph Team (March 2020 – July 2022)</div>
+                    <ul>
+                        <li>Headed development of a large-scale remediation workflow using Step Functions and Spark to identify and correct ML prediction errors across millions of 3P products, maintaining a minimum accuracy of 90%.</li>
+                    </ul>
+                    <span class="tech-tag">Technologies: Step Functions, Spark, React, Lambda, Athena, S3, Glue, SageMaker Ground Truth</span>
+
+                    <div class="subsection-title">Body Labs Team (May 2019 – March 2020)</div>
+                    <ul>
+                        <li>Developed an ETL workflow for labeling and storing training data with quality metadata.</li>
+                        <li>Built a highly secure data storage service with automated face obfuscation using Amazon Rekognition for storing beta participant data.</li>
+                    </ul>
+                    <span class="tech-tag">Technologies: Step Functions, CloudFormation, Lambda, S3, Amazon Rekognition</span>
+
+                    <div class="subsection-title">Alexa Developer Portal (January 2017 – May 2019)</div>
+                    <ul>
+                        <li>Led development of developer-facing features, including customizable email notifications, device-specific capability management, and advanced search functionality, reducing developer onboarding friction.</li>
+                    </ul>
+                    <span class="tech-tag">Technologies: Java, React, DynamoDB, Elasticsearch</span>
+                </div>
+
+                <div class="card">
+                    <div class="job-header">
+                        <div class="job-title">Software Engineer | Boeing</div>
+                        <div class="company-info">Herndon, VA | May 2014 – January 2017</div>
+                    </div>
+                    <ul>
+                        <li>Enhanced Entity Management Framework (EMF), a CRUD application with advanced search and event tracking. Implemented custom requirements for the Minnesota Criminal History System.</li>
+                    </ul>
+                    <span class="tech-tag">Technologies: MarkLogic, Java, JavaScript</span>
+                </div>
+
+                <div class="card">
+                    <div class="job-header">
+                        <div class="job-title">Web Developer | Booz Allen Hamilton</div>
+                        <div class="company-info">Frederick, MD | February 2013 – May 2014</div>
+                    </div>
+                    <ul>
+                        <li>Maintained .NET/SQL Server web application, developed database normalization scripts, and created data consolidation dashboards.</li>
+                    </ul>
+                    <span class="tech-tag">Technologies: .NET, SQL Server</span>
+                </div>
+            </section>
+
+            <section>
+                <h2>Education</h2>
+                <div class="card">
+                    <h3>Georgia Tech</h3>
+                    <div class="company-info">Atlanta, GA | M.S. in Computer Science | 2015 – 2020</div>
+                    <ul>
+                        <li>Relevant Coursework: Artificial Intelligence, Machine Learning for Trading, Computer Vision, AI for Robotics, Human-Computer Interaction</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Florida International University</h3>
+                    <div class="company-info">Miami, FL | B.S. in Computer Engineering | Minor in Computer Science | 2008 – 2012</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Projects Tab -->
+        <div id="projects" class="tab-content">
+            <div class="header">
+                <h1>Projects</h1>
+                <div class="subtitle">Personal & Professional Work</div>
+            </div>
+
+            <section>
+                <h2>Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-title">🎵 Audio Processing Pipeline</div>
+                        <div class="project-description">
+                            Built a scalable audio processing system that aligns text transcripts with audio files for ML training data. Processes thousands of hours of audio daily with sub-second alignment accuracy.
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">AWS Lambda</span>
+                            <span class="tag">Transcribe</span>
+                            <span class="tag">S3</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-title">📊 Data Remediation System</div>
+                        <div class="project-description">
+                            Architected a large-scale ML prediction correction workflow using Step Functions and Spark, maintaining 90%+ accuracy across 50M+ product records.
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Spark</span>
+                            <span class="tag">Step Functions</span>
+                            <span class="tag">React</span>
+                            <span class="tag">SageMaker</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-title">🔒 Secure Data Storage Service</div>
+                        <div class="project-description">
+                            Developed a privacy-first data storage solution with automated face obfuscation for sensitive user data, ensuring GDPR compliance.
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Lambda</span>
+                            <span class="tag">Rekognition</span>
+                            <span class="tag">CloudFormation</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-title">📨 Developer Notification System</div>
+                        <div class="project-description">
+                            Created a flexible email notification framework for Alexa developers, reducing onboarding friction and improving developer experience.
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">DynamoDB</span>
+                            <span class="tag">SES</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-title">🔍 Advanced Search Platform</div>
+                        <div class="project-description">
+                            Implemented a sophisticated search system for device management using Elasticsearch, supporting complex queries and filters.
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Elasticsearch</span>
+                            <span class="tag">Java</span>
+                            <span class="tag">React</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-title">🎙️ Voice Editing Interface</div>
+                        <div class="project-description">
+                            Built real-time preview functionality for AI-generated voice edits, converting user modifications into SSML annotations.
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">React</span>
+                            <span class="tag">SSML</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Hobbies Tab -->
+        <div id="hobbies" class="tab-content">
+            <div class="header">
+                <h1>Hobbies & Interests</h1>
+                <div class="subtitle">Beyond Code</div>
+            </div>
+
+            <section>
+                <h2>What I Love</h2>
+                <div class="hobbies-grid">
+                    <div class="hobby-card">
+                        <div class="hobby-icon">🎮</div>
+                        <div class="hobby-title">Gaming</div>
+                        <div class="hobby-description">
+                            Exploring immersive worlds and complex game mechanics. From strategy games to RPGs.
+                        </div>
+                    </div>
+
+                    <div class="hobby-card">
+                        <div class="hobby-icon">📚</div>
+                        <div class="hobby-title">Reading</div>
+                        <div class="hobby-description">
+                            Sci-fi novels, technical books, and staying current with tech blogs and research papers.
+                        </div>
+                    </div>
+
+                    <div class="hobby-card">
+                        <div class="hobby-icon">🏃</div>
+                        <div class="hobby-title">Fitness</div>
+                        <div class="hobby-description">
+                            Running, weightlifting, and staying active. Balance is key to productivity.
+                        </div>
+                    </div>
+
+                    <div class="hobby-card">
+                        <div class="hobby-icon">🎵</div>
+                        <div class="hobby-title">Music</div>
+                        <div class="hobby-description">
+                            Listening to everything from classical to electronic. Always discovering new artists.
+                        </div>
+                    </div>
+
+                    <div class="hobby-card">
+                        <div class="hobby-icon">🛠️</div>
+                        <div class="hobby-title">Side Projects</div>
+                        <div class="hobby-description">
+                            Building tools, experimenting with new tech, and contributing to open source.
+                        </div>
+                    </div>
+
+                    <div class="hobby-card">
+                        <div class="hobby-icon">✈️</div>
+                        <div class="hobby-title">Travel</div>
+                        <div class="hobby-description">
+                            Exploring new places, experiencing different cultures, and trying local cuisines.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section style="margin-top: 4rem;">
+                <h2>Current Interests</h2>
+                <div class="card">
+                    <ul>
+                        <li><strong>Machine Learning:</strong> Exploring LLMs, diffusion models, and practical AI applications</li>
+                        <li><strong>Cloud Architecture:</strong> Designing scalable, cost-effective AWS solutions</li>
+                        <li><strong>Developer Tools:</strong> Building tools that improve developer productivity</li>
+                        <li><strong>Web3:</strong> Following developments in blockchain and decentralized systems</li>
+                        <li><strong>Performance Optimization:</strong> Deep diving into system performance and efficiency</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact Tab -->
+        <div id="contact" class="tab-content">
+            <div class="header">
+                <h1>Get In Touch</h1>
+                <div class="subtitle">Let's Connect</div>
+            </div>
+
+            <section>
+                <h2>Contact Information</h2>
+                <div class="contact-grid">
+                    <div class="contact-info-card">
+                        <h3 style="margin-bottom: 1.5rem;">Reach Out</h3>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-text">
+                                <div class="contact-label">Email</div>
+                                <a href="mailto:arnaldogarcia7@gmail.com">arnaldogarcia7@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-text">
+                                <div class="contact-label">Phone</div>
+                                <a href="tel:301-273-5116">301-273-5116</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">💼</div>
+                            <div class="contact-text">
+                                <div class="contact-label">LinkedIn</div>
+                                <a href="https://linkedin.com/in/arnaldo-garcia-417ab458" target="_blank">linkedin.com/in/arnaldo-garcia-417ab458</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text">
+                                <div class="contact-label">Location</div>
+                                <div style="color: var(--text);">Glen Ridge, NJ</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <h3 style="margin-bottom: 1.5rem;">What I'm Looking For</h3>
+                        <ul style="list-style: none; margin: 0; padding: 0;">
+                            <li style="margin-bottom: 1.5rem; padding-left: 0;">
+                                <strong style="color: var(--accent); display: block; margin-bottom: 0.5rem;">Opportunities</strong>
+                                <span style="color: var(--text-muted);">Open to discussing senior engineering roles, technical leadership positions, and interesting projects in cloud infrastructure, ML/AI, and data systems.</span>
+                            </li>
+                            <li style="margin-bottom: 1.5rem; padding-left: 0;">
+                                <strong style="color: var(--accent); display: block; margin-bottom: 0.5rem;">Collaboration</strong>
+                                <span style="color: var(--text-muted);">Always interested in connecting with other engineers, discussing architecture, and sharing knowledge about AWS and distributed systems.</span>
+                            </li>
+                            <li style="padding-left: 0;">
+                                <strong style="color: var(--accent); display: block; margin-bottom: 0.5rem;">Mentorship</strong>
+                                <span style="color: var(--text-muted);">Happy to mentor junior engineers or discuss career paths in software engineering and cloud computing.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section style="margin-top: 3rem;">
+                <div class="card" style="text-align: center; padding: 3rem;">
+                    <h3 style="margin-bottom: 1rem; color: var(--accent);">Availability</h3>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+                        Currently employed at Audible but open to discussing new opportunities. Response time: typically within 24-48 hours.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Arnaldo Garcia. Built with HTML, CSS, and JavaScript.</p>
+            <p style="margin-top: 0.5rem; color: var(--text-muted);">Designed for modern browsers. Best viewed on desktop.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTab = button.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                button.classList.add('active');
+                document.getElementById(targetTab).classList.add('active');
+                
+                // Scroll to top smoothly
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // Add smooth scroll for all internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Add animation on scroll (optional enhancement)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.card, .project-card, .hobby-card, .skill-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
