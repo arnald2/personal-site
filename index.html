@@ -543,6 +543,88 @@
             color: var(--text-muted);
         }
 
+        /* Construction Animation */
+        .construction-scene {
+            height: 120px;
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto 2rem;
+            overflow: hidden;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .worker {
+            position: absolute;
+            bottom: 0px;
+            font-size: 3rem;
+            transition: transform 0.3s;
+        }
+
+        .worker-1 {
+            left: 20%;
+            animation: hammer 1s infinite alternate;
+            transform-origin: bottom center;
+        }
+
+        .worker-2 {
+            left: 60%;
+            animation: walk 3s infinite linear;
+        }
+
+        .crane {
+            position: absolute;
+            right: 10%;
+            top: 10%;
+            font-size: 4rem;
+            transform: scaleX(-1);
+            z-index: 0;
+            opacity: 0.5;
+        }
+
+        .brick {
+            position: absolute;
+            bottom: 5px;
+            left: 28%;
+            font-size: 1.5rem;
+        }
+
+        @keyframes hammer {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(-20deg);
+            }
+        }
+
+        @keyframes walk {
+            0% {
+                left: 60%;
+                transform: scaleX(1);
+            }
+
+            45% {
+                left: 80%;
+                transform: scaleX(1);
+            }
+
+            50% {
+                left: 80%;
+                transform: scaleX(-1);
+            }
+
+            95% {
+                left: 60%;
+                transform: scaleX(-1);
+            }
+
+            100% {
+                left: 60%;
+                transform: scaleX(1);
+            }
+        }
+
         /* Responsive */
         @media (max-width: 968px) {
             .contact-grid {
@@ -773,7 +855,12 @@
 
             <section style="text-align: center; padding: 4rem 0;">
                 <div class="card" style="display: inline-block; padding: 3rem; max-width: 500px;">
-                    <div style="font-size: 4rem; margin-bottom: 1rem;">🚧</div>
+                    <div class="construction-scene">
+                        <div class="crane">🏗️</div>
+                        <div class="worker worker-1">👷</div>
+                        <div class="brick">🧱</div>
+                        <div class="worker worker-2">👷</div>
+                    </div>
                     <h2 style="border-bottom: none; margin-bottom: 1rem;">Under Construction</h2>
                     <p style="color: var(--text-muted); font-size: 1.1rem;">
                         This section is currently being updated with new projects. Check back soon!
@@ -791,7 +878,12 @@
 
             <section style="text-align: center; padding: 4rem 0;">
                 <div class="card" style="display: inline-block; padding: 3rem; max-width: 500px;">
-                    <div style="font-size: 4rem; margin-bottom: 1rem;">🚧</div>
+                    <div class="construction-scene">
+                        <div class="crane">🏗️</div>
+                        <div class="worker worker-1">👷</div>
+                        <div class="brick">🧱</div>
+                        <div class="worker worker-2">👷</div>
+                    </div>
                     <h2 style="border-bottom: none; margin-bottom: 1rem;">Under Construction</h2>
                     <p style="color: var(--text-muted); font-size: 1.1rem;">
                         This section is currently being updated with new interests and activities. Check back soon!
