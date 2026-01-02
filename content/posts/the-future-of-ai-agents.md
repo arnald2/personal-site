@@ -2,7 +2,7 @@
 title: The Future of AI Agents
 date: Dec 15, 2025
 excerpt: How autonomous agents are changing the way we write code and solve complex problems.
-tags: [AI, Tech]
+tags: [AI, Tech, Coding]
 readTime: 5 min
 ---
 

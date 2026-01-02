@@ -20,22 +20,23 @@ function handleRoute() {
     if (targetTabContent) targetTabContent.classList.add('active');
 
     // Specific Route Handling
-    if (path === 'blog') {
+    if (path === 'showcase') {
         if (query && query.startsWith('post=')) {
             const slug = query.split('=')[1];
             renderBlogPost(slug);
-        } else if (query && query.startsWith('id=')) {
-            // Backward compatibility or fallback
-            const postId = parseInt(query.split('=')[1]);
-            renderBlogPost(postId);
         } else {
-            showBlogList();
+            const tagMatch = query ? query.match(/tag=([^&]+)/) : null;
+            const activeTag = tagMatch ? decodeURIComponent(tagMatch[1]) : 'All';
+            showBlogList(activeTag);
         }
     }
 
     // Scroll to top if mostly a page change
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+// Global state for current tag
+let currentFilterTag = 'All';
 
 // Tab Click Listeners - Now just update hash
 const tabButtons = document.querySelectorAll('.tab-btn');
@@ -50,28 +51,9 @@ tabButtons.forEach(button => {
 window.addEventListener('hashchange', handleRoute);
 window.addEventListener('DOMContentLoaded', handleRoute);
 
-// Sub-tab switching functionality
-const subTabButtons = document.querySelectorAll('.sub-tab-btn');
-const subContents = document.querySelectorAll('.sub-content');
+// Remove old sub-tab buttons logic (subTabButtons/subContents) as they are gone
 
-subTabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const targetSubTab = button.getAttribute('data-subtab');
-
-        // Remove active class from all sub-tab buttons and sub-contents
-        subTabButtons.forEach(btn => btn.classList.remove('active'));
-        subContents.forEach(content => content.classList.remove('active'));
-
-        // Add active class to clicked button and corresponding content
-        button.classList.add('active');
-        const targetSubElement = document.getElementById(targetSubTab);
-        if (targetSubElement) {
-            targetSubElement.classList.add('active');
-        }
-    });
-});
-
-// Add smooth scroll for all internal links
+// Add smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -82,7 +64,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add animation on scroll (optional enhancement)
+// Animation Observer
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -97,59 +79,74 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all cards
-document.querySelectorAll('.card, .project-card, .hobby-card, .skill-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(card);
-});
-
-// Vertical Timeline Interaction
-const storyPanel = document.querySelector('.story-panel');
-const timelineMarkers = document.querySelectorAll('.timeline-marker');
-const storyMilestones = document.querySelectorAll('.story-milestone');
-
-if (storyPanel && timelineMarkers.length > 0) {
-    // Clicking a marker scrolls the panel
-    timelineMarkers.forEach(marker => {
-        marker.addEventListener('click', () => {
-            const targetId = marker.getAttribute('data-for');
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
+// Observe elements
+function observeElements() {
+    document.querySelectorAll('.card, .project-card, .hobby-card, .skill-card, .blog-row').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
     });
-
-    // Intersection Observer for scroll spy
-    const storyObserverOptions = {
-        root: storyPanel,
-        threshold: 0.5,
-        rootMargin: '0px'
-    };
-
-    const storyObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Deactivate all
-                timelineMarkers.forEach(m => m.classList.remove('active'));
-                storyMilestones.forEach(m => m.classList.remove('active'));
-
-                // Activate current
-                const milestoneId = entry.target.id;
-                const marker = document.querySelector(`[data-for="${milestoneId}"]`);
-                if (marker) marker.classList.add('active');
-                entry.target.classList.add('active');
-            }
-        });
-    }, storyObserverOptions);
-
-    storyMilestones.forEach(milestone => storyObserver.observe(milestone));
 }
 
-// Blog Logic
-// blogPosts is loaded from js/blog-data.js
+// Vertical Timeline Interaction
+function initTimeline() {
+    const storyPanel = document.querySelector('.story-panel');
+    const timelineMarkers = document.querySelectorAll('.timeline-marker');
+    const storyMilestones = document.querySelectorAll('.story-milestone');
+
+    if (storyPanel && timelineMarkers.length > 0) {
+        // Clicking a marker scrolls the panel
+        timelineMarkers.forEach(marker => {
+            marker.addEventListener('click', () => {
+                const targetId = marker.getAttribute('data-for');
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        const storyObserverOptions = {
+            root: storyPanel,
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const storyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    timelineMarkers.forEach(m => m.classList.remove('active'));
+                    storyMilestones.forEach(m => m.classList.remove('active'));
+
+                    const milestoneId = entry.target.id;
+                    const marker = document.querySelector(`[data-for="${milestoneId}"]`);
+                    if (marker) marker.classList.add('active');
+                    entry.target.classList.add('active');
+                }
+            });
+        }, storyObserverOptions);
+
+        storyMilestones.forEach(milestone => storyObserver.observe(milestone));
+    }
+}
+
+// Data Loading
+const blogPosts = window.contentData ? window.contentData.blogPosts : [];
+const resumeContent = window.contentData ? window.contentData.resume : '';
+const timelineContent = window.contentData ? window.contentData.timeline : '';
+
+// Render content
+const resumeContainer = document.getElementById('resume-container');
+if (resumeContainer && resumeContent) {
+    resumeContainer.innerHTML = resumeContent;
+}
+
+const homeContainer = document.getElementById('home-container');
+if (homeContainer && timelineContent) {
+    homeContainer.innerHTML = timelineContent;
+    initTimeline();
+}
 
 function getSlug(title) {
     return title.toLowerCase()
@@ -157,36 +154,63 @@ function getSlug(title) {
         .replace(/(^-|-$)+/g, '');
 }
 
-function renderBlogPosts() {
+function renderFilterBar() {
+    const filterBar = document.getElementById('filter-bar');
+    if (!filterBar) return;
+
+    // Get unique tags
+    const tags = new Set(['All']);
+    blogPosts.forEach(post => {
+        post.tags.forEach(tag => tags.add(tag));
+    });
+
+    filterBar.innerHTML = Array.from(tags).map(tag => `
+        <button class="sub-tab-btn ${tag === currentFilterTag ? 'active' : ''}" 
+                onclick="setFilter('${tag}')">${tag}</button>
+    `).join('');
+}
+
+window.setFilter = function (tag) {
+    window.location.hash = `showcase?tag=${encodeURIComponent(tag)}`;
+};
+
+function renderBlogPosts(filterTag = 'All') {
     const container = document.getElementById('blog-container');
     if (!container) return;
 
-    container.innerHTML = blogPosts.map(post => {
+    currentFilterTag = filterTag;
+    renderFilterBar();
+
+    const filtered = filterTag === 'All'
+        ? blogPosts
+        : blogPosts.filter(post => post.tags.includes(filterTag));
+
+    if (filtered.length === 0) {
+        container.innerHTML = `<div style="padding: 2rem; text-align: center; color: var(--text-muted);">No posts found for this topic.</div>`;
+        return;
+    }
+
+    container.innerHTML = filtered.map(post => {
         const slug = getSlug(post.title);
         return `
-                    <div class="blog-row" onclick="viewPost('${slug}')">
-                        <div class="blog-date">${post.date}</div>
-                        <div class="blog-title">${post.title}</div>
-                        <div class="blog-tags-small">
-                            ${post.tags.map(tag => `<span class="tag-small">${tag}</span>`).join('')}
-                        </div>
-                    </div>
-                `}).join('');
+            <div class="blog-row" onclick="viewPost('${slug}')">
+                <div class="blog-date">${post.date}</div>
+                <div class="blog-title">${post.title}</div>
+                <div class="blog-tags-small">
+                    ${post.tags.map(tag => `<span class="tag-small">${tag}</span>`).join('')}
+                </div>
+            </div>
+        `}).join('');
+
+    observeElements();
 }
 
-// Global for onclick
 window.viewPost = function (slug) {
-    window.location.hash = `blog?post=${slug}`;
+    window.location.hash = `showcase?post=${slug}`;
 };
 
-function renderBlogPost(identifier) {
-    // Identifier can be ID (legacy) or slug (string)
-    let post;
-    if (typeof identifier === 'number') {
-        post = blogPosts.find(p => p.id === identifier);
-    } else {
-        post = blogPosts.find(p => getSlug(p.title) === identifier);
-    }
+function renderBlogPost(slug) {
+    const post = blogPosts.find(p => getSlug(p.title) === slug);
 
     if (!post) {
         showBlogList();
@@ -196,40 +220,42 @@ function renderBlogPost(identifier) {
     const singleView = document.getElementById('blog-single-view');
     const listView = document.getElementById('blog-list-view');
     const contentContainer = document.getElementById('single-post-content');
+    const filterBar = document.getElementById('filter-bar');
 
     contentContainer.innerHTML = `
-                    <div class="blog-post-header">
-                        <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text);">${post.title}</h1>
-                        <div class="blog-meta" style="justify-content: flex-start;">
-                            <span>${post.date}</span>
-                            <span>•</span>
-                            <span>${post.readTime} read</span>
-                             <span>•</span>
-                            <div class="blog-tags-small">
-                                ${post.tags.map(tag => `<span class="tag-small">${tag}</span>`).join('')}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog-post-content">
-                        ${post.content}
-                    </div>
-                `;
+        <div class="blog-post-header">
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text);">${post.title}</h1>
+            <div class="blog-meta" style="justify-content: flex-start;">
+                <span>${post.date}</span>
+                <span>•</span>
+                <span>${post.readTime} read</span>
+                 <span>•</span>
+                <div class="blog-tags-small">
+                    ${post.tags.map(tag => `<span class="tag-small">${tag}</span>`).join('')}
+                </div>
+            </div>
+        </div>
+        <div class="blog-post-content">
+            ${post.content}
+        </div>
+    `;
 
     listView.style.display = 'none';
+    if (filterBar) filterBar.style.display = 'none';
     singleView.classList.add('active');
 }
 
-function showBlogList() {
-    if (window.location.hash !== '#blog') {
-        window.location.hash = 'blog';
-        return;
-    }
+function showBlogList(tag = 'All') {
     const singleView = document.getElementById('blog-single-view');
     const listView = document.getElementById('blog-list-view');
+    const filterBar = document.getElementById('filter-bar');
 
-    singleView.classList.remove('active');
-    listView.style.display = 'block';
+    if (singleView) singleView.classList.remove('active');
+    if (listView) listView.style.display = 'block';
+    if (filterBar) filterBar.style.display = 'flex';
+
+    renderBlogPosts(tag);
 }
 
-// Call render on init
-renderBlogPosts();
+// Initial observed elements
+observeElements();

@@ -4,7 +4,9 @@ const { marked } = require('./lib/marked.js');
 
 // Conf
 const POSTS_DIR = path.join(__dirname, '../content/posts');
-const OUTPUT_FILE = path.join(__dirname, '../js/blog-data.js');
+const RESUME_FILE = path.join(__dirname, '../content/resume.html');
+const TIMELINE_FILE = path.join(__dirname, '../content/timeline.html');
+const OUTPUT_FILE = path.join(__dirname, '../js/content-data.js');
 
 // Ensure output dir exists
 const outputDir = path.dirname(OUTPUT_FILE);
@@ -12,7 +14,7 @@ if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
 }
 
-// Simple Front Matter Parser
+// Simple Front Matter Parser (for blog only)
 function parseFrontMatter(content) {
     const match = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
     if (!match) {
@@ -29,7 +31,6 @@ function parseFrontMatter(content) {
             const key = parts[0].trim();
             const value = parts.slice(1).join(':').trim();
 
-            // Handle arrays [a, b]
             if (value.startsWith('[') && value.endsWith(']')) {
                 attributes[key] = value.slice(1, -1).split(',').map(s => s.trim());
             } else {
@@ -60,22 +61,39 @@ function getPosts() {
                 content: html
             };
         })
-        .sort((a, b) => new Date(b.date) - new Date(a.date)); // Newest first
+        .sort((a, b) => new Date(b.date) - new Date(a.date));
+}
+
+function getResume() {
+    if (fs.existsSync(RESUME_FILE)) {
+        return fs.readFileSync(RESUME_FILE, 'utf8');
+    }
+    return '';
+}
+
+function getTimeline() {
+    if (fs.existsSync(TIMELINE_FILE)) {
+        return fs.readFileSync(TIMELINE_FILE, 'utf8');
+    }
+    return '';
 }
 
 // Build
-console.log('Building blog data with zero dependencies...');
+console.log('Building content data...');
 try {
     const posts = getPosts();
-    // Add ID fallback - we use client side slug, so ID is less critical but needed for legacy check
-    const postsWithIds = posts.map((post, index) => ({
-        ...post,
-        id: index + 1
-    }));
+    const resume = getResume();
+    const timeline = getTimeline();
 
-    const fileContent = `window.blogPosts = ${JSON.stringify(postsWithIds, null, 4)};`;
+    const data = {
+        blogPosts: posts,
+        resume: resume,
+        timeline: timeline
+    };
+
+    const fileContent = `window.contentData = ${JSON.stringify(data, null, 4)};`;
     fs.writeFileSync(OUTPUT_FILE, fileContent);
-    console.log(`Successfully generated ${OUTPUT_FILE} with ${posts.length} posts.`);
+    console.log(`Successfully generated ${OUTPUT_FILE}.`);
 } catch (error) {
     console.error('Build failed:', error);
     process.exit(1);

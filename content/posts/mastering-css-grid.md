@@ -2,7 +2,7 @@
 title: Mastering CSS Grid
 date: Nov 20, 2025
 excerpt: A deep dive into creating robust, responsive layouts with modern CSS grid techniques.
-tags: [CSS, Frontend]
+tags: [CSS, Frontend, Coding]
 readTime: 7 min
 ---
 

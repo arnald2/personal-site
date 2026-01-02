@@ -1,9 +1,9 @@
 ---
 title: Building a Better Portfolio
-date: Jan 1, 2026
-excerpt: Reflecting on the process of redesigning my personal site to better showcase my engineering journey.
-tags: [Web Dev, Design]
-readTime: 3 min
+date: Dec 15, 2025
+readTime: 5 min
+tags: [Coding, Design, Showcase]
+excerpt: "How I rebuilt my personal site using zero-dependency vanilla JS and CSS."
 ---
 
 When I set out to redesign this portfolio, I knew I wanted something that felt **distinctly engineering-focused** but still polished. The previous version was built on a heavy template that was hard to customize.

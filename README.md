@@ -26,45 +26,38 @@ A modern, high-performance personal portfolio website built with vanilla web tec
 └── package.json        # Project metadata
 ```
 
+
 ## 🛠️ Setup & Build
 
-This project relies on a lightweight **Static Content Generation** step. Blog posts are written in Markdown and compiled into a JavaScript data file that the browser works with directly.
+This project relies on a lightweight **Static Content Generation** step. Blog posts and Resume content are written in Markdown and compiled into a single JavaScript data file that the browser works with directly.
 
 ### Prerequisites
 - Node.js (v14+ recommended)
 
 ### Installation
 1. Clone the repository.
-2. No `npm install` required for the build script (dependencies are vendored).
+2. No `npm install` required (dependencies are vendored).
 
 ### Building Content
-Whenever you add or edit files in `content/posts/`, you must rebuild the data file:
+Whenever you add or edit files in `content/`, you must rebuild the data:
 
 ```bash
-node scripts/build-blog.js
+node scripts/build-content.js
 ```
 
-This generates `js/blog-data.js`, which `index.html` loads automatically.
+This generates `js/content-data.js`, which `index.html` loads automatically.
 
 ## ✍️ Adding New Content
 
+### Blog Posts
 1. Create a new `.md` file in `content/posts/`.
-2. Add the required **Frontmatter** at the top:
+2. Add the required Frontmatter.
+3. Run the build command.
 
-```markdown
----
-title: My New Post
-date: Jan 1, 2026
-excerpt: A short summary of the post.
-tags: [Tech, Life]
-readTime: 5 min
----
+### Resume
+1. Edit `content/resume.md`.
+2. Run `node scripts/build-content.js`.
 
-Your content goes here using standard **Markdown** syntax.
-```
-
-3. Run the build command: `node scripts/build-blog.js`
-4. Refresh the site!
 
 
 ## 🚀 Deployment
