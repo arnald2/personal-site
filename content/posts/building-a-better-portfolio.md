@@ -2,7 +2,7 @@
 title: Building a Better Portfolio
 date: Dec 15, 2025
 readTime: 5 min
-tags: [Coding, Design, Showcase]
+tags: [Coding, Design, Blog]
 excerpt: "How I rebuilt my personal site using zero-dependency vanilla JS and CSS."
 ---
 

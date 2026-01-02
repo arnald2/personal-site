@@ -20,7 +20,7 @@ function handleRoute() {
     if (targetTabContent) targetTabContent.classList.add('active');
 
     // Specific Route Handling
-    if (path === 'showcase') {
+    if (path === 'blog') {
         if (query && query.startsWith('post=')) {
             const slug = query.split('=')[1];
             renderBlogPost(slug);
@@ -171,7 +171,7 @@ function renderFilterBar() {
 }
 
 window.setFilter = function (tag) {
-    window.location.hash = `showcase?tag=${encodeURIComponent(tag)}`;
+    window.location.hash = `blog?tag=${encodeURIComponent(tag)}`;
 };
 
 function renderBlogPosts(filterTag = 'All') {
@@ -206,7 +206,7 @@ function renderBlogPosts(filterTag = 'All') {
 }
 
 window.viewPost = function (slug) {
-    window.location.hash = `showcase?post=${slug}`;
+    window.location.hash = `blog?post=${slug}`;
 };
 
 function renderBlogPost(slug) {

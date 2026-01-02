@@ -7,7 +7,7 @@ window.contentData = {
             "tags": [
                 "Coding",
                 "Design",
-                "Showcase"
+                "Blog"
             ],
             "readTime": "5 min",
             "content": "<p>When I set out to redesign this portfolio, I knew I wanted something that felt <strong>distinctly engineering-focused</strong> but still polished. The previous version was built on a heavy template that was hard to customize.</p>\n<h3>The Goals</h3>\n<ul>\n<li>Make it fast (vanilla JS/CSS).</li>\n<li>Showcase the <em>&quot;Code&quot;</em> aesthetic with monospaced fonts and terminal-like vibes.</li>\n<li>Ensure it&#39;s easy to update.</li>\n</ul>\n<p>I decided to stick to a dark mode theme because let&#39;s be honest, that&#39;s where we spend most of our time as developers. The color palette revolves around a deep black/gray background with vibrant cyan accents to make interactive elements pop.</p>\n<p>One of the coolest features is the dynamic timeline you see on the homepage. Getting those CSS calculations right for the responsive markers was a fun little challenge!</p>\n"
