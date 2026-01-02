@@ -109,6 +109,140 @@
             border: 1px solid var(--border);
         }
 
+        /* Blog Styles */
+        /* Blog Styles (90s Retro) */
+        .blog-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+            border: none;
+            background: transparent;
+        }
+
+        .blog-row {
+            display: grid;
+            grid-template-columns: 140px 1fr auto;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            align-items: baseline;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .blog-row:hover {
+            background: var(--secondary);
+            padding-left: 1.5rem;
+        }
+
+        .blog-row:hover .blog-title {
+            color: var(--accent);
+        }
+
+        .blog-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .blog-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            transition: color 0.2s;
+        }
+
+        .blog-tags-small {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .tag-small {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: lowercase;
+        }
+
+        .tag-small::before {
+            content: '#';
+            color: var(--accent);
+            opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            .blog-row {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .blog-tags-small {
+                display: none;
+            }
+        }
+
+        /* Message Logic */
+        .single-blog-view {
+            display: none;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .single-blog-view.active {
+            display: block;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 212, 255, 0.05);
+            border-radius: 6px;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .back-btn:hover {
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateX(-5px);
+        }
+
+        .blog-post-content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        .blog-post-content h2,
+        .blog-post-content h3 {
+            color: var(--text);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-post-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-post-header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
         .tab-btn {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             padding: 0.75rem 1.5rem;
@@ -147,6 +281,7 @@
             margin-left: auto;
             margin-right: auto;
             border: 1px solid var(--border);
+            flex-wrap: wrap;
         }
 
         .sub-tab-btn {
@@ -930,6 +1065,7 @@
                     <button class="tab-btn active" data-tab="home">Home</button>
                     <button class="tab-btn" data-tab="resume">Resume</button>
                     <button class="tab-btn" data-tab="showcase">Showcase</button>
+                    <button class="tab-btn" data-tab="blog">Blog</button>
                     <button class="tab-btn" data-tab="contact">Contact</button>
                 </div>
             </div>
@@ -1251,6 +1387,27 @@
             </section>
         </div>
 
+        <!-- Blog Tab -->
+        <div id="blog" class="tab-content">
+            <div class="header">
+                <h1>Thoughts & Writings</h1>
+                <div class="subtitle">Tech, Life, and Code</div>
+            </div>
+
+            <section id="blog-list-view">
+                <div id="blog-container" class="blog-list">
+                    <!-- Blog posts will be rendered here by JS -->
+                </div>
+            </section>
+
+            <section id="blog-single-view" class="single-blog-view">
+                <button class="back-btn" onclick="showBlogList()">← Back to List</button>
+                <div id="single-post-content">
+                    <!-- Content rendered here -->
+                </div>
+            </section>
+        </div>
+
         <!-- Showcase Tab -->
         <div id="showcase" class="tab-content">
             <div class="header">
@@ -1487,6 +1644,115 @@
 
                 storyMilestones.forEach(milestone => storyObserver.observe(milestone));
             }
+
+            // Blog Logic
+            const blogPosts = [
+                {
+                    id: 1,
+                    title: "Building a Better Portfolio",
+                    date: "Jan 1, 2026",
+                    excerpt: "Reflecting on the process of redesigning my personal site to better showcase my engineering journey.",
+                    tags: ["Web Dev", "Design"],
+                    readTime: "3 min",
+                    content: `
+                        <p>When I set out to redesign this portfolio, I knew I wanted something that felt <strong>distinctly engineering-focused</strong> but still polished. The previous version was built on a heavy template that was hard to customize.</p>
+                        <h3>The Goals</h3>
+                        <ul>
+                            <li>Make it fast (vanilla JS/CSS).</li>
+                            <li>Showcase the <em>"Code"</em> aesthetic with monospaced fonts and terminal-like vibes.</li>
+                            <li>Ensure it's easy to update.</li>
+                        </ul>
+                        <p>I decided to stick to a dark mode theme because let's be honest, that's where we spend most of our time as developers. The color palette revolves around a deep black/gray background with vibrant cyan accents to make interactive elements pop.</p>
+                        <p>One of the coolest features is the dynamic timeline you see on the homepage. Getting those CSS calculations right for the responsive markers was a fun little challenge!</p>
+                    `
+                },
+                {
+                    id: 2,
+                    title: "The Future of AI Agents",
+                    date: "Dec 15, 2025",
+                    excerpt: "How autonomous agents are changing the way we write code and solve complex problems.",
+                    tags: ["AI", "Tech"],
+                    readTime: "5 min",
+                    content: `
+                        <p>AI agents are rapidly evolving from simple chatbots to capable autonomous workers. We're seeing models that can plan, execute, and verify tasks—much like a human engineer would.</p>
+                        <h3>Why this matters</h3>
+                        <p>It means we can offload the "boilerplate" thinking. Instead of spending hours setting up the scaffold for a project, an agent can do it in seconds. This shifts the engineer's role to more of an <strong>Architecture & Review</strong> position.</p>
+                        <p>I believe the next few years will be defined by how well we can integrate these agents into our daily workflows without losing the human touch that makes great software truly <em>great</em>.</p>
+                    `
+                },
+                {
+                    id: 3,
+                    title: "Mastering CSS Grid",
+                    date: "Nov 20, 2025",
+                    excerpt: "A deep dive into creating robust, responsive layouts with modern CSS grid techniques.",
+                    tags: ["CSS", "Frontend"],
+                    readTime: "7 min",
+                    content: `
+                        <p>CSS Grid has completely changed how I approach web layout. Gone are the days of float hacks and complex negative margins.</p>
+                        <p>For this site, I used Grid extensively to handle the responsive behavior of the project cards and the timeline layout. The ability to simply define <code>grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))</code> makes responsive design almost automatic.</p>
+                        <h3>Quick Tip</h3>
+                        <p>Always name your grid lines if you're building a complex layout. It makes debugging (and reading your own code 6 months later) so much easier!</p>
+                    `
+                }
+            ];
+
+            function renderBlogPosts() {
+                const container = document.getElementById('blog-container');
+                if (!container) return;
+
+                container.innerHTML = blogPosts.map(post => `
+                    <div class="blog-row" onclick="viewPost(${post.id})">
+                        <div class="blog-date">${post.date}</div>
+                        <div class="blog-title">${post.title}</div>
+                        <div class="blog-tags-small">
+                            ${post.tags.map(tag => `<span class="tag-small">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            function viewPost(id) {
+                const post = blogPosts.find(p => p.id === id);
+                if (!post) return;
+
+                const singleView = document.getElementById('blog-single-view');
+                const listView = document.getElementById('blog-list-view');
+                const contentContainer = document.getElementById('single-post-content');
+
+                contentContainer.innerHTML = `
+                    <div class="blog-post-header">
+                        <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text);">${post.title}</h1>
+                        <div class="blog-meta" style="justify-content: flex-start;">
+                            <span>${post.date}</span>
+                            <span>•</span>
+                            <span>${post.readTime} read</span>
+                             <span>•</span>
+                            <div class="blog-tags-small">
+                                ${post.tags.map(tag => `<span class="tag-small">${tag}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-post-content">
+                        ${post.content}
+                    </div>
+                `;
+
+                listView.style.display = 'none';
+                singleView.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            function showBlogList() {
+                const singleView = document.getElementById('blog-single-view');
+                const listView = document.getElementById('blog-list-view');
+
+                singleView.classList.remove('active');
+                listView.style.display = 'block';
+            }
+
+            // Call render on init
+            renderBlogPosts();
+
         </script>
 </body>
 
