@@ -134,6 +134,51 @@
             box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
         }
 
+        /* Sub-tabs */
+        .sub-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            padding: 0.25rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 50px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid var(--border);
+        }
+
+        .sub-tab-btn {
+            padding: 0.5rem 1.5rem;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            cursor: pointer;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .sub-tab-btn:hover {
+            color: var(--text);
+        }
+
+        .sub-tab-btn.active {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent);
+        }
+
+        .sub-content {
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .sub-content.active {
+            display: block;
+        }
+
         /* Content Sections */
         .tab-content {
             display: none;
@@ -203,6 +248,201 @@
         .contact-links a:hover {
             color: var(--accent);
             background: rgba(0, 212, 255, 0.1);
+        }
+
+        /* Vertical Timeline Home Redesign */
+        .home-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 4rem;
+            padding: 2rem 0;
+            height: calc(100vh - 250px);
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+
+        .timeline-panel {
+            position: relative;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-bottom: 2rem;
+        }
+
+        .vertical-timeline-track {
+            position: absolute;
+            right: -1px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-marker {
+            position: relative;
+            padding: 1.5rem 0;
+            text-align: right;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--text-muted);
+        }
+
+        .timeline-marker:hover {
+            color: var(--text);
+        }
+
+        .timeline-marker::after {
+            content: '';
+            position: absolute;
+            right: calc(-2rem - 6px);
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-marker.active {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .timeline-marker.active::after {
+            background: var(--accent);
+            border-color: var(--accent);
+            box-shadow: 0 0 10px var(--accent);
+            width: 16px;
+            height: 16px;
+            right: calc(-2rem - 8px);
+        }
+
+        .marker-year {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            display: block;
+        }
+
+        .story-panel {
+            overflow-y: auto;
+            padding-right: 2rem;
+            padding-bottom: 50vh;
+            /* Allow last item to scroll to top */
+            scroll-behavior: smooth;
+        }
+
+        .story-panel::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .story-panel::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 10px;
+        }
+
+        .story-milestone {
+            margin-bottom: 12rem;
+            opacity: 0.3;
+            transition: all 0.8s ease;
+            transform: translateY(30px);
+        }
+
+        .story-milestone.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .milestone-header {
+            display: flex;
+            align-items: baseline;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .milestone-year-large {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+            opacity: 0.2;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .milestone-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--text);
+            letter-spacing: -0.02em;
+        }
+
+        .milestone-content {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .milestone-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+        }
+
+        .milestone-media {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .milestone-media:hover {
+            border-color: var(--accent);
+            transform: scale(1.02);
+        }
+
+        .milestone-media::before {
+            content: '📸 Milestone Photo';
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-family: 'JetBrains Mono', monospace;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 1024px) {
+            .home-layout {
+                grid-template-columns: 1fr;
+                height: auto;
+                overflow: visible;
+            }
+
+            .timeline-panel {
+                display: none;
+            }
+
+            .milestone-content {
+                grid-template-columns: 1fr;
+            }
+
+            .milestone-year-large {
+                font-size: 3rem;
+            }
+
+            .milestone-title {
+                font-size: 1.8rem;
+            }
         }
 
         /* Section Styles */
@@ -687,16 +927,181 @@
             <div class="nav-header">
                 <div class="logo">&lt;AG/&gt;</div>
                 <div class="nav-tabs">
-                    <button class="tab-btn active" data-tab="resume">Resume</button>
-                    <button class="tab-btn" data-tab="projects">Projects</button>
-                    <button class="tab-btn" data-tab="hobbies">Hobbies</button>
+                    <button class="tab-btn active" data-tab="home">Home</button>
+                    <button class="tab-btn" data-tab="resume">Resume</button>
+                    <button class="tab-btn" data-tab="showcase">Showcase</button>
                     <button class="tab-btn" data-tab="contact">Contact</button>
                 </div>
             </div>
         </nav>
 
+        <!-- Home Tab -->
+        <div id="home" class="tab-content active">
+            <div class="home-layout">
+                <div class="timeline-panel">
+                    <div class="vertical-timeline-track"></div>
+                    <div class="timeline-marker active" data-for="m1990">
+                        <span class="marker-year">1990</span>
+                    </div>
+                    <div class="timeline-marker" data-for="m2001">
+                        <span class="marker-year">2001</span>
+                    </div>
+                    <div class="timeline-marker" data-for="m2008">
+                        <span class="marker-year">2008</span>
+                    </div>
+                    <div class="timeline-marker" data-for="m2012">
+                        <span class="marker-year">2012</span>
+                    </div>
+                    <div class="timeline-marker" data-for="m2017">
+                        <span class="marker-year">2017</span>
+                    </div>
+                    <div class="timeline-marker" data-for="m2019">
+                        <span class="marker-year">2019</span>
+                    </div>
+                    <div class="timeline-marker" data-for="m2021">
+                        <span class="marker-year">2021</span>
+                    </div>
+                    <div class="timeline-marker" data-for="m2026">
+                        <span class="marker-year">2026</span>
+                    </div>
+                </div>
+
+                <div class="story-panel">
+                    <div id="m1990" class="story-milestone active">
+                        <div class="milestone-header">
+                            <span class="milestone-year-large">1990</span>
+                            <h3 class="milestone-title">The First Line of Pure Potential</h3>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="milestone-text">
+                                Representing humble beginnings in Cuba. A world away from the AWS cloud, this year
+                                marked the initialization of my journey. The foundation of a curious mind that would one
+                                day build systems for millions.
+                            </div>
+                            <div class="milestone-media">
+                                <!-- Placeholder for baby photo/Cuba landscape -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="m2001" class="story-milestone">
+                        <div class="milestone-header">
+                            <span class="milestone-year-large">2001</span>
+                            <h3 class="milestone-title">Cross-Border Deployment</h3>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="milestone-text">
+                                Arriving in the United States. A major system migration—leaving everything familiar to
+                                start a new chapter in a land of infinite opportunity. This move defined my resilience
+                                and adaptability.
+                            </div>
+                            <div class="milestone-media">
+                                <!-- Placeholder for arrival photo -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="m2008" class="story-milestone">
+                        <div class="milestone-header">
+                            <span class="milestone-year-large">2008</span>
+                            <h3 class="milestone-title">Initializing "The Engineer"</h3>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="milestone-text">
+                                Starting college at FIU. The formal training began—compilation of logic, algorithms, and
+                                a deep-seated love for how things work under the hood.
+                            </div>
+                            <div class="milestone-media">
+                                <!-- Placeholder for college photo -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="m2012" class="story-milestone">
+                        <div class="milestone-header">
+                            <span class="milestone-year-large">2012</span>
+                            <h3 class="milestone-title">Entry into the Stack</h3>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="milestone-text">
+                                Moving to the DC area for my first professional role. Transitioning from abstract theory
+                                to the messy, beautiful reality of real-world software engineering.
+                            </div>
+                            <div class="milestone-media">
+                                <!-- Placeholder for DC photo -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="m2017" class="story-milestone">
+                        <div class="milestone-header">
+                            <span class="milestone-year-large">2017</span>
+                            <h3 class="milestone-title">Scaling with the Giants</h3>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="milestone-text">
+                                Heading west to California to join Amazon. Learning what "scale" really
+                                means—architecting systems that live and breathe in the global cloud ecosystem.
+                            </div>
+                            <div class="milestone-media">
+                                <!-- Placeholder for California photo -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="m2019" class="story-milestone">
+                        <div class="milestone-header">
+                            <span class="milestone-year-large">2019</span>
+                            <h3 class="milestone-title">East Coast Runtime</h3>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="milestone-text">
+                                Relocating to Jersey City to work in the heart of New York City. The fast-paced energy
+                                of the city mirrored the high-throughput systems I was now building at Audible.
+                            </div>
+                            <div class="milestone-media">
+                                <!-- Placeholder for NYC skyline photo -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="m2021" class="story-milestone">
+                        <div class="milestone-header">
+                            <span class="milestone-year-large">2021</span>
+                            <h3 class="milestone-title">The Greatest Project</h3>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="milestone-text">
+                                Welcoming my first child. The ultimate legacy project—teaching a new generation about
+                                curiosity, growth, and the importance of a well-tended garden.
+                            </div>
+                            <div class="milestone-media">
+                                <!-- Placeholder for family photo -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="m2026" class="story-milestone">
+                        <div class="milestone-header">
+                            <span class="milestone-year-large">2026</span>
+                            <h3 class="milestone-title">The Present State</h3>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="milestone-text">
+                                Still building, still growing. Balancing the complexity of senior software leadership
+                                with the simplicity of nature.
+                            </div>
+                            <div class="milestone-media">
+                                <!-- Placeholder for current photo -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Resume Tab -->
-        <div id="resume" class="tab-content active">
+        <div id="resume" class="tab-content">
             <div class="header">
                 <h1>Arnaldo Garcia</h1>
                 <div class="subtitle">Senior Software Engineer</div>
@@ -846,50 +1251,73 @@
             </section>
         </div>
 
-        <!-- Projects Tab -->
-        <div id="projects" class="tab-content">
+        <!-- Showcase Tab -->
+        <div id="showcase" class="tab-content">
             <div class="header">
-                <h1>Projects</h1>
-                <div class="subtitle">Coming Soon</div>
+                <h1>Showcase</h1>
+                <div class="subtitle">Projects, Hobbies & Interests</div>
             </div>
 
-            <section style="text-align: center; padding: 4rem 0;">
-                <div class="card" style="display: inline-block; padding: 3rem; max-width: 500px;">
-                    <div class="construction-scene">
-                        <div class="crane">🏗️</div>
-                        <div class="worker worker-1">👷</div>
-                        <div class="brick">🧱</div>
-                        <div class="worker worker-2">👷</div>
-                    </div>
-                    <h2 style="border-bottom: none; margin-bottom: 1rem;">Under Construction</h2>
-                    <p style="color: var(--text-muted); font-size: 1.1rem;">
-                        This section is currently being updated with new projects. Check back soon!
-                    </p>
-                </div>
-            </section>
-        </div>
-
-        <!-- Hobbies Tab -->
-        <div id="hobbies" class="tab-content">
-            <div class="header">
-                <h1>Hobbies & Interests</h1>
-                <div class="subtitle">Coming Soon</div>
+            <div class="sub-nav">
+                <button class="sub-tab-btn active" data-subtab="coding">Coding</button>
+                <button class="sub-tab-btn" data-subtab="gardening">Gardening</button>
+                <button class="sub-tab-btn" data-subtab="photography">Photography</button>
             </div>
 
-            <section style="text-align: center; padding: 4rem 0;">
-                <div class="card" style="display: inline-block; padding: 3rem; max-width: 500px;">
-                    <div class="construction-scene">
-                        <div class="crane">🏗️</div>
-                        <div class="worker worker-1">👷</div>
-                        <div class="brick">🧱</div>
-                        <div class="worker worker-2">👷</div>
+            <!-- Coding Sub-content -->
+            <div id="coding" class="sub-content active">
+                <section style="text-align: center; padding: 2rem 0;">
+                    <div class="card" style="display: inline-block; padding: 3rem; max-width: 500px;">
+                        <div class="construction-scene">
+                            <div class="crane">🏗️</div>
+                            <div class="worker worker-1">👷</div>
+                            <div class="brick">🧱</div>
+                            <div class="worker worker-2">👷</div>
+                        </div>
+                        <h2 style="border-bottom: none; margin-bottom: 1rem;">Under Construction</h2>
+                        <p style="color: var(--text-muted); font-size: 1.1rem;">
+                            This section is currently being updated with new projects. Check back soon!
+                        </p>
                     </div>
-                    <h2 style="border-bottom: none; margin-bottom: 1rem;">Under Construction</h2>
-                    <p style="color: var(--text-muted); font-size: 1.1rem;">
-                        This section is currently being updated with new interests and activities. Check back soon!
-                    </p>
-                </div>
-            </section>
+                </section>
+            </div>
+
+            <!-- Gardening Sub-content -->
+            <div id="gardening" class="sub-content">
+                <section style="text-align: center; padding: 2rem 0;">
+                    <div class="card" style="display: inline-block; padding: 3rem; max-width: 500px;">
+                        <div class="construction-scene">
+                            <div class="crane">🏗️</div>
+                            <div class="worker worker-1">👷</div>
+                            <div class="brick">🧱</div>
+                            <div class="worker worker-2">👷</div>
+                        </div>
+                        <h2 style="border-bottom: none; margin-bottom: 1rem;">Under Construction</h2>
+                        <p style="color: var(--text-muted); font-size: 1.1rem;">
+                            This section is currently being updated with new gardening projects and interests. Check
+                            back soon!
+                        </p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Photography Sub-content -->
+            <div id="photography" class="sub-content">
+                <section style="text-align: center; padding: 2rem 0;">
+                    <div class="card" style="display: inline-block; padding: 3rem; max-width: 500px;">
+                        <div class="construction-scene">
+                            <div class="crane">🏗️</div>
+                            <div class="worker worker-1">👷</div>
+                            <div class="brick">🧱</div>
+                            <div class="worker worker-2">👷</div>
+                        </div>
+                        <h2 style="border-bottom: none; margin-bottom: 1rem;">Under Construction</h2>
+                        <p style="color: var(--text-muted); font-size: 1.1rem;">
+                            This section is currently being updated with new photography work. Check back soon!
+                        </p>
+                    </div>
+                </section>
+            </div>
         </div>
 
         <!-- Contact Tab -->
@@ -952,10 +1380,34 @@
 
                     // Add active class to clicked button and corresponding content
                     button.classList.add('active');
-                    document.getElementById(targetTab).classList.add('active');
+                    const targetElement = document.getElementById(targetTab);
+                    if (targetElement) {
+                        targetElement.classList.add('active');
+                    }
 
                     // Scroll to top smoothly
                     window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+
+            // Sub-tab switching functionality
+            const subTabButtons = document.querySelectorAll('.sub-tab-btn');
+            const subContents = document.querySelectorAll('.sub-content');
+
+            subTabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetSubTab = button.getAttribute('data-subtab');
+
+                    // Remove active class from all sub-tab buttons and sub-contents
+                    subTabButtons.forEach(btn => btn.classList.remove('active'));
+                    subContents.forEach(content => content.classList.remove('active'));
+
+                    // Add active class to clicked button and corresponding content
+                    button.classList.add('active');
+                    const targetSubElement = document.getElementById(targetSubTab);
+                    if (targetSubElement) {
+                        targetSubElement.classList.add('active');
+                    }
                 });
             });
 
@@ -992,6 +1444,49 @@
                 card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(card);
             });
+
+            // Vertical Timeline Interaction
+            const storyPanel = document.querySelector('.story-panel');
+            const timelineMarkers = document.querySelectorAll('.timeline-marker');
+            const storyMilestones = document.querySelectorAll('.story-milestone');
+
+            if (storyPanel && timelineMarkers.length > 0) {
+                // Clicking a marker scrolls the panel
+                timelineMarkers.forEach(marker => {
+                    marker.addEventListener('click', () => {
+                        const targetId = marker.getAttribute('data-for');
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    });
+                });
+
+                // Intersection Observer for scroll spy
+                const storyObserverOptions = {
+                    root: storyPanel,
+                    threshold: 0.5,
+                    rootMargin: '0px'
+                };
+
+                const storyObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Deactivate all
+                            timelineMarkers.forEach(m => m.classList.remove('active'));
+                            storyMilestones.forEach(m => m.classList.remove('active'));
+
+                            // Activate current
+                            const milestoneId = entry.target.id;
+                            const marker = document.querySelector(`[data-for="${milestoneId}"]`);
+                            if (marker) marker.classList.add('active');
+                            entry.target.classList.add('active');
+                        }
+                    });
+                }, storyObserverOptions);
+
+                storyMilestones.forEach(milestone => storyObserver.observe(milestone));
+            }
         </script>
 </body>
 
