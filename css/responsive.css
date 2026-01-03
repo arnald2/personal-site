@@ -1,0 +1,92 @@
+/* Responsive Layouts */
+
+@media (max-width: 1024px) {
+    .home-layout {
+        grid-template-columns: 1fr;
+        height: auto;
+        overflow: visible;
+    }
+
+    .timeline-panel {
+        display: none;
+    }
+
+    .milestone-content {
+        grid-template-columns: 1fr;
+    }
+
+    .milestone-year-large {
+        font-size: 3rem;
+    }
+
+    .milestone-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 968px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .blog-row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .blog-tags-small {
+        display: none;
+    }
+
+    .header h1 {
+        font-size: 2.5rem;
+    }
+
+    .nav-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav-tabs {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .tab-btn {
+        flex: 1;
+        min-width: 100px;
+    }
+
+    .skills-grid,
+    .projects-grid,
+    .hobbies-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    nav,
+    footer {
+        display: none;
+    }
+
+    #contact h2 {
+        text-align: center;
+    }
+
+    #contact h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
