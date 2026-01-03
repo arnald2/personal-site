@@ -1,6 +1,6 @@
 // Routing Logic
 function handleRoute() {
-    const hash = window.location.hash.slice(1) || 'home'; // Default to home
+    const hash = window.location.hash.slice(1) || 'home'; // Default to home (splash page)
     const [path, query] = hash.split('?');
 
     // Active Tab Handling

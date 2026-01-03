@@ -1,4 +1,65 @@
-/* Section Specific Styles */
+/* Splash Page */
+.splash-hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+.splash-title {
+    font-size: 5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.03em;
+}
+
+.splash-subtitle {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: 500;
+}
+
+.splash-subtitle::after {
+    display: none;
+}
+
+.splash-text {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    max-width: 600px;
+    margin-bottom: 3rem;
+}
+
+.cta-btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    color: var(--primary);
+    background: var(--accent);
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 212, 255, 0.5);
+    background: white;
+}
 
 /* Header */
 .header {
@@ -293,8 +354,8 @@
 }
 
 .blog-post-content {
-    max-width: 800px;
-    margin: 0 auto;
+    /* Removed max-width and margin:0 auto to align with header */
+    margin-top: 1rem;
     line-height: 1.8;
     font-size: 1.1rem;
     color: var(--text-muted);
@@ -315,6 +376,8 @@
     margin-bottom: 3rem;
     padding-bottom: 2rem;
     border-bottom: 1px solid var(--border);
+    text-align: left;
+    /* Align header text left as well if desired, or keep as is */
 }
 
 /* Grids & Content boxes */

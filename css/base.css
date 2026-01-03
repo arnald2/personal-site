@@ -90,7 +90,7 @@ li {
     line-height: 1.7;
 }
 
-li::before {
+ul li::before {
     content: '▹';
     position: absolute;
     left: 0;
@@ -99,4 +99,8 @@ li::before {
     font-weight: bold;
     font-size: 1.3rem;
     line-height: 1;
+}
+
+ol {
+    margin-left: 1.5rem;
 }

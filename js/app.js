@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
         resumeContainer.innerHTML = resumeContent;
     }
 
-    // Render home timeline
-    const homeContainer = document.getElementById('home-container');
-    if (homeContainer && timelineContent) {
-        homeContainer.innerHTML = timelineContent;
+    // Render timeline (now in About tab)
+    const aboutContainer = document.getElementById('about-container');
+    if (aboutContainer && timelineContent) {
+        aboutContainer.innerHTML = timelineContent;
         // Initialize timeline after rendering
         if (typeof initTimeline === 'function') {
             initTimeline();
