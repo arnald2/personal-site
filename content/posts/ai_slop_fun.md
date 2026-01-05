@@ -53,18 +53,6 @@ From rough sketch to realistic portrait.
 </div>
 
 
-
-
-#### 5. Child Doodles
-Turning simple scribbles from my 4 year old into art. ChatGPT can also use the same character's face in different scenes. It can generate a full body version of the face, and use it in different scenes. 
-<div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
-    <img src="assets/aislop/sketch_child_doodle.jpeg" alt="Child Doodle Original" loading="lazy">
-    <img src="assets/aislop/sketch_child_doodle2.png" alt="Child Doodle AI 1" loading="lazy">
-    <img src="assets/aislop/sketch_child_doodle3.png" alt="Child Doodle AI 2" loading="lazy">
-</div>
-
-
-
 #### 6. Circus Trainer
 This is a super old sketch I had, originally I was thinking it could be some kind of circus trainer falling asleep, and an animal sneaking up on him. I never finished the background. However with AI I was able to add in more things to the scene, like the 
 lighting in the background, the tiger. It's pretty impressive how well it was able to follow directions. I gave prompts "like move the tiger a bit back and into the shadow" and it was able to make it look exactly like I imagined. 
