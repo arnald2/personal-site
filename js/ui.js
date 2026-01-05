@@ -43,21 +43,24 @@ function initTheme() {
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
 
-    // Check local storage
+    // Check local storage - Default is Light now
     const currentTheme = localStorage.getItem('theme');
-    if (currentTheme === 'light') {
-        body.classList.add('light-mode');
-        themeToggle.textContent = '☀️';
+    if (currentTheme === 'dark') {
+        body.classList.add('dark-mode');
+        themeToggle.textContent = '☀️'; // Sun icon when in Dark Mode
+    } else {
+        // Ensure default state
+        themeToggle.textContent = '🌙'; // Moon icon when in Light Mode
     }
 
     themeToggle.addEventListener('click', () => {
-        body.classList.toggle('light-mode');
+        body.classList.toggle('dark-mode');
 
-        if (body.classList.contains('light-mode')) {
-            localStorage.setItem('theme', 'light');
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
             themeToggle.textContent = '☀️';
         } else {
-            localStorage.setItem('theme', 'dark');
+            localStorage.setItem('theme', 'light');
             themeToggle.textContent = '🌙';
         }
     });
