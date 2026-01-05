@@ -36,8 +36,36 @@ function initSmoothScroll() {
     });
 }
 
+
+
+// Theme Toggle Logic
+function initTheme() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Check local storage
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'light') {
+        body.classList.add('light-mode');
+        themeToggle.textContent = '☀️';
+    }
+
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+
+        if (body.classList.contains('light-mode')) {
+            localStorage.setItem('theme', 'light');
+            themeToggle.textContent = '☀️';
+        } else {
+            localStorage.setItem('theme', 'dark');
+            themeToggle.textContent = '🌙';
+        }
+    });
+}
+
 // Initialization of basic UI behaviors
 document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     observeElements();
+    initTheme();
 });

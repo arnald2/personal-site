@@ -11,6 +11,20 @@
     --gradient-end: #121212;
 }
 
+body.light-mode {
+    --primary: #ffffff;
+    --secondary: #f4f4f4;
+    --accent: #0077b6;
+    /* darker blue for better contrast on white */
+    --accent-hover: #9b2226;
+    --text: #1a1a1a;
+    --text-muted: #666666;
+    --border: #e0e0e0;
+    --card-bg: #ffffff;
+    --gradient-start: #f8f9fa;
+    --gradient-end: #e9ecef;
+}
+
 * {
     margin: 0;
     padding: 0;

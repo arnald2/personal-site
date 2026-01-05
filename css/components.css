@@ -61,6 +61,26 @@ nav {
     box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
 }
 
+.theme-toggle {
+    font-size: 1.2rem;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle:hover {
+    background: rgba(0, 212, 255, 0.1);
+    transform: rotate(15deg);
+    border-color: var(--accent);
+}
+
 /* Sub-tabs */
 .sub-nav {
     display: flex;
