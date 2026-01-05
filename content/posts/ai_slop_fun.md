@@ -72,6 +72,13 @@ Turning simple scribble from my 4 year old into art. A.I can also use the same c
     <img src="assets/aislop/circus_trainer3.png" alt="Circus Trainer 3" loading="lazy">
 </div>
 
+#### 7. Rejected Beer Ad
+I asked for a beer commercial, AI gave me this nightmare fuel instead.
+<video controls style="max-width: 600px; width: 100%; display: block; margin: 0 auto 2rem; border-radius: 8px;">
+    <source src="assets/aislop/rejected_beer_add.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
 ### Sure, your artsy black and white vacation pic is cool, but why not spice them up with a live dragon? 
 
 ### Don Drapper you better watch out, Slop Draper is coming for you.
