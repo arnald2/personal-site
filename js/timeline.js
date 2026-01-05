@@ -31,7 +31,11 @@ function initTimeline() {
 
                     const milestoneId = entry.target.id;
                     const marker = document.querySelector(`[data-for="${milestoneId}"]`);
-                    if (marker) marker.classList.add('active');
+                    if (marker) {
+                        marker.classList.add('active');
+                        // Scroll the marker into view within the timeline panel
+                        marker.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
                     entry.target.classList.add('active');
                 }
             });
