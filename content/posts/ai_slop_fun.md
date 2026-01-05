@@ -24,16 +24,12 @@ The evolution of a doodle.
     Your browser does not support the video tag.
 </video>
 
-#### 2. Painted Face
-From rough sketch to realistic portrait.
-<div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
-    <img src="assets/aislop/sketch_painted_face.jpg" alt="Painted Face Sketch" loading="lazy">
-    <img src="assets/aislop/sketch_painted_face2.PNG" alt="Painted Face AI 1" loading="lazy">
-    <img src="assets/aislop/sketch_painted_face3.PNG" alt="Painted Face AI 2" loading="lazy">
-    <img src="assets/aislop/sketch_painted_face4.PNG" alt="Painted Face AI 3" loading="lazy">
-    <img src="assets/aislop/sketch_painted_face5.PNG" alt="Painted Face AI 4" loading="lazy">
+#### 5. Alien Sketches
+<div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+    <img src="assets/aislop/sketch_aliens_1.jpg" alt="Alien Sketch Original" loading="lazy">
+    <img src="assets/aislop/sketch_aliens_2.png" alt="Alien Sketch AI 1" loading="lazy">
+    <img src="assets/aislop/sketch_aliens_3.png" alt="Alien Sketch AI 2" loading="lazy">
 </div>
-
 
 #### 3. Weird Animals
 Creating creatures that shouldn't exist.
@@ -47,20 +43,27 @@ Creating creatures that shouldn't exist.
     Your browser does not support the video tag.
 </video>
 
+#### 2. Painted Face
+From rough sketch to realistic portrait.
+<div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+    <img src="assets/aislop/sketch_painted_face.jpg" alt="Painted Face Sketch" loading="lazy">
+    <img src="assets/aislop/sketch_painted_face2.PNG" alt="Painted Face AI 1" loading="lazy">
+    <img src="assets/aislop/sketch_painted_face3.PNG" alt="Painted Face AI 2" loading="lazy">
+    <img src="assets/aislop/sketch_painted_face4.PNG" alt="Painted Face AI 3" loading="lazy">
+</div>
+
+
+
+
 #### 4. Child Doodles
-Turning simple scribbles into art.
+Turning simple scribble from my 4 year old into art. A.I can also use the same characters face in different scenes. It can generate a full body version of the face, and use it in different scenes. 
 <div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
     <img src="assets/aislop/sketch_child_doodle.jpeg" alt="Child Doodle Original" loading="lazy">
     <img src="assets/aislop/sketch_child_doodle2.png" alt="Child Doodle AI 1" loading="lazy">
     <img src="assets/aislop/sketch_child_doodle3.png" alt="Child Doodle AI 2" loading="lazy">
 </div>
 
-#### 5. Alien Sketches
-<div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
-    <img src="assets/aislop/sketch_aliens_1.jpg" alt="Alien Sketch Original" loading="lazy">
-    <img src="assets/aislop/sketch_aliens_2.png" alt="Alien Sketch AI 1" loading="lazy">
-    <img src="assets/aislop/sketch_aliens_3.png" alt="Alien Sketch AI 2" loading="lazy">
-</div>
+
 
 ### Sure, your artsy black and white vacation pic is cool, but why not spice them up with a live dragon? 
 
