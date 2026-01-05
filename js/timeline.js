@@ -18,8 +18,9 @@ function initTimeline() {
 
         const storyObserverOptions = {
             root: storyPanel,
-            threshold: 0.5,
-            rootMargin: '0px'
+            threshold: 0, // Trigger as soon as it intersects the active zone
+            // Define a narrow active zone in the vertical center of the panel
+            rootMargin: '-45% 0px -45% 0px'
         };
 
         const storyObserver = new IntersectionObserver((entries) => {

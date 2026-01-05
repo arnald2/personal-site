@@ -1,57 +1,75 @@
 ---
-title: Building a Better Portfolio with AI Agents
+title: Vive coding a Person site. 
 date: Jan 02, 2026
-readTime: 8 min
-tags: [Coding, AI, Blog]
-excerpt: "How I built this site using advanced AI agents (Antigravity & Claude Code) and hosted it on GitHub Pages."
+readTime: 10 min
+tags: [Guide, Portfolio, GitHub]
+excerpt: "A step-by-step guide on how I built this portfolio using AI agents"
 ---
 
-When I set out to redesign this personal site, I didn't just want to build another portfolio—I wanted to experiment with a new way of coding. Instead of writing every line from scratch or wrestling with a heavy framework, I pair-programmed this entire project using **Antigravity** and **Claude Code**, two powerful AI coding agents.
+I have wanted a personal site for years. I used to have a simple one hosted on my universities server, but eventually i lost access to it, and they also took it down at some point. I played around with some templates in the past, but never really took the time to actually host a site, and did not really see the point. However with the receent leaps in Agentic coding, it's become extremely easy to quickly put something together. With a single prompt Claude code was able to quickly generate a whole professinal looking site, and it gave me ideas on how to host it for free on Github, it even included detailed instructions. 
 
-### The Goals
+I then wanted to test the Antigravity IDE from Google. So i openend the repository in the IDE and continued adding the fetures i wanted for the site. I added a personal timeline, and blog tab, and a various small improvement like url linking to blog post, and code refactoring. All while writting 0 lines of code myself. I have literally not looked at the JS or CSS files at all. It might be beutiful, or spagetti code, i have no idea, but the site looks good enough, and behaves as expected, and that's all i care about for now. If anyone is reading this, and wants a similar site, feel free to fork ([this repository](https://github.com/arnaldo/personal-site)), and follow the step by step guide below, and just change the information to match your own. Can probably do it all much faster if you use Claude code, and Antigravity IDE. Starting from scratch as i did is probably fun too, but it does take a bit more timme. One frustartion i had with Antigravity is that it hangs a log, and i have to cancel the request and restart it. I had to do that pretty frequently.
 
-- **Agentic Workflow**: Let the AI handle the heavy lifting of boilerplate, refactoring, and CSS grid calculations.
-- **Vanilla Performance**: Stick to pure HTML, CSS, and JS. No heavy bundles.
-- **Automated Deployment**: Simple hosting via GitHub Pages.
 
-### Coding with AI Agents
+### 1. Hosting on GitHub Pages
 
-This site was built by interacting with **Antigravity**, a Google Deepmind agent, and **Claude Code**. Here is how the workflow typically looked:
+Github supports free static hosting for public repositories. 
 
-1.  **Refactoring at Speed**: I asked the agent to "modularize the massive `styles.css` file," and it intelligently split the code into `base.css`, `components.css`, `sections.css`, and `responsive.css`, updating the HTML links automatically.
-2.  **Live Coding**: I could say "Make the timeline marker active when I scroll," and the agent wrote the Intersection Observer logic in `js/timeline.js` instantly.
-3.  **Content Management**: We built a custom Node.js script to compile these Markdown files into a JSON object, so I can write blogs in Markdown without needing a database.
+**Steps to Host:**
+1.  **Create a Repository**: Go to GitHub and create a new public repository (e.g., `my-portfolio`).
+2.  **Upload Code**: Push your HTML, CSS, and JS files to this repository.
+3.  **Enable Pages**:
+    *   Go to your repository **Settings**.
+    *   Click on **Pages** in the sidebar.
+    *   Under **Source**, select `Deploy from a branch`.
+    *   Choose your `main` branch and `/ (root)` folder.
+    *   Click **Save**.
 
-It wasn't just auto-complete; it was *auto-complete for entire features*.
+That's it! Your site will be online at `https://<username>.github.io/<repository>/`.
 
-### Tech Stack
+---
 
--   **Core**: HTML5, CSS3, Vanilla JavaScript (ES6+).
--   **Styling**: Custom CSS Variables and Grid layouts.
--   **Build System**: A zero-dependency Node.js script that compiles content.
--   **Hosting**: GitHub Pages.
+### 2. Managing Your Content
 
-### How to Host This on GitHub Pages
+One "vive coded" extra feature i added is making the page easier to edit by separating the content from the code. And also separating the pages into inidivual files. This way, the resume, timeline, and blog posts can be updated without touching the code.
 
-One of the best parts of this stack is how easy it is to deploy. Since it's a static site, you don't need Vercel or Netlify (though those work too).
+#### 📅 Editing the Timeline
+The vertical timeline in the "About" section is great for showing your career journey.
+*   **File to Edit**: `content/timeline.html`
+*   **How**: Open this file. You will see blocks like `<div class="timeline-marker">` and `<div class="story-milestone">`.
+*   **To Add a Milestone**: Copy an existing block, change the year and the text description. The site automatically handles the scrolling animation.
 
-1.  **Push your code** to a public GitHub repository.
-2.  Go to your repository **Settings** > **Pages**.
-3.  Under **Source**, select `Deploy from a branch`.
-4.  Choose your `main` branch and the `/ (root)` folder.
-5.  Click **Save**.
+#### 📄 Updating the Resume
+The Resume tab has nice styling to separate all the scetions
+*   **File to Edit**: `content/resume.html`
+*   **How**: This is standard HTML. Look for the `<div class="card">` elements under "Work Experience".
+*   **Tip**: Copy a whole `card` div to add a new job. Update the `<h2>` texts for your skills.
 
-Your site will be live at `https://<username>.github.io/<repo-name>/`.
+#### 📮 Contact Info
+*   **File to Edit**: `index.html` (Look for the `#contact` section).
+*   **How**: Update the `href` links for your Email and LinkedIn.
 
-### Developing Locally
+#### ✍️ Adding a Blog Post
+The blog uses Markdown, so it's easier to add new entries without dealing with HTML. I use [Obsidian](https://obsidian.md/) for note taking already, so i am very used to markdown styling. 
+Side note on Obsidian: Since it's just a text file on the file system. The directories can also be opened in Antigravity IDE, so you get the cappabilites of having the AI agents explore notes for ideas, and update the written content etc. 
 
-If you want to try this "AI-native" development flow yourself:
-
-1.  **Clone the repo**: `git clone <your-repo-url>`
-2.  **Run the build script**: Whenever you add a new post (like this one), just run:
+**Steps:**
+1.  Create a new file in `content/posts/` (e.g., `my-new-post.md`).
+2.  Add this "Frontmatter" at the very top:
+    ```yaml
+    ---
+    title: My New Post
+    date: Jan 03, 2026
+    readTime: 5 min
+    tags: [Life, Coding]
+    excerpt: "A short summary of what this post is about."
+    ---
+    ```
+3.  Write your content below it!
+4.  **Important**: Run the build script to update the site.
     ```bash
     node scripts/build-content.js
     ```
-3.  **Open in Browser**: No dev server required, just open `index.html`.
+    *(If you don't want to run code, you can ask an AI agent to "Update the blog content" for you!)*
 
-This project is proof that with the right AI tools, you can build high-quality, custom software faster than ever before.
+

@@ -255,29 +255,60 @@
 
 .milestone-media {
     width: 100%;
-    aspect-ratio: 16/10;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border);
-    border-radius: 16px;
+    /* Removed fixed aspect-ratio and height constraints */
+    background: transparent;
+    border: none;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.milestone-media figure {
+    margin: 0;
+    width: 100%;
+}
+
+.milestone-media img,
+.milestone-media video {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    border: 1px solid var(--border);
     transition: all 0.4s ease;
 }
 
-.milestone-media:hover {
+.milestone-media img:hover,
+.milestone-media video:hover {
     border-color: var(--accent);
     transform: scale(1.02);
 }
 
-.milestone-media::before {
-    content: '📸 Milestone Photo';
-    color: var(--text-muted);
-    font-size: 0.9rem;
+.milestone-media figcaption {
     font-family: 'JetBrains Mono', monospace;
-    opacity: 0.5;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    background: transparent;
+    padding: 0;
+    border: none;
+    line-height: 1.4;
+
+    /* Subtle Styling */
+    position: static;
+    margin-top: 0.75rem;
+    max-width: 100%;
+
+    font-weight: normal;
+    text-transform: none;
+    box-shadow: none;
+    transform: none;
+    text-align: center;
+    width: 100%;
+}
+
+.milestone-media figure {
+    position: relative;
+    margin: 0;
+    width: 100%;
 }
 
 /* Blog Styles */
