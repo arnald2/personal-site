@@ -2,7 +2,7 @@
 title: Vive coding a Person site. 
 date: Jan 02, 2026
 readTime: 10 min
-tags: [Guide, Portfolio, GitHub]
+tags: [Code]
 excerpt: "A step-by-step guide on how I built this portfolio using AI agents"
 ---
 

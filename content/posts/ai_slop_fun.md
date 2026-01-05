@@ -2,7 +2,7 @@
 title: The Art of AI Slop
 date: Dec 15, 2025
 excerpt: Fun with Chat GPT and Google image and video generation. 
-tags: [AI, Tech, Coding]
+tags: [AI Art]
 readTime: 5 min
 ---
 
