@@ -65,6 +65,13 @@ Turning simple scribble from my 4 year old into art. A.I can also use the same c
 
 
 
+#### 6. Circus Trainer
+<div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+    <img src="assets/aislop/circus_trainer1.jpg" alt="Circus Trainer 1" loading="lazy">
+    <img src="assets/aislop/circus_trainer2.png" alt="Circus Trainer 2" loading="lazy">
+    <img src="assets/aislop/circus_trainer3.png" alt="Circus Trainer 3" loading="lazy">
+</div>
+
 ### Sure, your artsy black and white vacation pic is cool, but why not spice them up with a live dragon? 
 
 ### Don Drapper you better watch out, Slop Draper is coming for you.
