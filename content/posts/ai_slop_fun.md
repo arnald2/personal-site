@@ -6,10 +6,10 @@ tags: [AI Art]
 readTime: 5 min
 ---
 
-Ever sinee i discovered Dall-E and Midjourney, a couple of years ago, i got a bit obsessed with AI art. It's so fun to have a random idea, and bam, 2 minutes later you have a semi profesional looking image of it. Granted it does not always match expectations, but it's still pretty fun, and sometimes the unexpected resultsa are quite funny. One of my favorite new things to try is to use a picture i took or a sketch and have the AI augment the drawing to look like a real painting, or add some 
-random mosnster into my laandscape photos. I added some of the example below. 
+Ever since I discovered Dall-E and Midjourney, a couple of years ago, I got a bit obsessed with AI art. It's so fun to have a random idea, and bam, 2 minutes later you have a semi professional looking image of it. Granted it does not always match expectations, but it's still pretty fun, and sometimes the unexpected results are quite funny. One of my favorite new things to try is to use a picture I took or a sketch and have the AI augment the drawing to look like a real painting, or add some 
+random monster into my landscape photos. I added some of the examples below. 
 
-### Skech to painting to Video
+### Sketch to Painting to Video
 
 
 #### 1. Ninja on Head
@@ -24,7 +24,7 @@ The evolution of a doodle.
     Your browser does not support the video tag.
 </video>
 
-#### 5. Alien Sketches
+#### 2. Alien Sketches
 <div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
     <img src="assets/aislop/sketch_aliens_1.jpg" alt="Alien Sketch Original" loading="lazy">
     <img src="assets/aislop/sketch_aliens_2.png" alt="Alien Sketch AI 1" loading="lazy">
@@ -43,7 +43,7 @@ Creating creatures that shouldn't exist.
     Your browser does not support the video tag.
 </video>
 
-#### 2. Painted Face
+#### 4. Painted Face
 From rough sketch to realistic portrait.
 <div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
     <img src="assets/aislop/sketch_painted_face.jpg" alt="Painted Face Sketch" loading="lazy">
@@ -55,8 +55,8 @@ From rough sketch to realistic portrait.
 
 
 
-#### 4. Child Doodles
-Turning simple scribble from my 4 year old into art. Nano Banana and ChatGPT can also use the same characters face in different scenes. It can generate a full body version of the face, and use it in different scenes. 
+#### 5. Child Doodles
+Turning simple scribbles from my 4 year old into art. ChatGPT can also use the same character's face in different scenes. It can generate a full body version of the face, and use it in different scenes. 
 <div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
     <img src="assets/aislop/sketch_child_doodle.jpeg" alt="Child Doodle Original" loading="lazy">
     <img src="assets/aislop/sketch_child_doodle2.png" alt="Child Doodle AI 1" loading="lazy">
@@ -66,8 +66,8 @@ Turning simple scribble from my 4 year old into art. Nano Banana and ChatGPT can
 
 
 #### 6. Circus Trainer
-This is a super old sketch i had, orignally i was thinking it could be some kind of circus trainer falling asleep, and an animal sneaking up on him. I never finished the background. However with AI i was able to add in more things to the scene, like the 
-lighthing in the background, the tiger. It's pretty impresive how well it was able to follow directions. I gave promps "like move the tigher a bit back and into the shadow" and it was able to make it look exactly like i imagined. 
+This is a super old sketch I had, originally I was thinking it could be some kind of circus trainer falling asleep, and an animal sneaking up on him. I never finished the background. However with AI I was able to add in more things to the scene, like the 
+lighting in the background, the tiger. It's pretty impressive how well it was able to follow directions. I gave prompts "like move the tiger a bit back and into the shadow" and it was able to make it look exactly like I imagined. 
 <div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
     <img src="assets/aislop/circus_trainer1.jpg" alt="Circus Trainer 1" loading="lazy">
     <img src="assets/aislop/circus_trainer2.png" alt="Circus Trainer 2" loading="lazy">
@@ -75,14 +75,14 @@ lighthing in the background, the tiger. It's pretty impresive how well it was ab
 </div>
 
 #### 7. Watch out Don Draper
-This is an example of Veo doing somethign somewhat unexpected that i found hilarious. I just gave it a bunch of buzz words related to an Italian Beer, like vespa, leather pants etc, and it spit out this hilarious video. 
+This is an example of Veo doing something somewhat unexpected that I found hilarious. I just gave it a bunch of buzz words related to an Italian Beer, like vespa, leather pants etc, and it spit out this hilarious video. 
 <video controls style="max-width: 600px; width: 100%; display: block; margin: 0 auto 2rem; border-radius: 8px;">
     <source src="assets/aislop/rejected_beer_add.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
 
 ### Augmenting vacation photos with AI?
-Sure the black sand beaches of Tahiti, but somethign was always missing. Now it is finally complete with Godzilla in the mix. 
+Sure the black sand beaches of Tahiti, but something was always missing. Now it is finally complete with Godzilla in the mix. 
 <div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
     <img src="assets/aislop/godzilla_original.JPG" alt="Original Vacation Photo" loading="lazy">
     <video controls style="max-width: 100%; border-radius: 8px;">
