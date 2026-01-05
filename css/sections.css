@@ -203,7 +203,7 @@
 .story-panel {
     overflow-y: auto;
     padding-right: 2rem;
-    padding-top: 40vh;
+    padding-top: 6vh;
     padding-bottom: 40vh;
     scroll-behavior: smooth;
 }
