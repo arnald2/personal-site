@@ -82,7 +82,7 @@ This is an example of Veo doing something somewhat unexpected that I found hilar
 </video>
 
 ### Augmenting vacation photos with AI?
-Sure the black sand beaches of Tahiti, but something was always missing. Now it is finally complete with Godzilla in the mix. 
+Sure the black sand beaches of Tahiti are nice, but something was always missing. Now it is finally complete with Godzilla in the mix. 
 <div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
     <img src="assets/aislop/godzilla_original.JPG" alt="Original Vacation Photo" loading="lazy">
     <video controls style="max-width: 100%; border-radius: 8px;">
@@ -90,3 +90,29 @@ Sure the black sand beaches of Tahiti, but something was always missing. Now it 
         Your browser does not support the video tag.
     </video>
 </div> 
+
+
+### Music Slop
+
+Another really fun AI app is Suno. I have been having tons of fun turning any random idea into a song. It's incredible how good the voices and music are. I don't think I could tell it's AI. It does sometimes mess up on the pronunciation of some words, but for the most part, it's amazing. I am scared to share the songs I have created since they are way too dumb. AI Slop Weird Al Yankovic over here. Now I finally have that country song about the consequences of eating too many onions I always wanted. 
+
+
+#### 2. Whale Bone
+I made this one from my frustrating experience of trying to get my daughter to participate at the soccer games. I used Claude for the lyrics, Suno lyrics are ok, but i found Claude to do a much better job. 
+<video controls style="max-width: 600px; width: 100%; display: block; margin: 0 auto 2rem; border-radius: 8px;">
+    <source src="assets/aislop/whale_bone.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video> 
+
+#### 1. The Slop God
+Another one I just made to wrap up this post. The AI Slop god. Which brings me to the final topic of the post below, is AI Art Art? 
+<video controls style="max-width: 600px; width: 100%; display: block; margin: 0 auto 2rem; border-radius: 8px;">
+    <source src="assets/aislop/the_slop_god.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video> 
+
+
+### Is AI Art Art? 
+
+Many people have strong opinions about this. I don't really want to get into the formal definition of art, or skills needed to be an artist. I'll just say overall my experience with using AI to do anything creative is that it feels really fun for a bit, but then eventually I do start wondering to myself what was the point of that. Which I have never asked myself when engaging with doing a drawing or a painting, no matter how bad it was. I think it's the lack of effort that plays a big part into it. We value what we put effort into. If it's effortless, even if it's the most beautiful song or painting in the world it's a bit empty. So I think AI assisted artifacts can certainly be art in the hands of people who are very skilled, and are willing to put the effort to make something that raises above the baseline of "AI Slop" mediocrity. With the lowered barrier to entry we will probably get Software that would have never been built. Stories that would not have been told, and painting that would have never seen the light of day thanks to AI, which I think is kind of cool. It's also possible for existing artist to use AI for inspiration, or to quickly sell a song or movie idea without having to put in a lot of upfront effort. So overall I am somewhat optimistic, although I still think it will always be more fun to do something by hand. 
+
