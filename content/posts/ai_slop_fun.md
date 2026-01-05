@@ -56,7 +56,7 @@ From rough sketch to realistic portrait.
 
 
 #### 4. Child Doodles
-Turning simple scribble from my 4 year old into art. A.I can also use the same characters face in different scenes. It can generate a full body version of the face, and use it in different scenes. 
+Turning simple scribble from my 4 year old into art. Nano Banana and ChatGPT can also use the same characters face in different scenes. It can generate a full body version of the face, and use it in different scenes. 
 <div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
     <img src="assets/aislop/sketch_child_doodle.jpeg" alt="Child Doodle Original" loading="lazy">
     <img src="assets/aislop/sketch_child_doodle2.png" alt="Child Doodle AI 1" loading="lazy">
@@ -66,19 +66,27 @@ Turning simple scribble from my 4 year old into art. A.I can also use the same c
 
 
 #### 6. Circus Trainer
+This is a super old sketch i had, orignally i was thinking it could be some kind of circus trainer falling asleep, and an animal sneaking up on him. I never finished the background. However with AI i was able to add in more things to the scene, like the 
+lighthing in the background, the tiger. It's pretty impresive how well it was able to follow directions. I gave promps "like move the tigher a bit back and into the shadow" and it was able to make it look exactly like i imagined. 
 <div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
     <img src="assets/aislop/circus_trainer1.jpg" alt="Circus Trainer 1" loading="lazy">
     <img src="assets/aislop/circus_trainer2.png" alt="Circus Trainer 2" loading="lazy">
     <img src="assets/aislop/circus_trainer3.png" alt="Circus Trainer 3" loading="lazy">
 </div>
 
-#### 7. Rejected Beer Ad
-I asked for a beer commercial, AI gave me this nightmare fuel instead.
+#### 7. Watch out Don Draper
+This is an example of Veo doing somethign somewhat unexpected that i found hilarious. I just gave it a bunch of buzz words related to an Italian Beer, like vespa, leather pants etc, and it spit out this hilarious video. 
 <video controls style="max-width: 600px; width: 100%; display: block; margin: 0 auto 2rem; border-radius: 8px;">
     <source src="assets/aislop/rejected_beer_add.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
 
-### Sure, your artsy black and white vacation pic is cool, but why not spice them up with a live dragon? 
-
-### Don Drapper you better watch out, Slop Draper is coming for you.
+### Augmenting vacation photos with AI?
+Sure the black sand beaches of Tahiti, but somethign was always missing. Now it is finally complete with Godzilla in the mix. 
+<div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+    <img src="assets/aislop/godzilla_original.JPG" alt="Original Vacation Photo" loading="lazy">
+    <video controls style="max-width: 100%; border-radius: 8px;">
+        <source src="assets/aislop/godzilla.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div> 
