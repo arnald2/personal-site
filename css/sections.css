@@ -118,7 +118,10 @@
     padding: 2rem 0;
     height: calc(100vh - 250px);
     overflow: hidden;
-    margin-top: 2rem;
+    margin-top: 0;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .timeline-panel {
@@ -203,7 +206,7 @@
 .story-panel {
     overflow-y: auto;
     padding-right: 2rem;
-    padding-top: 6vh;
+    padding-top: 2rem;
     padding-bottom: 40vh;
     scroll-behavior: smooth;
 }

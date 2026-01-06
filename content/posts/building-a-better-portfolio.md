@@ -1,12 +1,12 @@
 ---
-title: Vive coding a Person site. 
+title: Vive coding a Personal Website. 
 date: Jan 02, 2026
 readTime: 10 min
 tags: [Code]
 excerpt: "A step-by-step guide on how I built this portfolio using AI agents"
 ---
 
-I have wanted a personal site for years. I used to have a simple one hosted on my university's server, but eventually I lost access to it, and they took the domain down at some point. I played around with some templates in the past, but never really took the time to actually host a site, and did not see the point. However with the recent leaps in Agentic coding, it's become extremely easy to quickly put something together. With a single prompt Claude code was able to quickly generate a whole professional looking site, and it gave me ideas on how to host it for free on GitHub, it even included detailed instructions. 
+I have wanted a personal site for years. I used to have a simple one hosted on my university's server, but eventually I lost access to it, and they took the domain down at some point. I played around with some templates in the past, but never really took the time to actually host a site, and did not see the point. However with the recent leaps in Agentic coding, it's become extremely easy to quickly put something together. With a single prompt Claude code was able to quickly generate a whole professional looking site, and it gave me ideas on how to host it for free on GitHub, it even included detailed instructions. I am hoping to use this site as a place to put some HTML 5 games, random blogs post and side projects in the future. 
 
 I then wanted to test the Antigravity IDE from Google. So I opened the repository in the IDE and continued adding the features I wanted for the site. I added a personal timeline, and blog tab, and a various small improvements like url linking to blog post, and code refactoring. All while writing 0 lines of code myself. I have literally not looked at the JS or CSS files at all. It might be beautiful, or spaghetti code, I have no idea, but the site looks good enough, and behaves as expected, and that's all I care about for now. If anyone is reading this, and wants a similar site, feel free to fork ([this repository](https://github.com/arnaldo/personal-site)), and follow the step by step guide below, and just change the information to match your own. Can probably do it all much faster if you use Claude code, and Antigravity IDE. Starting from scratch as I did is probably fun too, but it does take a bit more time. One frustration I had with Antigravity is that it hangs a lot, and I have to cancel the request and restart it. I had to do that pretty frequently. 
 
