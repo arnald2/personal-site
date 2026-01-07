@@ -13,15 +13,21 @@ A modern, high-performance personal portfolio website built with vanilla web tec
 
 ```
 ├── content/
-│   └── posts/          # Source Markdown files for blog posts
+│   ├── posts/          # Source Markdown files for blog posts
+│   ├── resume.html     # Resume content (HTML)
+│   └── timeline.html   # Timeline content (HTML)
 ├── css/
-│   └── styles.css      # Main stylesheet (Variables, Layout, Components)
+│   ├── base.css        # CSS Variables & Theme Definitions
+│   ├── components.css  # UI Components (Buttons, Cards, Nav)
+│   ├── sections.css    # Layout for specific sections
+│   └── responsive.css  # Mobile responsiveness
 ├── js/
-│   ├── app.js          # Core application logic (Routing, UI, Animations)
-│   └── blog-data.js    # Generated content file (Do not edit manually)
+│   ├── app.js          # Core application logic
+│   ├── ui.js           # UI interactions & Theming
+│   ├── content-data.js # Generated blog content (Do not edit manually)
+│   └── ...             # Other modules (router, timeline, etc.)
 ├── scripts/
-│   ├── build-blog.js   # Build script to compile MD -> JS
-│   └── lib/            # Vendored dependencies (marked.js)
+│   └── build-content.js # Build script to compile Blog MD -> JS
 ├── index.html          # Main entry point
 └── package.json        # Project metadata
 ```
@@ -52,11 +58,13 @@ This generates `js/content-data.js`, which `index.html` loads automatically.
 ### Blog Posts
 1. Create a new `.md` file in `content/posts/`.
 2. Add the required Frontmatter.
-3. Run the build command.
+3. Run `node scripts/build-content.js`.
 
-### Resume
-1. Edit `content/resume.md`.
-2. Run `node scripts/build-content.js`.
+### Resume & Timeline
+The Resume and Timeline are now maintained as **HTML fragments** for greater styling control.
+1. **Resume**: Edit `content/resume.html`.
+2. **Timeline**: Edit `content/timeline.html`.
+3. No build step required for these! Changes appear instantly on reload.
 
 
 
@@ -78,5 +86,6 @@ Your site will be live at `https://<username>.github.io/<repo-name>/`.
 ## 🔗 Features
 
 - **Deep Linking**: Hash-based routing allows sharing links to specific tabs (`#blog`) or posts (`#blog?post=my-new-post`).
+- **Multi-Theme System**: Includes 7 distinct themes including 'Miami Vice', 'Havana Night', and 'Cherry Blossoms', with a persistent selector.
 - **Responsive Design**: Fully responsive layout using CSS Grid and Flexbox.
 - **Zero-Dependency Runtime**: The site works efficiently without heavy client-side frameworks like React or Vue.
