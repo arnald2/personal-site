@@ -207,7 +207,7 @@
     overflow-y: auto;
     padding-right: 2rem;
     padding-top: 2rem;
-    padding-bottom: 40vh;
+    padding-bottom: 80vh;
     scroll-behavior: smooth;
 }
 
@@ -405,6 +405,17 @@
     line-height: 1.8;
     font-size: 1.1rem;
     color: var(--text-muted);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blog-post-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5rem auto;
+    border-radius: 8px;
 }
 
 .blog-post-content h2,
@@ -436,7 +447,9 @@
     padding-bottom: 2rem;
     border-bottom: 1px solid var(--border);
     text-align: left;
-    /* Align header text left as well if desired, or keep as is */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Grids & Content boxes */

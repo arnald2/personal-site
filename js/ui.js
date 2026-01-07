@@ -39,31 +39,59 @@ function initSmoothScroll() {
 
 
 // Theme Toggle Logic
+// Theme Logic
 function initTheme() {
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
+    const themeBtn = document.getElementById('theme-btn');
+    const themeMenu = document.getElementById('theme-menu');
+    const themeOptions = document.querySelectorAll('.theme-option');
+    const root = document.documentElement; // Apply theme to root
 
-    // Check local storage - Default is Light now
-    const currentTheme = localStorage.getItem('theme');
-    if (currentTheme === 'dark') {
-        body.classList.add('dark-mode');
-        themeToggle.textContent = '☀️'; // Sun icon when in Dark Mode
-    } else {
-        // Ensure default state
-        themeToggle.textContent = '🌙'; // Moon icon when in Light Mode
-    }
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    root.setAttribute('data-theme', savedTheme);
+    updateActiveOption(savedTheme);
 
-    themeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
+    // Toggle Dropdown
+    themeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        themeMenu.classList.toggle('active');
+    });
 
-        if (body.classList.contains('dark-mode')) {
-            localStorage.setItem('theme', 'dark');
-            themeToggle.textContent = '☀️';
-        } else {
-            localStorage.setItem('theme', 'light');
-            themeToggle.textContent = '🌙';
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!themeBtn.contains(e.target) && !themeMenu.contains(e.target)) {
+            themeMenu.classList.remove('active');
         }
     });
+
+    // Handle Theme Selection
+    themeOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const theme = option.getAttribute('data-theme');
+
+            // Set theme
+            root.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+
+            // UI Feedback
+            updateActiveOption(theme);
+            themeMenu.classList.remove('active');
+
+            // Optional: visual feedback on button
+            themeBtn.style.transform = 'scale(0.9)';
+            setTimeout(() => themeBtn.style.transform = '', 200);
+        });
+    });
+
+    function updateActiveOption(theme) {
+        themeOptions.forEach(opt => {
+            if (opt.getAttribute('data-theme') === theme) {
+                opt.classList.add('active');
+            } else {
+                opt.classList.remove('active');
+            }
+        });
+    }
 }
 
 // Initialization of basic UI behaviors

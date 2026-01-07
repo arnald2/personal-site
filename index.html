@@ -10,6 +10,16 @@
     <link
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Manrope:wght@400;600;700;800&display=swap"
         rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FV374R313R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-FV374R313R');
+    </script>
+
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/sections.css">
@@ -27,7 +37,18 @@
                     <button class="tab-btn" data-tab="resume">Resume</button>
                     <button class="tab-btn" data-tab="about">About</button>
                     <button class="tab-btn" data-tab="contact">Contact</button>
-                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+                    <div class="theme-wrapper">
+                        <button class="theme-btn" id="theme-btn" aria-label="Select Theme">🎨</button>
+                        <div class="theme-menu" id="theme-menu">
+                            <button class="theme-option" data-theme="light">☀️ Light</button>
+                            <button class="theme-option" data-theme="dark">🌙 Dark</button>
+                            <button class="theme-option" data-theme="miami">🌴 Miami Vice</button>
+                            <button class="theme-option" data-theme="havana">🎺 Havana Night</button>
+                            <button class="theme-option" data-theme="pnw">🌲 PNW</button>
+                            <button class="theme-option" data-theme="nyc">🚖 NYC Metro</button>
+                            <button class="theme-option" data-theme="cherry">🌸 Cherry Blossoms</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>

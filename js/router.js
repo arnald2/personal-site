@@ -32,6 +32,13 @@ function handleRoute() {
 
     // Scroll to top if mostly a page change
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Google Analytics Virtual Pageview
+    if (typeof gtag === 'function') {
+        gtag('event', 'page_view', {
+            page_path: '/' + path + (query ? '?' + query : '')
+        });
+    }
 }
 
 // Tab Click Listeners - Now just update hash

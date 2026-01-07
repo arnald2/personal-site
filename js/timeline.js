@@ -11,7 +11,7 @@ function initTimeline() {
                 const targetId = marker.getAttribute('data-for');
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
             });
         });

@@ -1,9 +1,12 @@
+/* Default Theme (Light) */
 :root {
     --primary: #ffffff;
     --secondary: #f4f4f4;
     --accent: #0077b6;
-    /* darker blue for better contrast on white */
+    /* Classic Blue */
     --accent-hover: #9b2226;
+    --accent-text: #ffffff;
+    /* White text on blue */
     --text: #1a1a1a;
     --text-muted: #666666;
     --border: #e0e0e0;
@@ -12,17 +15,122 @@
     --gradient-end: #e9ecef;
 }
 
-body.dark-mode {
+/* Dark Mode */
+:root[data-theme="dark"] {
     --primary: #050505;
     --secondary: #121212;
     --accent: #10b2e8;
+    /* Bright Cyan */
     --accent-hover: #c419b3;
+    --accent-text: #050505;
+    /* Black text on cyan */
     --text: #f0f0f0;
     --text-muted: #a0a0a0;
     --border: #333333;
     --card-bg: #1a1a1a;
     --gradient-start: #000000;
     --gradient-end: #121212;
+}
+
+/* Miami Vice */
+:root[data-theme="miami"] {
+    --primary: #20042e;
+    /* Deep Purple Background */
+    --secondary: #027F7F;
+    /* Deep Calm Green */
+    --accent: #FE6DC6;
+    /* Bright Pink */
+    --accent-hover: #14E2F9;
+    /* Turquoise */
+    --accent-text: #20042e;
+    /* Dark Purple on Pink */
+    --text: #e0fbfc;
+    --text-muted: #b8c0ff;
+    --border: #BE00FE;
+    /* Purple Shade */
+    --card-bg: #2b1138;
+    --gradient-start: #20042e;
+    --gradient-end: #5514b4;
+}
+
+/* Havana Night */
+:root[data-theme="havana"] {
+    --primary: #102526;
+    /* Dark Deep Teal */
+    --secondary: #2F4858;
+    /* Slate Teal */
+    --accent: #00B4D8;
+    /* Bright Cyan/Blue */
+    --accent-hover: #F08080;
+    /* Light Coral */
+    --accent-text: #102526;
+    /* Dark Teal on Cyan */
+    --text: #E0F2F1;
+    --text-muted: #80CBC4;
+    --border: #4DB6AC;
+    --card-bg: #1A3639;
+    --gradient-start: #102526;
+    --gradient-end: #004d40;
+}
+
+/* Pacific Northwest */
+:root[data-theme="pnw"] {
+    --primary: #2f3e46;
+    /* Charcoal */
+    --secondary: #354f52;
+    /* Slate */
+    --accent: #84a98c;
+    /* Sage Green */
+    --accent-hover: #cad2c5;
+    /* Light Grey-Green */
+    --accent-text: #2f3e46;
+    /* Dark Charcoal on Sage */
+    --text: #f1f1f1;
+    --text-muted: #a3b18a;
+    --border: #52796f;
+    --card-bg: #354f52;
+    --gradient-start: #2f3e46;
+    --gradient-end: #202c33;
+}
+
+/* NYC Metro */
+:root[data-theme="nyc"] {
+    --primary: #111111;
+    /* Black */
+    --secondary: #333333;
+    /* Dark Grey for Nav */
+    --accent: #fddb3a;
+    /* Taxi Yellow */
+    --accent-hover: #ffffff;
+    --accent-text: #111111;
+    /* Black on Yellow */
+    --text: #eeeeee;
+    --text-muted: #999999;
+    --border: #fddb3a;
+    --card-bg: #222222;
+    --gradient-start: #111111;
+    --gradient-end: #2c2c2c;
+}
+
+/* Cherry Blossoms */
+:root[data-theme="cherry"] {
+    --primary: #fff0f5;
+    /* Lavender Blush */
+    --secondary: #ffb7c5;
+    /* Cherry Blossom Pink */
+    --accent: #ff69b4;
+    /* Hot Pink */
+    --accent-hover: #98fb98;
+    /* Pale Green (leaves) */
+    --accent-text: #202020;
+    /* Near Black on Hot Pink */
+    --text: #4a4a4a;
+    --text-muted: #8b5a5a;
+    --border: #ffb7c5;
+    --card-bg: #fffbfb;
+    --gradient-start: #fff0f5;
+    --gradient-end: #ffe4e1;
+    /* Misty Rose */
 }
 
 * {
