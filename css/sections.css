@@ -209,6 +209,7 @@
     padding-top: 2rem;
     padding-bottom: 80vh;
     scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
 }
 
 .story-panel::-webkit-scrollbar {
@@ -225,6 +226,8 @@
     opacity: 0.3;
     transition: all 0.8s ease;
     transform: translateY(30px);
+    scroll-snap-align: start;
+    scroll-margin-top: 2rem;
 }
 
 .story-milestone.active {

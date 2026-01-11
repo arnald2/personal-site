@@ -11,7 +11,7 @@ function initTimeline() {
                 const targetId = marker.getAttribute('data-for');
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
@@ -20,7 +20,7 @@ function initTimeline() {
             root: storyPanel,
             threshold: 0, // Trigger as soon as it intersects the active zone
             // Define a narrow active zone in the vertical center of the panel
-            rootMargin: '-45% 0px -45% 0px'
+            rootMargin: '-10% 0px -80% 0px'
         };
 
         const storyObserver = new IntersectionObserver((entries) => {
@@ -34,7 +34,8 @@ function initTimeline() {
                     if (marker) {
                         marker.classList.add('active');
                         // Scroll the marker into view within the timeline panel
-                        marker.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        // using 'nearest' prevents unrelated jitter if it's already visible
+                        marker.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                     }
                     entry.target.classList.add('active');
                 }
