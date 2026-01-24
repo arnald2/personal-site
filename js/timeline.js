@@ -10,11 +10,21 @@ function initTimeline() {
             marker.addEventListener('click', () => {
                 const targetId = marker.getAttribute('data-for');
                 const targetElement = document.getElementById(targetId);
+
+                // Update active states manually
+                timelineMarkers.forEach(m => m.classList.remove('active'));
+                storyMilestones.forEach(m => m.classList.remove('active'));
+
+                marker.classList.add('active');
                 if (targetElement) {
+                    targetElement.classList.add('active');
                     targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
+
+        // Initialize first item as active if needed, or leave it to user interaction
+        // For now, we leave the initial state as defined in HTML/CSS or just blank untill filtered
 
         const storyObserverOptions = {
             root: storyPanel,
@@ -33,9 +43,8 @@ function initTimeline() {
                     const marker = document.querySelector(`[data-for="${milestoneId}"]`);
                     if (marker) {
                         marker.classList.add('active');
-                        // Scroll the marker into view within the timeline panel
-                        // using 'nearest' prevents unrelated jitter if it's already visible
-                        marker.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        // IMPORTANT: We do NOT scroll the marker into view here.
+                        // This prevents the page/sidebar from snapping or moving automatically while scrolling.
                     }
                     entry.target.classList.add('active');
                 }
