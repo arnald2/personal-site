@@ -4,8 +4,8 @@ const { marked } = require('./lib/marked.js');
 
 // Conf
 const POSTS_DIR = path.join(__dirname, '../content/posts');
-const RESUME_FILE = path.join(__dirname, '../content/resume.html');
-const TIMELINE_FILE = path.join(__dirname, '../content/timeline.html');
+const LIFE_TIMELINE_FILE = path.join(__dirname, '../content/life_timeline.html');
+const CAREER_TIMELINE_FILE = path.join(__dirname, '../content/career_timeline.html');
 const OUTPUT_FILE = path.join(__dirname, '../js/content-data.js');
 
 // Ensure output dir exists
@@ -64,16 +64,9 @@ function getPosts() {
         .sort((a, b) => new Date(b.date) - new Date(a.date));
 }
 
-function getResume() {
-    if (fs.existsSync(RESUME_FILE)) {
-        return fs.readFileSync(RESUME_FILE, 'utf8');
-    }
-    return '';
-}
-
-function getTimeline() {
-    if (fs.existsSync(TIMELINE_FILE)) {
-        return fs.readFileSync(TIMELINE_FILE, 'utf8');
+function getFileContent(filePath) {
+    if (fs.existsSync(filePath)) {
+        return fs.readFileSync(filePath, 'utf8');
     }
     return '';
 }
@@ -82,13 +75,13 @@ function getTimeline() {
 console.log('Building content data...');
 try {
     const posts = getPosts();
-    const resume = getResume();
-    const timeline = getTimeline();
+    const lifeTimeline = getFileContent(LIFE_TIMELINE_FILE);
+    const careerTimeline = getFileContent(CAREER_TIMELINE_FILE);
 
     const data = {
         blogPosts: posts,
-        resume: resume,
-        timeline: timeline
+        timeline: lifeTimeline,
+        workTimeline: careerTimeline
     };
 
     const fileContent = `window.contentData = ${JSON.stringify(data, null, 4)};`;

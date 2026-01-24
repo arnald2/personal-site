@@ -34,7 +34,7 @@
                 <div class="nav-tabs">
                     <button class="tab-btn active" data-tab="home">Home</button>
                     <button class="tab-btn" data-tab="blog">Blog</button>
-                    <button class="tab-btn" data-tab="resume">Resume</button>
+
                     <button class="tab-btn" data-tab="about">About</button>
                     <button class="tab-btn" data-tab="contact">Contact</button>
                     <div class="theme-wrapper">
@@ -62,17 +62,12 @@
                     I have created this site as a way to share my thoughts, personal projects, bad jokes, and
                     experiences
                     with the world. Mostly as a "creative" outlet of sorts. Primarily focused around experiments with
-                    GenAI capabilities. It is also a place to put all the pictures of random trees I have been taking
-                    since I have not been using Instagram lately </p>
+                    GenAI capabilities. It is also a place to put all the pictures of random trees I have been taking.
+                </p>
             </div>
         </div>
 
-        <!-- Resume Tab -->
-        <div id="resume" class="tab-content">
-            <div id="resume-container">
-                <!-- Resume content rendered from JS -->
-            </div>
-        </div>
+
 
         <!-- Blog Tab -->
         <div id="blog" class="tab-content">
@@ -102,6 +97,49 @@
 
     <!-- About Tab (Formerly Home) -->
     <div id="about" class="tab-content">
+        <div class="timeline-toggle-wrapper work-active" id="balance-toggle-wrapper">
+            <div class="balance-container" title="Click to toggle Work/Life">
+                <svg class="balance-svg" viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet">
+                    <!-- Base -->
+                    <path class="balance-base" d="M100 110 L120 110 L110 80 L90 80 L80 110 Z" fill="var(--text-muted)"
+                        opacity="0.5" />
+                    <rect x="98" y="50" width="4" height="60" fill="var(--text-muted)" opacity="0.5" />
+
+                    <!-- Rotating Group -->
+                    <g class="balance-beam-group">
+                        <!-- The Beam -->
+                        <rect x="40" y="48" width="120" height="4" rx="2" fill="var(--text)" />
+
+                        <!-- Center Pivot Point -->
+                        <circle cx="100" cy="50" r="4" fill="var(--accent)" />
+
+                        <!-- Left Pan (Life) -->
+                        <g class="balance-pan-assembly left-pan">
+                            <!-- String -->
+                            <line x1="45" y1="50" x2="45" y2="90" stroke="var(--text-muted)" stroke-width="1" />
+                            <!-- Pan -->
+                            <path class="pan-shape" d="M25 90 Q45 105 65 90" fill="none" stroke="var(--text)"
+                                stroke-width="2" />
+                            <!-- Label - counter rotated in CSS -->
+                            <text x="45" y="85" text-anchor="middle" class="pan-label emoji-label" fill="var(--text)"
+                                font-size="24">🌴</text>
+                        </g>
+
+                        <!-- Right Pan (Work) -->
+                        <g class="balance-pan-assembly right-pan">
+                            <!-- String -->
+                            <line x1="155" y1="50" x2="155" y2="90" stroke="var(--text-muted)" stroke-width="1" />
+                            <!-- Pan -->
+                            <path class="pan-shape" d="M135 90 Q155 105 175 90" fill="none" stroke="var(--text)"
+                                stroke-width="2" />
+                            <!-- Label -->
+                            <text x="155" y="85" text-anchor="middle" class="pan-label emoji-label" fill="var(--text)"
+                                font-size="24">👨🏻‍💻</text>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </div>
         <div id="about-container">
             <!-- Timeline content rendered from JS -->
         </div>

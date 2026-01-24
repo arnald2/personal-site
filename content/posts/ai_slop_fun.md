@@ -66,7 +66,7 @@ lighting in the background, the tiger. It's pretty impressive how well it was ab
 #### 7. Watch out Don Draper
 This is an example of Veo doing something somewhat unexpected that I found hilarious. I just gave it a bunch of buzz words related to an Italian Beer, like Vespa, leather pants, etc., and it spit out this hilarious video. 
 <video controls style="max-width: 600px; width: 100%; display: block; margin: 0 auto 2rem; border-radius: 8px;">
-    <source src="assets/aislop/rejected_beer_ad.mp4" type="video/mp4">
+    <source src="assets/aislop/rejected_beer_add.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
 
@@ -102,5 +102,13 @@ Another one I just quickly made to wrap up this post. The Slop God. Lyrics from 
 
 ### Is AI Art actually Art? 
 
-Many people have strong opinions about this. I don't really want to get into the formal definition of art, or skills needed to be an artist. I'll just say overall my experience with using AI to do anything creative is that it feels really fun for a bit, but then eventually I do start wondering "what was the point of all that". Which I have never asked myself when drawing or a painting, no matter how bad the output was. I think it's the lack of effort that plays a big part into it. We value what we put effort into. If it's effortless, even if it's the most beautiful song or painting in the world it's a bit empty. So I think AI assisted artifacts can certainly be art in the hands of people who are very skilled, and are willing to put the effort to make something that rises above the baseline of "AI Slop" mediocrity. With the lowered barrier to entry we will probably get Software that would have never been built. Stories that would not have been told, and paintings that would have never seen the light of day thanks to AI, which I think is kind of cool. I still think it will always be more fun to do something by hand, and humans will always value effort and talent. So to answer my own question, AI art can be art, but not all AI art is "Art", I think some effort, intention and differentiation need to go into it. However, it's still fun for non-artists like me to play around with it and see what comes out. 
+Many people have strong opinions about this. I don't really want to get into the formal definition of art, or skills needed to be an artist. I'll just say overall my experience with using AI to do anything creative is that it feels really fun for a bit, but then eventually I do start wondering "what was the point of all that". Which I have never asked myself when drawing or a painting, no matter how bad the output was.
+
+I think it's the lack of effort that plays a big part into it. We value what we put effort into. If it's effortless, even if it's the most beautiful song or painting in the world it will feel empty.
+
+ I think AI assisted artifacts can certainly be art in the hands of people who are very skilled, and are willing to put the effort to make something that rises above the baseline of "AI Slop" mediocrity. 
+ 
+ With the lowered barrier to entry we will probably get great Software that would have never been built. Amazing stories that would not have been told, and beautiful paintings that would have never seen the light of day; Forever stuck in the imagination of person without the skills to make them.
+
+ Humans will always value effort and talent. So to answer my own question, AI art can be art, but not all AI art is "Art", I think effort, imagination and differentiation need to go into it. However, it's still fun for non-artists like me to play around with it and see what comes out. 
 

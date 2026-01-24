@@ -329,6 +329,45 @@
     width: 100%;
 }
 
+/* Milestone Blurb */
+.milestone-blurb {
+    background: rgba(0, 212, 255, 0.03);
+    border-left: 3px solid var(--accent);
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-radius: 0 12px 12px 0;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+}
+
+.milestone-blurb:hover {
+    background: rgba(0, 212, 255, 0.06);
+    transform: translateX(5px);
+}
+
+.blurb-title {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.blurb-title::before {
+    content: '>';
+    color: var(--primary);
+}
+
+.blurb-content {
+    line-height: 1.6;
+}
+
 /* Blog Styles */
 .blog-list {
     display: flex;

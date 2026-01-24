@@ -1,21 +1,46 @@
 // Entry point for content initialization
 document.addEventListener('DOMContentLoaded', () => {
-    const resumeContent = window.contentData ? window.contentData.resume : '';
-    const timelineContent = window.contentData ? window.contentData.timeline : '';
-
-    // Render resume
-    const resumeContainer = document.getElementById('resume-container');
-    if (resumeContainer && resumeContent) {
-        resumeContainer.innerHTML = resumeContent;
-    }
-
     // Render timeline (now in About tab)
     const aboutContainer = document.getElementById('about-container');
-    if (aboutContainer && timelineContent) {
-        aboutContainer.innerHTML = timelineContent;
-        // Initialize timeline after rendering
-        if (typeof initTimeline === 'function') {
-            initTimeline();
+    const toggle = document.getElementById('work-life-toggle');
+
+    function renderTimeline(isWork) {
+        if (!aboutContainer) return;
+
+        const contentKey = isWork ? 'workTimeline' : 'timeline';
+        const content = window.contentData ? window.contentData[contentKey] : '';
+
+        if (content) {
+            aboutContainer.innerHTML = content;
+            // Initialize timeline after rendering
+            if (typeof initTimeline === 'function') {
+                initTimeline();
+            }
+        }
+    }
+
+    if (aboutContainer) {
+        // Initial render (Work timeline by default)
+        renderTimeline(true);
+
+        // Toggle listener
+        const balanceToggle = document.getElementById('balance-toggle-wrapper');
+        let isWorkActive = true; // Default to Work
+
+        if (balanceToggle) {
+            balanceToggle.addEventListener('click', () => {
+                isWorkActive = !isWorkActive; // Toggle state
+
+                // Update UI visualization
+                if (isWorkActive) {
+                    balanceToggle.classList.add('work-active');
+                } else {
+                    balanceToggle.classList.remove('work-active');
+                }
+
+                // Render content
+                renderTimeline(isWorkActive);
+            });
         }
     }
 });
