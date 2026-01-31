@@ -206,10 +206,9 @@
 .story-panel {
     overflow-y: auto;
     padding-right: 2rem;
-    padding-top: 2rem;
+    padding-top: 5rem;
     padding-bottom: 80vh;
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
 }
 
 .story-panel::-webkit-scrollbar {
@@ -226,8 +225,6 @@
     opacity: 0.3;
     transition: all 0.8s ease;
     transform: translateY(30px);
-    scroll-snap-align: start;
-    scroll-margin-top: 2rem;
 }
 
 .story-milestone.active {
@@ -293,6 +290,13 @@
     border-radius: 16px;
     border: 1px solid var(--border);
     transition: all 0.4s ease;
+}
+
+.milestone-media .work-logo {
+    background: white;
+    padding: 1.5rem;
+    object-fit: contain;
+    aspect-ratio: 3/2;
 }
 
 .milestone-media img:hover,

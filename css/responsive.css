@@ -5,6 +5,7 @@
         grid-template-columns: 1fr;
         height: auto;
         overflow: visible;
+        padding-left: 1rem;
     }
 
     .timeline-panel {

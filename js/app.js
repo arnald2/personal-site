@@ -11,11 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const content = window.contentData ? window.contentData[contentKey] : '';
 
         if (content) {
+            console.log('Rendering timeline content for:', contentKey);
             aboutContainer.innerHTML = content;
             // Initialize timeline after rendering
             if (typeof initTimeline === 'function') {
                 initTimeline();
+            } else {
+                console.error('initTimeline is not a function');
             }
+        } else {
+            console.error('No content found for key:', contentKey);
+            console.log('Available keys:', window.contentData ? Object.keys(window.contentData) : 'contentData is undefined');
         }
     }
 

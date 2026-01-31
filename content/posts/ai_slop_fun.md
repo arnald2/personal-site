@@ -106,9 +106,9 @@ Many people have strong opinions about this. I don't really want to get into the
 
 I think it's the lack of effort that plays a big part into it. We value what we put effort into. If it's effortless, even if it's the most beautiful song or painting in the world it will feel empty.
 
- I think AI assisted artifacts can certainly be art in the hands of people who are very skilled, and are willing to put the effort to make something that rises above the baseline of "AI Slop" mediocrity. 
- 
- With the lowered barrier to entry we will probably get great Software that would have never been built. Amazing stories that would not have been told, and beautiful paintings that would have never seen the light of day; Forever stuck in the imagination of person without the skills to make them.
+I think AI-assisted artifacts can certainly be art in the hands of people who are very skilled, and are willing to put in the effort to make something that rises above the baseline of "AI Slop" mediocrity. I think a good analogy is old action films. Any dumb action film now with 5% on Rotten Tomatoes would blow the best action movie from the 40s or 50s out of the water.
 
- Humans will always value effort and talent. So to answer my own question, AI art can be art, but not all AI art is "Art", I think effort, imagination and differentiation need to go into it. However, it's still fun for non-artists like me to play around with it and see what comes out. 
+With the lowered barrier to entry, more people might try to do things they might have never attempted. We will probably get great software that would have never been built. Amazing stories that would not have been told, and beautiful paintings that would have never seen the light of day—forever stuck in the imagination of a person without the skills to make them.
+
+Humans will always value effort and talent. So to answer my own question: AI art can be art, but not all AI art is "Art". I think effort, imagination, and differentiation need to go into it. However, it's still fun for non-artists like me to play around with it and see what comes out. 
 
