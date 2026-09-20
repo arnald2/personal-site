@@ -1,155 +1,248 @@
-/* Default Theme (Light) */
+/* ==========================================================================
+   Base Design System & Multi-Theme Tokens
+   ========================================================================== */
+
 :root {
-    --primary: #ffffff;
-    --secondary: #f4f4f4;
-    --accent: #0077b6;
-    /* Classic Blue */
-    --accent-hover: #9b2226;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+    /* Transition timings */
+    --transition-fast: 0.15s ease;
+    --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Border Radii */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;
+}
+
+/* Default Theme: Modern Light */
+:root, :root[data-theme="light"] {
+    --primary: #fafafa;
+    --secondary: #f0f1f5;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
     --accent-text: #ffffff;
-    /* White text on blue */
-    --text: #1a1a1a;
-    --text-muted: #666666;
-    --border: #e0e0e0;
+    --accent-subtle: rgba(37, 99, 235, 0.08);
+    --accent-glow: rgba(37, 99, 235, 0.2);
+    --text: #0f172a;
+    --text-muted: #64748b;
+    --border: rgba(15, 23, 42, 0.08);
+    --border-hover: rgba(15, 23, 42, 0.16);
     --card-bg: #ffffff;
-    --gradient-start: #f8f9fa;
-    --gradient-end: #e9ecef;
+    --card-hover-bg: #f8fafc;
+    --tag-bg: rgba(15, 23, 42, 0.04);
+    --tag-border: rgba(15, 23, 42, 0.08);
+    --tag-text: #334155;
+    --code-bg: #f1f5f9;
+    --code-border: rgba(15, 23, 42, 0.08);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 20px 35px -10px rgba(0, 0, 0, 0.08);
+    --gradient-start: #fafafa;
+    --gradient-end: #f1f5f9;
+    --grid-dot: rgba(15, 23, 42, 0.04);
 }
 
-/* Dark Mode */
+/* Modern Obsidian Dark */
 :root[data-theme="dark"] {
-    --primary: #050505;
-    --secondary: #121212;
-    --accent: #10b2e8;
-    /* Bright Cyan */
-    --accent-hover: #c419b3;
-    --accent-text: #050505;
-    /* Black text on cyan */
-    --text: #f0f0f0;
-    --text-muted: #a0a0a0;
-    --border: #333333;
-    --card-bg: #1a1a1a;
-    --gradient-start: #000000;
-    --gradient-end: #121212;
+    --primary: #09090b;
+    --secondary: #12131a;
+    --accent: #6366f1;
+    --accent-hover: #818cf8;
+    --accent-text: #ffffff;
+    --accent-subtle: rgba(99, 102, 241, 0.1);
+    --accent-glow: rgba(99, 102, 241, 0.25);
+    --text: #f4f4f7;
+    --text-muted: #94a3b8;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(255, 255, 255, 0.18);
+    --card-bg: #111218;
+    --card-hover-bg: #171822;
+    --tag-bg: rgba(255, 255, 255, 0.04);
+    --tag-border: rgba(255, 255, 255, 0.08);
+    --tag-text: #cbd5e1;
+    --code-bg: #0d0e14;
+    --code-border: rgba(255, 255, 255, 0.08);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+    --gradient-start: #09090b;
+    --gradient-end: #111218;
+    --grid-dot: rgba(255, 255, 255, 0.04);
 }
 
-/* Miami Vice */
+/* Miami Vice Theme */
 :root[data-theme="miami"] {
-    --primary: #20042e;
-    /* Deep Purple Background */
-    --secondary: #027F7F;
-    /* Deep Calm Green */
-    --accent: #FE6DC6;
-    /* Bright Pink */
-    --accent-hover: #14E2F9;
-    /* Turquoise */
-    --accent-text: #20042e;
-    /* Dark Purple on Pink */
-    --text: #e0fbfc;
-    --text-muted: #b8c0ff;
-    --border: #BE00FE;
-    /* Purple Shade */
-    --card-bg: #2b1138;
-    --gradient-start: #20042e;
-    --gradient-end: #5514b4;
+    --primary: #190526;
+    --secondary: #270c3c;
+    --accent: #fe6dc6;
+    --accent-hover: #14e2f9;
+    --accent-text: #190526;
+    --accent-subtle: rgba(254, 109, 198, 0.12);
+    --accent-glow: rgba(254, 109, 198, 0.35);
+    --text: #f8f0fc;
+    --text-muted: #c4b5fd;
+    --border: rgba(190, 0, 254, 0.25);
+    --border-hover: rgba(254, 109, 198, 0.5);
+    --card-bg: #220835;
+    --card-hover-bg: #2d0c45;
+    --tag-bg: rgba(20, 226, 249, 0.08);
+    --tag-border: rgba(20, 226, 249, 0.2);
+    --tag-text: #14e2f9;
+    --code-bg: #140320;
+    --code-border: rgba(190, 0, 254, 0.2);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 20px -2px rgba(25, 5, 38, 0.6);
+    --shadow-lg: 0 20px 40px -15px rgba(254, 109, 198, 0.2);
+    --gradient-start: #190526;
+    --gradient-end: #340c4e;
+    --grid-dot: rgba(254, 109, 198, 0.06);
 }
 
-/* Havana Night */
+/* Havana Night Theme */
 :root[data-theme="havana"] {
-    --primary: #102526;
-    /* Dark Deep Teal */
-    --secondary: #2F4858;
-    /* Slate Teal */
-    --accent: #00B4D8;
-    /* Bright Cyan/Blue */
-    --accent-hover: #F08080;
-    /* Light Coral */
-    --accent-text: #102526;
-    /* Dark Teal on Cyan */
-    --text: #E0F2F1;
-    --text-muted: #80CBC4;
-    --border: #4DB6AC;
-    --card-bg: #1A3639;
-    --gradient-start: #102526;
-    --gradient-end: #004d40;
+    --primary: #0a1b1c;
+    --secondary: #132b2d;
+    --accent: #00b4d8;
+    --accent-hover: #f08080;
+    --accent-text: #0a1b1c;
+    --accent-subtle: rgba(0, 180, 216, 0.12);
+    --accent-glow: rgba(0, 180, 216, 0.3);
+    --text: #e0f2f1;
+    --text-muted: #80cbc4;
+    --border: rgba(77, 182, 172, 0.22);
+    --border-hover: rgba(0, 180, 216, 0.45);
+    --card-bg: #10292b;
+    --card-hover-bg: #163639;
+    --tag-bg: rgba(0, 180, 216, 0.08);
+    --tag-border: rgba(0, 180, 216, 0.2);
+    --tag-text: #4dd0e1;
+    --code-bg: #071516;
+    --code-border: rgba(77, 182, 172, 0.2);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 20px 40px -15px rgba(0, 180, 216, 0.2);
+    --gradient-start: #0a1b1c;
+    --gradient-end: #072624;
+    --grid-dot: rgba(0, 180, 216, 0.06);
 }
 
-/* Pacific Northwest */
+/* Pacific Northwest Theme */
 :root[data-theme="pnw"] {
-    --primary: #2f3e46;
-    /* Charcoal */
-    --secondary: #354f52;
-    /* Slate */
+    --primary: #222e33;
+    --secondary: #2b3b40;
     --accent: #84a98c;
-    /* Sage Green */
     --accent-hover: #cad2c5;
-    /* Light Grey-Green */
-    --accent-text: #2f3e46;
-    /* Dark Charcoal on Sage */
-    --text: #f1f1f1;
+    --accent-text: #222e33;
+    --accent-subtle: rgba(132, 169, 140, 0.14);
+    --accent-glow: rgba(132, 169, 140, 0.3);
+    --text: #f1f5f3;
     --text-muted: #a3b18a;
-    --border: #52796f;
-    --card-bg: #354f52;
-    --gradient-start: #2f3e46;
-    --gradient-end: #202c33;
+    --border: rgba(82, 121, 111, 0.3);
+    --border-hover: rgba(132, 169, 140, 0.5);
+    --card-bg: #29383e;
+    --card-hover-bg: #304248;
+    --tag-bg: rgba(132, 169, 140, 0.1);
+    --tag-border: rgba(132, 169, 140, 0.25);
+    --tag-text: #cad2c5;
+    --code-bg: #1c262a;
+    --code-border: rgba(82, 121, 111, 0.25);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 20px -2px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+    --gradient-start: #222e33;
+    --gradient-end: #1a2327;
+    --grid-dot: rgba(132, 169, 140, 0.07);
 }
 
-/* NYC Metro */
+/* NYC Metro Theme */
 :root[data-theme="nyc"] {
-    --primary: #111111;
-    /* Black */
-    --secondary: #333333;
-    /* Dark Grey for Nav */
+    --primary: #111113;
+    --secondary: #1a1a1d;
     --accent: #fddb3a;
-    /* Taxi Yellow */
-    --accent-hover: #ffffff;
-    --accent-text: #111111;
-    /* Black on Yellow */
-    --text: #eeeeee;
-    --text-muted: #999999;
-    --border: #fddb3a;
-    --card-bg: #222222;
-    --gradient-start: #111111;
-    --gradient-end: #2c2c2c;
+    --accent-hover: #fef08a;
+    --accent-text: #111113;
+    --accent-subtle: rgba(253, 219, 58, 0.12);
+    --accent-glow: rgba(253, 219, 58, 0.28);
+    --text: #f3f4f6;
+    --text-muted: #9ca3af;
+    --border: rgba(255, 255, 255, 0.1);
+    --border-hover: rgba(253, 219, 58, 0.4);
+    --card-bg: #19191d;
+    --card-hover-bg: #222227;
+    --tag-bg: rgba(253, 219, 58, 0.08);
+    --tag-border: rgba(253, 219, 58, 0.25);
+    --tag-text: #fddb3a;
+    --code-bg: #0d0d0f;
+    --code-border: rgba(255, 255, 255, 0.1);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 20px -2px rgba(0, 0, 0, 0.6);
+    --shadow-lg: 0 20px 40px -15px rgba(253, 219, 58, 0.15);
+    --gradient-start: #111113;
+    --gradient-end: #1e1e24;
+    --grid-dot: rgba(253, 219, 58, 0.05);
 }
 
-/* Cherry Blossoms */
+/* Cherry Blossoms Theme */
 :root[data-theme="cherry"] {
-    --primary: #fff0f5;
-    /* Lavender Blush */
-    --secondary: #ffb7c5;
-    /* Cherry Blossom Pink */
-    --accent: #ff69b4;
-    /* Hot Pink */
-    --accent-hover: #98fb98;
-    /* Pale Green (leaves) */
-    --accent-text: #202020;
-    /* Near Black on Hot Pink */
-    --text: #4a4a4a;
-    --text-muted: #8b5a5a;
-    --border: #ffb7c5;
-    --card-bg: #fffbfb;
-    --gradient-start: #fff0f5;
-    --gradient-end: #ffe4e1;
-    /* Misty Rose */
+    --primary: #fff5f7;
+    --secondary: #fee7ec;
+    --accent: #f43f5e;
+    --accent-hover: #e11d48;
+    --accent-text: #ffffff;
+    --accent-subtle: rgba(244, 63, 94, 0.08);
+    --accent-glow: rgba(244, 63, 94, 0.25);
+    --text: #374151;
+    --text-muted: #9f7a82;
+    --border: rgba(244, 63, 94, 0.15);
+    --border-hover: rgba(244, 63, 94, 0.35);
+    --card-bg: #ffffff;
+    --card-hover-bg: #fff8f9;
+    --tag-bg: rgba(244, 63, 94, 0.06);
+    --tag-border: rgba(244, 63, 94, 0.15);
+    --tag-text: #e11d48;
+    --code-bg: #fdf2f4;
+    --code-border: rgba(244, 63, 94, 0.12);
+    --shadow-sm: 0 1px 3px rgba(244, 63, 94, 0.04);
+    --shadow-md: 0 4px 20px -2px rgba(244, 63, 94, 0.08);
+    --shadow-lg: 0 20px 35px -10px rgba(244, 63, 94, 0.12);
+    --gradient-start: #fff5f7;
+    --gradient-end: #fde8ed;
+    --grid-dot: rgba(244, 63, 94, 0.05);
 }
 
-* {
+/* ==========================================================================
+   Base Styles & Reset
+   ========================================================================== */
+
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: var(--font-sans);
     background-color: var(--primary);
     background-image: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
     color: var(--text);
-    line-height: 1.7;
+    line-height: 1.68;
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* Theme-Aware Ambient Background Pattern */
 body::before {
     content: '';
     position: fixed;
@@ -157,31 +250,38 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background:
-        radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(0, 212, 255, 0.05) 0%, transparent 50%);
+    background-image: radial-gradient(var(--grid-dot) 1.5px, transparent 1.5px);
+    background-size: 28px 28px;
     pointer-events: none;
     z-index: 0;
+    opacity: 0.8;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1140px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     position: relative;
     z-index: 1;
 }
 
-/* Global Typography */
-h2 {
-    font-size: 1.8rem;
+/* Global Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    color: var(--text);
+    line-height: 1.25;
+    letter-spacing: -0.025em;
     font-weight: 700;
-    color: var(--accent);
+}
+
+h2 {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: var(--text);
     margin-bottom: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: -0.02em;
     position: relative;
-    padding-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
 }
 
 h2::after {
@@ -189,16 +289,34 @@ h2::after {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 60px;
+    width: 48px;
     height: 3px;
     background: var(--accent);
+    border-radius: var(--radius-full);
 }
 
 h3 {
     font-size: 1.3rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text);
     margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
 }
 
 ul {
@@ -208,22 +326,25 @@ ul {
 
 li {
     margin-bottom: 0.75rem;
-    padding-left: 1.5rem;
+    padding-left: 1.4rem;
     position: relative;
-    line-height: 1.7;
+    line-height: 1.65;
 }
 
 ul li::before {
-    content: '▹';
+    content: '—';
     position: absolute;
     left: 0;
-    top: 0.15em;
+    top: 0;
     color: var(--accent);
-    font-weight: bold;
-    font-size: 1.3rem;
-    line-height: 1;
+    font-weight: 700;
 }
 
 ol {
     margin-left: 1.5rem;
+}
+
+::selection {
+    background: var(--accent-subtle);
+    color: var(--accent);
 }

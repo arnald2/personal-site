@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arnaldo Garcia - Software Engineer</title>
+    <title>Arnaldo Garcia — Senior Software Engineer</title>
+    <meta name="description" content="Senior Software Engineer with 9+ years experience designing scalable cloud architectures, high-throughput data pipelines, and ML systems at Amazon and Audible.">
+
+    <!-- Fonts: Inter & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Manrope:wght@400;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..800;1,14..32,300..800&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FV374R313R"></script>
@@ -20,6 +21,7 @@
         gtag('config', 'G-FV374R313R');
     </script>
 
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/sections.css">
@@ -28,23 +30,23 @@
 
 <body>
     <div class="container">
+        <!-- Navigation -->
         <nav>
             <div class="nav-header">
-                <div class="logo">&lt;AG/&gt;</div>
+                <a href="#home" class="logo">&lt;AG/&gt;</a>
                 <div class="nav-tabs">
                     <button class="tab-btn active" data-tab="home">Home</button>
                     <button class="tab-btn" data-tab="blog">Blog</button>
-
                     <button class="tab-btn" data-tab="about">About</button>
                     <button class="tab-btn" data-tab="contact">Contact</button>
                     <div class="theme-wrapper">
-                        <button class="theme-btn" id="theme-btn" aria-label="Select Theme">🌈</button>
+                        <button class="theme-btn" id="theme-btn" aria-label="Select Theme" title="Switch Theme (T)">🌈</button>
                         <div class="theme-menu" id="theme-menu">
-                            <button class="theme-option" data-theme="light">☀️ Light</button>
-                            <button class="theme-option" data-theme="dark">🌙 Dark</button>
+                            <button class="theme-option" data-theme="dark">🌙 Obsidian Dark</button>
+                            <button class="theme-option" data-theme="light">☀️ Clean Light</button>
                             <button class="theme-option" data-theme="miami">🌴 Miami Vice</button>
                             <button class="theme-option" data-theme="havana">🎺 Havana Night</button>
-                            <button class="theme-option" data-theme="pnw">🌲 PNW</button>
+                            <button class="theme-option" data-theme="pnw">🌲 PNW Mist</button>
                             <button class="theme-option" data-theme="nyc">🚖 NYC Metro</button>
                             <button class="theme-option" data-theme="cherry">🌸 Cherry Blossoms</button>
                         </div>
@@ -53,21 +55,252 @@
             </div>
         </nav>
 
-        <!-- Splash Home Tab -->
+        <!-- Home Tab -->
         <div id="home" class="tab-content active">
-            <div class="splash-hero">
-                <h1 class="splash-title">Hi!</h1>
-                <h2 class="splash-subtitle">Welcome to my website</h2>
-                <p class="splash-text">
-                    I have created this site as a way to share my thoughts, personal projects, bad jokes, and
-                    experiences
-                    with the world. Mostly as a "creative" outlet of sorts. Primarily focused around experiments with
-                    GenAI capabilities. It is also a place to put all the pictures of random trees I have been taking.
-                </p>
+            <div class="home-container">
+                <!-- Hero Section -->
+                <header class="hero-section">
+                    <div class="hero-status">
+                        <span class="status-dot"></span>
+                        <span>Senior Software Engineer @ Audible (Amazon)</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Designing <span class="accent-text">high-throughput cloud systems</span>, ML pipelines, & creative experiments.
+                    </h1>
+
+                    <p class="hero-bio">
+                        Hi, I'm <strong>Arnaldo Garcia</strong>. I'm a Senior Software Engineer with <strong>9+ years</strong> of experience architecting distributed serverless systems, real-time data ingestion pipelines, and ML infrastructure at <strong>Amazon</strong> and <strong>Audible</strong>. Based in New Jersey, with an M.S. in Computer Science from <strong>Georgia Tech</strong>.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#blog" class="action-btn-primary">
+                            <span>Read the Blog</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                        </a>
+
+                        <a href="#about" class="action-btn-secondary">
+                            <span>Career & Life Timeline</span>
+                        </a>
+
+                        <button class="action-btn-secondary" onclick="copyEmail()">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                            </svg>
+                            <span>Copy Email</span>
+                        </button>
+
+                        <div class="social-links-row">
+                            <a href="https://linkedin.com/in/arnaldo-garcia-417ab458" target="_blank" rel="noopener noreferrer" class="social-icon-button" title="LinkedIn Profile" aria-label="LinkedIn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect width="4" height="12" x="2" y="9"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                            <a href="mailto:arnaldogarcia7@gmail.com" class="social-icon-button" title="Send Email" aria-label="Email">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.5C2 7 4 5 6.5 5H18c2.2 0 4 1.8 4 4v8Z"></path>
+                                    <polyline points="15,9 18,9 18,11"></polyline>
+                                    <path d="m6.5 5 5.5 5 5.5-5"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Metric Highlights Strip -->
+                    <div class="metrics-strip">
+                        <div class="metric-item">
+                            <div class="metric-num">9<span>+</span></div>
+                            <div class="metric-label">Years of Experience</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-num">50M<span>+</span></div>
+                            <div class="metric-label">Products in ML Pipeline</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-num">Millions</div>
+                            <div class="metric-label">Daily Events Ingested</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-num">M.S.<span> CS</span></div>
+                            <div class="metric-label">Georgia Tech (ML & AI)</div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Featured Systems Bento Grid -->
+                <section class="home-section">
+                    <div class="home-section-header">
+                        <div>
+                            <span class="section-eyebrow">Architecture & Scale</span>
+                            <h2 class="section-heading">Featured Production Systems</h2>
+                        </div>
+                        <a href="#about" class="section-link-more">
+                            <span>View Full Career Timeline</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+
+                    <div class="bento-grid">
+                        <div class="bento-card bento-large">
+                            <div>
+                                <div class="bento-badge-row">
+                                    <span class="bento-badge">Real-Time Data Platform</span>
+                                    <span class="bento-metric">Millions Events / Day</span>
+                                </div>
+                                <h3 class="bento-title">Distributed Metrics Ingestion Pipeline</h3>
+                                <p class="bento-description">
+                                    Architected a serverless event ingestion engine at Audible handling millions of playback and interaction events across multiple teams. Leveraged Kinesis Firehose, Lambda micro-batching, and S3 Parquet partitioning to cut query latency by 75% while maintaining sub-second ingestion SLAs.
+                                </p>
+                            </div>
+                            <div class="tag-list" style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+                                <span class="tag">AWS Kinesis</span>
+                                <span class="tag">AWS Lambda</span>
+                                <span class="tag">S3 Parquet</span>
+                                <span class="tag">Athena</span>
+                                <span class="tag">AWS CDK</span>
+                            </div>
+                        </div>
+
+                        <div class="bento-card bento-side">
+                            <div>
+                                <div class="bento-badge-row">
+                                    <span class="bento-badge">Machine Learning Infra</span>
+                                    <span class="bento-metric">50M+ Records</span>
+                                </div>
+                                <h3 class="bento-title">ML Remediation Engine</h3>
+                                <p class="bento-description">
+                                    Large-scale correction workflow using Apache Spark and AWS Step Functions to identify ML prediction errors across third-party product records at Amazon scale.
+                                </p>
+                            </div>
+                            <div class="tag-list" style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+                                <span class="tag">Apache Spark</span>
+                                <span class="tag">Step Functions</span>
+                                <span class="tag">SageMaker</span>
+                            </div>
+                        </div>
+
+                        <div class="bento-card bento-standard">
+                            <div>
+                                <div class="bento-badge-row">
+                                    <span class="bento-badge">Speech AI & Data</span>
+                                    <span class="bento-metric">Sub-Second Alignment</span>
+                                </div>
+                                <h3 class="bento-title">Audio-Text Alignment Pipeline</h3>
+                                <p class="bento-description">
+                                    Automated ML dataset preparation system that synchronizes thousands of hours of spoken narration with manuscript text using AWS Transcribe and phonetic alignment algorithms.
+                                </p>
+                            </div>
+                            <div class="tag-list" style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+                                <span class="tag">AWS Transcribe</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">Speech AI</span>
+                                <span class="tag">ECS</span>
+                            </div>
+                        </div>
+
+                        <div class="bento-card bento-standard">
+                            <div>
+                                <div class="bento-badge-row">
+                                    <span class="bento-badge">State Orchestration</span>
+                                    <span class="bento-metric">Zero Downtime</span>
+                                </div>
+                                <h3 class="bento-title">Manuscript Revision State Machine</h3>
+                                <p class="bento-description">
+                                    Resilient distributed state machine orchestrating complex user edit migrations across versioned manuscript schemas in DynamoDB with transaction rollbacks and zero data loss.
+                                </p>
+                            </div>
+                            <div class="tag-list" style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+                                <span class="tag">AWS Step Functions</span>
+                                <span class="tag">DynamoDB</span>
+                                <span class="tag">Event-Driven</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Latest Writing Section -->
+                <section class="home-section">
+                    <div class="home-section-header">
+                        <div>
+                            <span class="section-eyebrow">Writing & Insights</span>
+                            <h2 class="section-heading">From the Blog</h2>
+                        </div>
+                        <a href="#blog" class="section-link-more">
+                            <span>Browse All Posts</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+
+                    <div class="blog-list" style="margin-top: 0;">
+                        <a href="#blog?post=the-art-of-ai-slop" class="blog-row">
+                            <div class="blog-date">Dec 15, 2025</div>
+                            <div class="blog-title">The Art of AI Slop</div>
+                            <div class="blog-tags-small">
+                                <span class="tag-small">AI Art</span>
+                            </div>
+                        </a>
+                        <a href="#blog?post=vibe-coding-a-personal-website" class="blog-row">
+                            <div class="blog-date">Jan 02, 2026</div>
+                            <div class="blog-title">Vibe coding a Personal Website</div>
+                            <div class="blog-tags-small">
+                                <span class="tag-small">Code</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Random Trees & AI Experiments Gallery -->
+                <section class="home-section">
+                    <div class="home-section-header">
+                        <div>
+                            <span class="section-eyebrow">Creative Corner</span>
+                            <h2 class="section-heading">Random Trees & AI Art</h2>
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; max-width: 480px; margin: 0;">
+                            "A place to put all the pictures of random trees I have been taking." Real photos transformed with GenAI.
+                        </p>
+                    </div>
+
+                    <div class="gallery-grid">
+                        <div class="gallery-card">
+                            <div class="gallery-media">
+                                <img src="assets/Enhance/IMG_5224.PNG" alt="Impressionist Tree Canopy" loading="lazy">
+                            </div>
+                            <div class="gallery-content">
+                                <div class="gallery-title">Gnarled Canopy</div>
+                                <div class="gallery-desc">Oil painting transformation of a tree canopy against the midday sky.</div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-card">
+                            <div class="gallery-media">
+                                <img src="assets/Enhance/65A0DF22-1669-4316-AE60-0586C596F2EC.png" alt="Autumn River Reflection" loading="lazy">
+                            </div>
+                            <div class="gallery-content">
+                                <div class="gallery-title">Autumn Reflections</div>
+                                <div class="gallery-desc">Golden reeds and water foliage rendered in warm textured impasto.</div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-card">
+                            <div class="gallery-media">
+                                <img src="assets/Enhance/30BD175B-C24C-4C13-B841-9F383D323961.png" alt="Coastal Wildflowers" loading="lazy">
+                            </div>
+                            <div class="gallery-content">
+                                <div class="gallery-title">Coastal Blooms</div>
+                            <div class="gallery-desc">Vibrant lupines along the beach with ocean horizon in the distance.</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
-
-
 
         <!-- Blog Tab -->
         <div id="blog" class="tab-content">
@@ -77,116 +310,112 @@
             </div>
 
             <div id="filter-bar" class="sub-nav">
-                <!-- Dynamic tags will be rendered here -->
+                <!-- Dynamic tags rendered here -->
             </div>
 
             <section id="blog-list-view">
                 <div id="blog-container" class="blog-list">
-                    <!-- Unified content items will be rendered here -->
+                    <!-- Posts rendered here -->
                 </div>
             </section>
 
             <section id="blog-single-view" class="single-blog-view">
-                <button class="back-btn" onclick="showBlogList()">← Back to List</button>
+                <button class="back-btn" onclick="showBlogList()">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5"></path>
+                        <path d="m12 19-7-7 7-7"></path>
+                    </svg>
+                    <span>Back to all posts</span>
+                </button>
                 <div id="single-post-content">
                     <!-- Content rendered here -->
                 </div>
             </section>
         </div>
-    </div>
 
-    <!-- About Tab (Formerly Home) -->
-    <div id="about" class="tab-content">
-        <div class="timeline-toggle-wrapper work-active" id="balance-toggle-wrapper">
-            <div class="balance-container" title="Click to toggle Work/Life">
-                <svg class="balance-svg" viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet">
-                    <!-- Base -->
-                    <path class="balance-base" d="M100 110 L120 110 L110 80 L90 80 L80 110 Z" fill="var(--text-muted)"
-                        opacity="0.5" />
-                    <rect x="98" y="50" width="4" height="60" fill="var(--text-muted)" opacity="0.5" />
+        <!-- About Tab (Career & Life Timeline) -->
+        <div id="about" class="tab-content">
+            <div class="timeline-toggle-wrapper work-active" id="balance-toggle-wrapper">
+                <div class="balance-container" title="Click to toggle Work / Life">
+                    <svg class="balance-svg" viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet">
+                        <!-- Base -->
+                        <path class="balance-base" d="M100 110 L120 110 L110 80 L90 80 L80 110 Z" fill="var(--text-muted)" opacity="0.4" />
+                        <rect x="98" y="50" width="4" height="60" fill="var(--text-muted)" opacity="0.4" />
 
-                    <!-- Rotating Group -->
-                    <g class="balance-beam-group">
-                        <!-- The Beam -->
-                        <rect x="40" y="48" width="120" height="4" rx="2" fill="var(--text)" />
+                        <!-- Rotating Beam Group -->
+                        <g class="balance-beam-group">
+                            <rect x="40" y="48" width="120" height="4" rx="2" fill="var(--text)" />
+                            <circle cx="100" cy="50" r="4" fill="var(--accent)" />
 
-                        <!-- Center Pivot Point -->
-                        <circle cx="100" cy="50" r="4" fill="var(--accent)" />
+                            <!-- Left Pan (Life) -->
+                            <g class="balance-pan-assembly left-pan">
+                                <line x1="45" y1="50" x2="45" y2="90" stroke="var(--text-muted)" stroke-width="1" />
+                                <path class="pan-shape" d="M25 90 Q45 105 65 90" fill="none" stroke="var(--text)" stroke-width="2" />
+                                <text x="45" y="85" text-anchor="middle" class="pan-label emoji-label" font-size="24">🌴</text>
+                            </g>
 
-                        <!-- Left Pan (Life) -->
-                        <g class="balance-pan-assembly left-pan">
-                            <!-- String -->
-                            <line x1="45" y1="50" x2="45" y2="90" stroke="var(--text-muted)" stroke-width="1" />
-                            <!-- Pan -->
-                            <path class="pan-shape" d="M25 90 Q45 105 65 90" fill="none" stroke="var(--text)"
-                                stroke-width="2" />
-                            <!-- Label - counter rotated in CSS -->
-                            <text x="45" y="85" text-anchor="middle" class="pan-label emoji-label" fill="var(--text)"
-                                font-size="24">🌴</text>
+                            <!-- Right Pan (Work) -->
+                            <g class="balance-pan-assembly right-pan">
+                                <line x1="155" y1="50" x2="155" y2="90" stroke="var(--text-muted)" stroke-width="1" />
+                                <path class="pan-shape" d="M135 90 Q155 105 175 90" fill="none" stroke="var(--text)" stroke-width="2" />
+                                <text x="155" y="85" text-anchor="middle" class="pan-label emoji-label" font-size="24">👨🏻‍💻</text>
+                            </g>
                         </g>
-
-                        <!-- Right Pan (Work) -->
-                        <g class="balance-pan-assembly right-pan">
-                            <!-- String -->
-                            <line x1="155" y1="50" x2="155" y2="90" stroke="var(--text-muted)" stroke-width="1" />
-                            <!-- Pan -->
-                            <path class="pan-shape" d="M135 90 Q155 105 175 90" fill="none" stroke="var(--text)"
-                                stroke-width="2" />
-                            <!-- Label -->
-                            <text x="155" y="85" text-anchor="middle" class="pan-label emoji-label" fill="var(--text)"
-                                font-size="24">👨🏻‍💻</text>
-                        </g>
-                    </g>
-                </svg>
+                    </svg>
+                </div>
+            </div>
+            <div id="about-container">
+                <!-- Timeline content rendered from JS -->
             </div>
         </div>
-        <div id="about-container">
-            <!-- Timeline content rendered from JS -->
-        </div>
-    </div>
 
-    <!-- Contact Tab -->
-    <div id="contact" class="tab-content">
-        <div class="header">
-            <h1>Get In Touch</h1>
-            <div class="subtitle">I am relatively responsive to email and LinkedIn messages.</div>
-        </div>
+        <!-- Contact Tab -->
+        <div id="contact" class="tab-content">
+            <div class="header">
+                <h1>Get In Touch</h1>
+                <div class="subtitle">I am relatively responsive to email and LinkedIn messages.</div>
+            </div>
 
-        <section>
-            <div class="contact-grid">
-                <div class="contact-info-card">
-                    <h3 style="margin-bottom: 1.5rem;">Contact Info</h3>
+            <section>
+                <div class="contact-grid">
+                    <div class="contact-info-card">
+                        <h3 style="margin-bottom: 1.5rem;">Contact Info</h3>
 
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div class="contact-text">
-                            <div class="contact-label">Email</div>
-                            <a href="mailto:arnaldo.garcia7@gmail.com?subject=Yo&body=Sup">arnaldogarcia7@gmail.com</a>
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-text">
+                                <div class="contact-label">Email</div>
+                                <a href="mailto:arnaldo.garcia7@gmail.com?subject=Yo&body=Sup">arnaldogarcia7@gmail.com</a>
+                            </div>
+                            <button onclick="copyEmail()" style="margin-left: auto; padding: 0.35rem 0.75rem; font-size: 0.75rem; border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text-muted); font-family: var(--font-mono);">
+                                Copy
+                            </button>
                         </div>
-                    </div>
 
-
-                    <div class="contact-item">
-                        <div class="contact-icon">💼</div>
-                        <div class="contact-text">
-                            <div class="contact-label">LinkedIn</div>
-                            <a href="https://linkedin.com/in/arnaldo-garcia-417ab458"
-                                target="_blank">linkedin.com/in/arnaldo-garcia-417ab458</a>
+                        <div class="contact-item">
+                            <div class="contact-icon">💼</div>
+                            <div class="contact-text">
+                                <div class="contact-label">LinkedIn</div>
+                                <a href="https://linkedin.com/in/arnaldo-garcia-417ab458" target="_blank" rel="noopener noreferrer">linkedin.com/in/arnaldo-garcia-417ab458</a>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div class="contact-text">
-                            <div class="contact-label">Location</div>
-                            <div style="color: var(--text);">Essex County, NJ (NYC Metro Area)</div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text">
+                                <div class="contact-label">Location</div>
+                                <div style="color: var(--text);">Essex County, NJ (NYC Metro Area)</div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </section>
+        </div>
 
-            </div>
-        </section>
-
+        <!-- Footer -->
+        <footer>
+            <p>© <span id="year"></span> Arnaldo Garcia. Engineered with vanilla web craft.</p>
+        </footer>
     </div>
 
     <!-- Core Scripts -->
