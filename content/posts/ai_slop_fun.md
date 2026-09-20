@@ -45,7 +45,7 @@ Creating creatures that shouldn't exist.
 </video>
 
 #### 4. Painted Face
-From rough sketch to realistic portrait. One fun thing to try with AI is to keep asking it over and over again to improve the artifact it generated. It eventually converges to something, or just starts making it worse. But it's fun to try. I find with code for example it eventually just starts to make things really complicated, and overly abstract and constrained in its quest for "better". [Cool Blog Post about this topic](https://minimaxir.com/2025/01/write-better-code/).
+From rough sketch to realistic portrait. One fun thing to try with AI is to keep asking it over and over again to improve the artifact it generated. It eventually converges to something, or just starts making it worse. But it's fun to try. I find with code for example it eventually just starts to make things really complicated, and overly abstract and constrained in its quest for "better". [Cool Blog Post about this topic](https://minimaxir.com/2025/01/write-better-code/). As the famous quote goes, "A good artist knows when to stop". I think that's where the human element is most important. A.I might not know a good stopping point, and most popele do't either. I think that can be a big differentiator, what people call having "good taste", is really just knowing when to stop.
 <div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
     <img src="assets/aislop/sketch_painted_face.jpg" alt="Painted Face Sketch" loading="lazy">
     <img src="assets/aislop/sketch_painted_face2.PNG" alt="Painted Face AI 1" loading="lazy">
@@ -106,7 +106,7 @@ Many people have strong opinions about this. I don't really want to get into the
 
 I think it's the lack of effort that plays a big part into it. We value what we put effort into. If it's effortless, even if it's the most beautiful song or painting in the world it will feel empty.
 
-I think AI-assisted artifacts can certainly be art in the hands of people who are very skilled, and are willing to put in the effort to make something that rises above the baseline of "AI Slop" mediocrity. I think a good analogy is old action films. Any dumb action film now with 5% on Rotten Tomatoes would blow the best action movie from the 40s or 50s out of the water.
+I think AI-assisted artifacts can certainly be art in the hands of people who are very skilled, and are willing to put in the effort to make something that rises above the baseline of "AI Slop" mediocrity. I think a good analogy is old action films. Any dumb action film now with 5% on Rotten Tomatoes would blow the best action movie from the 40s or 50s out of the water. However those films were ground breaking for their time, and these new Michael Bay style action movies feel repetitivie.
 
 With the lowered barrier to entry, more people might try to do things they might have never attempted. We will probably get great software that would have never been built. Amazing stories that would not have been told, and beautiful paintings that would have never seen the light of day—forever stuck in the imagination of a person without the skills to make them.
 
