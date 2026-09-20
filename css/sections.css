@@ -15,6 +15,39 @@
     position: relative;
 }
 
+.splash-hero-center {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 1rem 3rem;
+}
+
+.splash-title {
+    font-size: clamp(3.5rem, 8vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.splash-subtitle {
+    font-family: var(--font-mono);
+    font-size: clamp(1.15rem, 2.5vw, 1.6rem);
+    color: var(--accent);
+    margin-bottom: 1.75rem;
+    font-weight: 600;
+}
+
+.splash-text {
+    font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+    color: var(--text-muted);
+    line-height: 1.8;
+    max-width: 680px;
+    margin: 0 auto 2.5rem;
+}
+
 .hero-status {
     display: inline-flex;
     align-items: center;

@@ -59,21 +59,15 @@
         <div id="home" class="tab-content active">
             <div class="home-container">
                 <!-- Hero Section -->
-                <header class="hero-section">
-                    <div class="hero-status">
-                        <span class="status-dot"></span>
-                        <span>Senior Software Engineer @ Audible (Amazon)</span>
-                    </div>
+                <header class="hero-section splash-hero-center">
+                    <h1 class="splash-title">Hi!</h1>
+                    <h2 class="splash-subtitle">Welcome to my website</h2>
 
-                    <h1 class="hero-title">
-                        Designing <span class="accent-text">high-throughput cloud systems</span>, ML pipelines, & creative experiments.
-                    </h1>
-
-                    <p class="hero-bio">
-                        Hi, I'm <strong>Arnaldo Garcia</strong>. I'm a Senior Software Engineer with <strong>9+ years</strong> of experience architecting distributed serverless systems, real-time data ingestion pipelines, and ML infrastructure at <strong>Amazon</strong> and <strong>Audible</strong>. Based in New Jersey, with an M.S. in Computer Science from <strong>Georgia Tech</strong>.
+                    <p class="splash-text">
+                        I have created this site as a way to share my thoughts, personal projects, bad jokes, and experiences with the world. Mostly as a "creative" outlet of sorts. Primarily focused around experiments with GenAI capabilities. It is also a place to put all the pictures of random trees I have been taking.
                     </p>
 
-                    <div class="hero-actions">
+                    <div class="hero-actions" style="justify-content: center;">
                         <a href="#blog" class="action-btn-primary">
                             <span>Read the Blog</span>
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -111,149 +105,7 @@
                             </a>
                         </div>
                     </div>
-
-                    <!-- Metric Highlights Strip -->
-                    <div class="metrics-strip">
-                        <div class="metric-item">
-                            <div class="metric-num">9<span>+</span></div>
-                            <div class="metric-label">Years of Experience</div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="metric-num">50M<span>+</span></div>
-                            <div class="metric-label">Products in ML Pipeline</div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="metric-num">Millions</div>
-                            <div class="metric-label">Daily Events Ingested</div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="metric-num">M.S.<span> CS</span></div>
-                            <div class="metric-label">Georgia Tech (ML & AI)</div>
-                        </div>
-                    </div>
                 </header>
-
-                <!-- Featured Systems Bento Grid -->
-                <section class="home-section">
-                    <div class="home-section-header">
-                        <div>
-                            <span class="section-eyebrow">Architecture & Scale</span>
-                            <h2 class="section-heading">Featured Production Systems</h2>
-                        </div>
-                        <a href="#about" class="section-link-more">
-                            <span>View Full Career Timeline</span>
-                            <span>→</span>
-                        </a>
-                    </div>
-
-                    <div class="bento-grid">
-                        <div class="bento-card bento-large">
-                            <div>
-                                <div class="bento-badge-row">
-                                    <span class="bento-badge">Real-Time Data Platform</span>
-                                    <span class="bento-metric">Millions Events / Day</span>
-                                </div>
-                                <h3 class="bento-title">Distributed Metrics Ingestion Pipeline</h3>
-                                <p class="bento-description">
-                                    Architected a serverless event ingestion engine at Audible handling millions of playback and interaction events across multiple teams. Leveraged Kinesis Firehose, Lambda micro-batching, and S3 Parquet partitioning to cut query latency by 75% while maintaining sub-second ingestion SLAs.
-                                </p>
-                            </div>
-                            <div class="tag-list" style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
-                                <span class="tag">AWS Kinesis</span>
-                                <span class="tag">AWS Lambda</span>
-                                <span class="tag">S3 Parquet</span>
-                                <span class="tag">Athena</span>
-                                <span class="tag">AWS CDK</span>
-                            </div>
-                        </div>
-
-                        <div class="bento-card bento-side">
-                            <div>
-                                <div class="bento-badge-row">
-                                    <span class="bento-badge">Machine Learning Infra</span>
-                                    <span class="bento-metric">50M+ Records</span>
-                                </div>
-                                <h3 class="bento-title">ML Remediation Engine</h3>
-                                <p class="bento-description">
-                                    Large-scale correction workflow using Apache Spark and AWS Step Functions to identify ML prediction errors across third-party product records at Amazon scale.
-                                </p>
-                            </div>
-                            <div class="tag-list" style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
-                                <span class="tag">Apache Spark</span>
-                                <span class="tag">Step Functions</span>
-                                <span class="tag">SageMaker</span>
-                            </div>
-                        </div>
-
-                        <div class="bento-card bento-standard">
-                            <div>
-                                <div class="bento-badge-row">
-                                    <span class="bento-badge">Speech AI & Data</span>
-                                    <span class="bento-metric">Sub-Second Alignment</span>
-                                </div>
-                                <h3 class="bento-title">Audio-Text Alignment Pipeline</h3>
-                                <p class="bento-description">
-                                    Automated ML dataset preparation system that synchronizes thousands of hours of spoken narration with manuscript text using AWS Transcribe and phonetic alignment algorithms.
-                                </p>
-                            </div>
-                            <div class="tag-list" style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
-                                <span class="tag">AWS Transcribe</span>
-                                <span class="tag">Python</span>
-                                <span class="tag">Speech AI</span>
-                                <span class="tag">ECS</span>
-                            </div>
-                        </div>
-
-                        <div class="bento-card bento-standard">
-                            <div>
-                                <div class="bento-badge-row">
-                                    <span class="bento-badge">State Orchestration</span>
-                                    <span class="bento-metric">Zero Downtime</span>
-                                </div>
-                                <h3 class="bento-title">Manuscript Revision State Machine</h3>
-                                <p class="bento-description">
-                                    Resilient distributed state machine orchestrating complex user edit migrations across versioned manuscript schemas in DynamoDB with transaction rollbacks and zero data loss.
-                                </p>
-                            </div>
-                            <div class="tag-list" style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
-                                <span class="tag">AWS Step Functions</span>
-                                <span class="tag">DynamoDB</span>
-                                <span class="tag">Event-Driven</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Latest Writing Section -->
-                <section class="home-section">
-                    <div class="home-section-header">
-                        <div>
-                            <span class="section-eyebrow">Writing & Insights</span>
-                            <h2 class="section-heading">From the Blog</h2>
-                        </div>
-                        <a href="#blog" class="section-link-more">
-                            <span>Browse All Posts</span>
-                            <span>→</span>
-                        </a>
-                    </div>
-
-                    <div class="blog-list" style="margin-top: 0;">
-                        <a href="#blog?post=the-art-of-ai-slop" class="blog-row">
-                            <div class="blog-date">Dec 15, 2025</div>
-                            <div class="blog-title">The Art of AI Slop</div>
-                            <div class="blog-tags-small">
-                                <span class="tag-small">AI Art</span>
-                            </div>
-                        </a>
-                        <a href="#blog?post=vibe-coding-a-personal-website" class="blog-row">
-                            <div class="blog-date">Jan 02, 2026</div>
-                            <div class="blog-title">Vibe coding a Personal Website</div>
-                            <div class="blog-tags-small">
-                                <span class="tag-small">Code</span>
-                            </div>
-                        </a>
-                    </div>
-                </section>
 
                 <!-- Random Trees & AI Experiments Gallery -->
                 <section class="home-section">
