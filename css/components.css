@@ -346,24 +346,26 @@ nav {
     }
 }
 
-/* Balance Beam Toggle (Work / Life) */
+/* Balance Beam Toggle (Work / Life) — Artisanal Precision Scale */
 .timeline-toggle-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2.5rem;
-    padding-top: 1rem;
+    margin-bottom: 1.75rem;
+    padding-top: 0.5rem;
 }
 
 .balance-container {
-    width: 210px;
-    height: 125px;
+    width: 280px;
+    height: 168px;
     cursor: pointer;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .balance-container:hover {
-    transform: scale(1.06);
+    transform: translateY(-2px);
 }
 
 .balance-svg {
@@ -372,74 +374,128 @@ nav {
     overflow: visible;
 }
 
+/* Central Beam Pivots at (130, 46) */
 .balance-beam-group {
-    transform-origin: 100px 50px;
-    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-    transform: rotate(-15deg);
+    transform-origin: 130px 46px;
+    transition: transform 0.78s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: rotate(-11.5deg);
+}
+
+/* Subtle hover teeter preview */
+.balance-container:hover .balance-beam-group {
+    transform: rotate(-9deg);
 }
 
 .balance-pan-assembly {
-    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition:
+        transform 0.78s cubic-bezier(0.34, 1.56, 0.64, 1),
+        color 0.35s ease,
+        filter 0.35s ease;
 }
 
+/* Counter-rotate pans at their exact suspension shackles so they hang level with gravity */
 .left-pan {
-    transform-origin: 45px 50px;
-    transform: rotate(15deg);
+    transform-origin: 52px 46px;
+    transform: rotate(11.5deg);
+    color: var(--accent);
+    filter: drop-shadow(0 6px 14px var(--accent-glow));
+}
+
+.balance-container:hover .left-pan {
+    transform: rotate(9deg);
 }
 
 .right-pan {
-    transform-origin: 155px 50px;
-    transform: rotate(15deg);
+    transform-origin: 208px 46px;
+    transform: rotate(11.5deg);
+    color: var(--text-muted);
+    opacity: 0.72;
 }
 
-/* Work Active State (Beam tilts right) */
+.balance-container:hover .right-pan {
+    transform: rotate(9deg);
+    opacity: 0.88;
+}
+
+/* Work Active State (Beam tilts right: Work pan drops down, Life pan rises) */
 .work-active .balance-beam-group {
-    transform: rotate(15deg);
+    transform: rotate(11.5deg);
+}
+
+.work-active .balance-container:hover .balance-beam-group {
+    transform: rotate(9deg);
 }
 
 .work-active .left-pan {
-    transform: rotate(-15deg);
+    transform: rotate(-11.5deg);
+    color: var(--text-muted);
+    filter: none;
+    opacity: 0.72;
+}
+
+.work-active .balance-container:hover .left-pan {
+    transform: rotate(-9deg);
+    opacity: 0.88;
 }
 
 .work-active .right-pan {
-    transform: rotate(-15deg);
+    transform: rotate(-11.5deg);
+    color: var(--accent);
+    filter: drop-shadow(0 6px 14px var(--accent-glow));
+    opacity: 1;
 }
 
-.pan-label,
-.pan-shape {
-    transition: all 0.3s;
+.work-active .balance-container:hover .right-pan {
+    transform: rotate(-9deg);
 }
 
-.emoji-label {
-    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+/* Dish, Cord, and Typography Transitions */
+.pan-rim,
+.pan-shape,
+.pan-cord,
+.pan-finial,
+.pan-text-label {
+    transition: all 0.35s ease;
+}
+
+.pan-text-label {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
     fill: currentColor;
 }
 
-/* Life Active: Left Pan Highlight */
-.left-pan .pan-label {
+/* Life Active (Default): Left Pan Highlight */
+.left-pan .pan-rim,
+.left-pan .pan-shape {
+    stroke: var(--accent);
+}
+
+.left-pan .pan-finial {
     fill: var(--accent);
 }
 
-.left-pan .pan-shape {
-    stroke: var(--accent);
-    stroke-width: 3;
-}
-
-.work-active .left-pan .pan-label {
-    fill: var(--text-muted);
-}
-
-.work-active .left-pan .pan-shape {
+.right-pan .pan-rim,
+.right-pan .pan-shape {
     stroke: var(--text-muted);
-    stroke-width: 2;
 }
 
 /* Work Active: Right Pan Highlight */
-.work-active .right-pan .pan-label {
-    fill: var(--accent);
+.work-active .left-pan .pan-rim,
+.work-active .left-pan .pan-shape {
+    stroke: var(--text-muted);
 }
 
+.work-active .left-pan .pan-finial {
+    fill: var(--text-muted);
+}
+
+.work-active .right-pan .pan-rim,
 .work-active .right-pan .pan-shape {
     stroke: var(--accent);
-    stroke-width: 3;
+}
+
+.work-active .right-pan .pan-finial {
+    fill: var(--accent);
 }

@@ -144,28 +144,115 @@
         <div id="about" class="tab-content">
             <div class="timeline-toggle-wrapper" id="balance-toggle-wrapper">
                 <div class="balance-container" title="Click to toggle Life / Work">
-                    <svg class="balance-svg" viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet">
-                        <!-- Base -->
-                        <path class="balance-base" d="M100 110 L120 110 L110 80 L90 80 L80 110 Z" fill="var(--text-muted)" opacity="0.4" />
-                        <rect x="98" y="50" width="4" height="60" fill="var(--text-muted)" opacity="0.4" />
+                    <svg class="balance-svg" viewBox="0 0 260 156" preserveAspectRatio="xMidYMid meet" aria-label="Toggle between Life and Work timeline">
+                        <!-- Calibration Scale Arc & Fulcrum Stand (Static) -->
+                        <g class="balance-stand">
+                            <!-- Soft Ground Shadow -->
+                            <ellipse cx="130" cy="144" rx="44" ry="3" fill="var(--text-muted)" opacity="0.15" />
 
-                        <!-- Rotating Beam Group -->
+                            <!-- Upper Calibration Protractor Arc -->
+                            <path d="M114 28 A 22 22 0 0 1 146 28" fill="none" stroke="var(--text-muted)" stroke-width="1" opacity="0.45" />
+                            <line x1="130" y1="21" x2="130" y2="26" stroke="var(--accent)" stroke-width="1.4" opacity="0.8" />
+                            <line x1="122" y1="23" x2="123" y2="26.5" stroke="var(--text-muted)" stroke-width="1" opacity="0.45" />
+                            <line x1="138" y1="23" x2="137" y2="26.5" stroke="var(--text-muted)" stroke-width="1" opacity="0.45" />
+                            <line x1="115" y1="26" x2="116.5" y2="29" stroke="var(--text-muted)" stroke-width="1" opacity="0.35" />
+                            <line x1="145" y1="26" x2="143.5" y2="29" stroke="var(--text-muted)" stroke-width="1" opacity="0.35" />
+
+                            <!-- Ornate Fulcrum Fork / Cradle -->
+                            <path d="M122 46 C122 33, 138 33, 138 46" fill="none" stroke="var(--text-muted)" stroke-width="1.5" opacity="0.65" />
+                            <circle cx="130" cy="18" r="1.8" fill="var(--text-muted)" opacity="0.55" />
+
+                            <!-- Lathe-Turned Central Pillar -->
+                            <path d="M126.2 128 L128.2 53 L131.8 53 L133.8 128 Z" fill="var(--text-muted)" opacity="0.45" />
+                            <!-- Decorative Turned Pillar Rings -->
+                            <rect x="125.5" y="56" width="9" height="2.5" rx="1.2" fill="var(--text-muted)" opacity="0.65" />
+                            <rect x="125" y="88" width="10" height="2.8" rx="1.4" fill="var(--text-muted)" opacity="0.65" />
+                            <rect x="122" y="125" width="16" height="3.5" rx="1.7" fill="var(--text-muted)" opacity="0.6" />
+
+                            <!-- Stepped Architectural Plinth Base -->
+                            <path d="M102 139 C105 131, 114 128.5, 130 128.5 C146 128.5, 155 131, 158 139 Z" fill="var(--text-muted)" opacity="0.38" stroke="var(--text-muted)" stroke-width="1" stroke-opacity="0.5" />
+                            <rect x="92" y="139" width="76" height="4.5" rx="2.2" fill="var(--text-muted)" opacity="0.55" />
+                        </g>
+
+                        <!-- Rotating Beam & Pans Group (Pivots at 130, 46) -->
                         <g class="balance-beam-group">
-                            <rect x="40" y="48" width="120" height="4" rx="2" fill="var(--text)" />
-                            <circle cx="100" cy="50" r="4" fill="var(--accent)" />
+                            <!-- Equilibrium Indicator Needle -->
+                            <path class="balance-needle" d="M128.4 44 L130 24 L131.6 44 Z" fill="var(--accent)" />
 
-                            <!-- Left Pan (Life) -->
+                            <!-- Sculpted Watchmaker's Tapered Beam -->
+                            <path class="balance-yoke" d="M48 46 L52 43.2 L117 41.2 C123 41.2, 125.5 38.5, 130 38.5 C134.5 38.5, 137 41.2, 143 41.2 L208 43.2 L212 46 L208 48.8 L143 50.8 C137 50.8, 134.5 53.5, 130 53.5 C125.5 53.5, 123 50.8, 117 50.8 L52 48.8 Z" fill="var(--card-bg)" stroke="var(--text)" stroke-width="1.6" />
+                            <!-- Inner Fluting Detail on Beam Arms -->
+                            <line x1="65" y1="46" x2="114" y2="46" stroke="var(--text-muted)" stroke-width="1" opacity="0.55" stroke-linecap="round" />
+                            <line x1="146" y1="46" x2="195" y2="46" stroke="var(--text-muted)" stroke-width="1" opacity="0.55" stroke-linecap="round" />
+
+                            <!-- Central Jeweled Pivot Bearing -->
+                            <circle cx="130" cy="46" r="5.5" fill="var(--card-bg)" stroke="var(--text)" stroke-width="1.6" />
+                            <circle cx="130" cy="46" r="2.4" fill="var(--accent)" />
+
+                            <!-- Terminal Pivot Shackles -->
+                            <circle cx="52" cy="46" r="2.8" fill="var(--card-bg)" stroke="var(--text)" stroke-width="1.5" />
+                            <circle cx="208" cy="46" r="2.8" fill="var(--card-bg)" stroke="var(--text)" stroke-width="1.5" />
+
+                            <!-- Left Pan Assembly: LIFE (Pivots at 52, 46) -->
                             <g class="balance-pan-assembly left-pan">
-                                <line x1="45" y1="50" x2="45" y2="90" stroke="var(--text-muted)" stroke-width="1" />
-                                <path class="pan-shape" d="M25 90 Q45 105 65 90" fill="none" stroke="var(--text)" stroke-width="2" />
-                                <text x="45" y="85" text-anchor="middle" class="pan-label emoji-label" font-size="24">🌴</text>
+                                <!-- Shackle Ring & 3 Suspension Cords -->
+                                <circle cx="52" cy="51" r="2" fill="none" stroke="var(--text-muted)" stroke-width="1.2" />
+                                <line class="pan-cord" x1="52" y1="53" x2="23" y2="96" stroke="var(--text-muted)" stroke-width="1.15" />
+                                <line class="pan-cord pan-cord-center" x1="52" y1="53" x2="52" y2="96" stroke="var(--text-muted)" stroke-width="0.85" stroke-dasharray="2 2" opacity="0.65" />
+                                <line class="pan-cord" x1="52" y1="53" x2="81" y2="96" stroke="var(--text-muted)" stroke-width="1.15" />
+
+                                <!-- Crafted Life Emblem: Botanical Palm & Sun -->
+                                <g class="pan-emblem">
+                                    <!-- Warm Sun Disc -->
+                                    <circle cx="58" cy="79" r="6.5" fill="var(--accent)" opacity="0.22" />
+                                    <circle cx="58" cy="79" r="6.5" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.7" />
+                                    <!-- Curved Palm Trunk -->
+                                    <path d="M47 93 Q44.5 81 51 70" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                    <!-- Sculpted Fronds -->
+                                    <path d="M51 70 Q39 71 35 77" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                    <path d="M51 70 Q41 63 35 66" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                    <path d="M51 70 Q59 62 66 66" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                    <path d="M51 70 Q62 70 65 76" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                    <!-- Island Horizon -->
+                                    <path d="M39 93.5 Q52 90.5 65 93.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                </g>
+
+                                <!-- Sculpted Scale Dish & Bottom Finial -->
+                                <ellipse class="pan-rim" cx="52" cy="96" rx="31" ry="3.2" fill="var(--card-bg)" stroke="var(--text)" stroke-width="1.6" />
+                                <path class="pan-shape" d="M21 96 C25 106.5, 79 106.5, 83 96" fill="var(--card-bg)" fill-opacity="0.7" stroke="var(--text)" stroke-width="1.8" stroke-linecap="round" />
+                                <path class="pan-finial" d="M49.5 104 L52 108 L54.5 104 Z" fill="var(--text-muted)" />
+
+                                <!-- Engraved Micro-Label -->
+                                <text x="52" y="121" text-anchor="middle" class="pan-text-label">LIFE</text>
                             </g>
 
-                            <!-- Right Pan (Work) -->
+                            <!-- Right Pan Assembly: WORK (Pivots at 208, 46) -->
                             <g class="balance-pan-assembly right-pan">
-                                <line x1="155" y1="50" x2="155" y2="90" stroke="var(--text-muted)" stroke-width="1" />
-                                <path class="pan-shape" d="M135 90 Q155 105 175 90" fill="none" stroke="var(--text)" stroke-width="2" />
-                                <text x="155" y="85" text-anchor="middle" class="pan-label emoji-label" font-size="24">👨🏻‍💻</text>
+                                <!-- Shackle Ring & 3 Suspension Cords -->
+                                <circle cx="208" cy="51" r="2" fill="none" stroke="var(--text-muted)" stroke-width="1.2" />
+                                <line class="pan-cord" x1="208" y1="53" x2="179" y2="96" stroke="var(--text-muted)" stroke-width="1.15" />
+                                <line class="pan-cord pan-cord-center" x1="208" y1="53" x2="208" y2="96" stroke="var(--text-muted)" stroke-width="0.85" stroke-dasharray="2 2" opacity="0.65" />
+                                <line class="pan-cord" x1="208" y1="53" x2="237" y2="96" stroke="var(--text-muted)" stroke-width="1.15" />
+
+                                <!-- Crafted Work Emblem: Precision Laptop & Code Prompt -->
+                                <g class="pan-emblem">
+                                    <!-- Laptop Display -->
+                                    <rect x="193" y="72.5" width="30" height="19" rx="2.2" fill="var(--card-bg)" stroke="currentColor" stroke-width="1.7" />
+                                    <!-- Code Prompt < / > -->
+                                    <polyline points="203.5,79 200,82 203.5,85" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <polyline points="212.5,79 216,82 212.5,85" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <line x1="209.5" y1="78" x2="206.5" y2="86" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" />
+                                    <!-- Laptop Base Deck -->
+                                    <path d="M188.5 91.5 L227.5 91.5 L225 94.5 L191 94.5 Z" fill="currentColor" opacity="0.85" />
+                                </g>
+
+                                <!-- Sculpted Scale Dish & Bottom Finial -->
+                                <ellipse class="pan-rim" cx="208" cy="96" rx="31" ry="3.2" fill="var(--card-bg)" stroke="var(--text)" stroke-width="1.6" />
+                                <path class="pan-shape" d="M177 96 C181 106.5, 235 106.5, 239 96" fill="var(--card-bg)" fill-opacity="0.7" stroke="var(--text)" stroke-width="1.8" stroke-linecap="round" />
+                                <path class="pan-finial" d="M205.5 104 L208 108 L210.5 104 Z" fill="var(--text-muted)" />
+
+                                <!-- Engraved Micro-Label -->
+                                <text x="208" y="121" text-anchor="middle" class="pan-text-label">WORK</text>
                             </g>
                         </g>
                     </svg>
