@@ -651,6 +651,625 @@
 }
 
 /* --------------------------------------------------
+   3D iPod Cover Flow & Camera Zoom Timeline
+-------------------------------------------------- */
+.cf-timeline-wrapper {
+    max-width: 1040px;
+    margin: 0 auto 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation: fadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cf-top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 0.75rem 1.25rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+}
+
+.cf-intro-compact {
+    flex: 1;
+    min-width: 240px;
+}
+
+.cf-intro-compact h2 {
+    font-size: 1.15rem !important;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 0.2rem 0 !important;
+}
+
+.cf-intro-compact p {
+    font-size: 0.9rem !important;
+    color: var(--text-muted);
+    margin: 0 !important;
+    line-height: 1.45;
+}
+
+.cf-mode-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem;
+    background: var(--secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+}
+
+.cf-mode-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.42rem 0.95rem;
+    border-radius: var(--radius-full);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.cf-mode-btn:hover {
+    color: var(--text);
+}
+
+.cf-mode-btn.active {
+    background: var(--accent);
+    color: var(--accent-text);
+    box-shadow: 0 2px 10px var(--accent-glow);
+}
+
+/* 3D Stage Viewport */
+.cf-stage-container {
+    position: relative;
+    width: 100%;
+    height: 410px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    background: radial-gradient(circle at 50% 60%, var(--accent-subtle) 0%, transparent 70%);
+    border: 1px solid var(--border);
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.cf-stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    perspective: 1100px;
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Individual 3D Album / Photo Card */
+.cf-card {
+    position: absolute;
+    width: 310px;
+    height: 310px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition:
+        transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.45s ease,
+        filter 0.45s ease;
+    will-change: transform, opacity, filter;
+    /* Classic iPod floor reflection */
+    -webkit-box-reflect: below 8px linear-gradient(transparent 72%, rgba(255, 255, 255, 0.16));
+}
+
+.cf-card-inner {
+    width: 100%;
+    height: 100%;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cf-card.active .cf-card-inner {
+    border-color: var(--accent);
+    box-shadow:
+        0 24px 55px rgba(0, 0, 0, 0.65),
+        0 0 25px var(--accent-glow);
+}
+
+.cf-card-media {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    overflow: hidden;
+    background: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cf-photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cf-card.active:hover .cf-photo-img {
+    transform: scale(1.04);
+}
+
+.cf-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #ffffff;
+    padding: 2.25rem;
+    display: block;
+}
+
+.cf-card-year-pill {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-full);
+    background: rgba(10, 10, 14, 0.78);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.cf-multi-photo-dots {
+    position: absolute;
+    bottom: 0.65rem;
+    left: 0.65rem;
+    display: flex;
+    gap: 0.35rem;
+    z-index: 4;
+}
+
+.cf-photo-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(10, 10, 14, 0.78);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.cf-photo-dot.active,
+.cf-photo-dot:hover {
+    background: var(--accent);
+    color: var(--accent-text);
+    border-color: var(--accent);
+    transform: scale(1.1);
+}
+
+.cf-zoom-trigger {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(10, 10, 14, 0.72);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.25s ease;
+}
+
+.cf-card.active .cf-zoom-trigger {
+    opacity: 0.85;
+    transform: scale(1);
+}
+
+.cf-card.active .cf-zoom-trigger:hover {
+    opacity: 1;
+    background: var(--accent);
+    color: var(--accent-text);
+    border-color: var(--accent);
+}
+
+.cf-card-footer {
+    padding: 0.75rem 1rem;
+    background: var(--card-bg);
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.cf-card-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+/* Stage Left / Right Navigation Arrows */
+.cf-nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 200;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-smooth);
+}
+
+.cf-nav-arrow:hover:not(:disabled) {
+    background: var(--accent);
+    color: var(--accent-text);
+    border-color: var(--accent);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.cf-nav-arrow:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+}
+
+.cf-prev {
+    left: 1.25rem;
+}
+
+.cf-next {
+    right: 1.25rem;
+}
+
+/* iPod-Style Horizontal Year Scrubber Bar */
+.cf-scrubber-bar {
+    position: relative;
+    padding: 0.75rem 1.5rem 0.25rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+}
+
+.cf-scrubber-track {
+    position: absolute;
+    top: 1.45rem;
+    left: 2.5rem;
+    right: 2.5rem;
+    height: 3px;
+    background: var(--border);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.cf-scrubber-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent-glow);
+    transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cf-scrubber-markers {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cf-year-dot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.45rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem 0.4rem;
+    color: var(--text-muted);
+    transition: var(--transition-fast);
+}
+
+.cf-dot-pip {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary);
+    border: 2px solid var(--border);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cf-year-dot.passed .cf-dot-pip {
+    border-color: var(--accent);
+    background: var(--secondary);
+}
+
+.cf-year-dot.active .cf-dot-pip {
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 12px var(--accent-glow);
+    transform: translateY(-2px);
+}
+
+.cf-dot-label {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.cf-year-dot:hover .cf-dot-label,
+.cf-year-dot.active .cf-dot-label {
+    color: var(--accent);
+}
+
+.cf-year-dot.active .cf-dot-label {
+    font-weight: 800;
+    transform: scale(1.08);
+}
+
+/* Story Readout Card Below Stage */
+.cf-story-readout {
+    min-height: 220px;
+}
+
+.cf-story-animate {
+    animation: cfStoryFade 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes cfStoryFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cf-story-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2rem 2.25rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.cf-story-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+}
+
+.cf-story-title-group {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.cf-story-year {
+    font-family: var(--font-mono);
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--accent);
+}
+
+.cf-story-title {
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.cf-story-counter {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    padding: 0.25rem 0.65rem;
+    background: var(--secondary);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border);
+}
+
+.cf-story-caption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-family: var(--font-mono);
+    font-size: 0.84rem;
+    color: var(--accent);
+    background: var(--accent-subtle);
+    border: 1px solid var(--border);
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 1.25rem;
+}
+
+.cf-caption-switcher {
+    display: inline-flex;
+    gap: 0.4rem;
+}
+
+.cf-caption-pill {
+    padding: 0.2rem 0.65rem;
+    border-radius: var(--radius-full);
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.cf-caption-pill.active,
+.cf-caption-pill:hover {
+    background: var(--accent);
+    color: var(--accent-text);
+    border-color: var(--accent);
+}
+
+.cf-story-body {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+}
+
+.cf-story-body p {
+    margin-bottom: 1rem;
+}
+
+.cf-story-body p:last-child {
+    margin-bottom: 0;
+}
+
+.cf-story-blurb-wrap .milestone-blurb {
+    margin-top: 1.5rem;
+}
+
+/* Fullscreen Photo Zoom Lightbox */
+.cf-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(5, 5, 8, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cf-lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.cf-lightbox-content {
+    max-width: 90vw;
+    max-height: 86vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transform: scale(0.92);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cf-lightbox.active .cf-lightbox-content {
+    transform: scale(1);
+}
+
+#cf-lightbox-img {
+    max-width: 100%;
+    max-height: 75vh;
+    width: auto;
+    height: auto;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75);
+    object-fit: contain;
+    background: #fff;
+}
+
+.cf-lightbox-caption {
+    text-align: center;
+    color: #f4f4f6;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 650px;
+}
+
+.cf-lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.75rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.cf-lightbox-close:hover {
+    background: var(--accent);
+    color: var(--accent-text);
+    transform: scale(1.08);
+}
+
+
+/* --------------------------------------------------
    Blog Styles
 -------------------------------------------------- */
 .blog-list {

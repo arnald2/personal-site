@@ -26,12 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (aboutContainer) {
-        // Initial render (Work timeline by default)
-        renderTimeline(true);
+        // Initial render (Life timeline with photos by default)
+        renderTimeline(false);
 
         // Toggle listener
         const balanceToggle = document.getElementById('balance-toggle-wrapper');
-        let isWorkActive = true; // Default to Work
+        let isWorkActive = false; // Default to Life photos
 
         if (balanceToggle) {
             balanceToggle.addEventListener('click', () => {
