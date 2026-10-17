@@ -205,6 +205,110 @@ nav {
     box-shadow: var(--shadow-sm);
 }
 
+/* Artisanal Watchmaker's Rotary Tag Selector (Blog) */
+.blog-instrument-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -0.75rem auto 2rem;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.blog-dial-container {
+    width: 100%;
+    max-width: 520px;
+}
+
+.blog-dial-svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    display: block;
+}
+
+.blog-gauge-tick {
+    stroke: var(--text-muted);
+    stroke-width: 1;
+    opacity: 0.28;
+}
+
+.blog-gauge-tick-major {
+    stroke: var(--accent);
+    stroke-width: 1.6;
+    opacity: 0.75;
+}
+
+/* Rotary Turret & Breguet Needle Pivots at (250, 142) */
+.blog-dial-rotor {
+    transform-origin: 250px 142px;
+    transition: transform 0.78s cubic-bezier(0.34, 1.56, 0.64, 1);
+    will-change: transform;
+}
+
+.blog-dial-needle {
+    filter: drop-shadow(0 0 8px var(--accent-glow));
+}
+
+/* Interactive Topic Stations Around the Protractor Arc */
+.blog-tag-station {
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: color 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+    opacity: 0.72;
+    outline: none;
+}
+
+.blog-tag-station:hover {
+    color: var(--text);
+    opacity: 0.95;
+}
+
+.blog-tag-station.active {
+    color: var(--accent);
+    opacity: 1;
+    filter: drop-shadow(0 4px 12px var(--accent-glow));
+}
+
+.station-pip {
+    fill: var(--card-bg);
+    stroke: var(--border);
+    stroke-width: 1.5;
+    transition: all 0.3s ease;
+}
+
+.blog-tag-station:hover .station-pip {
+    stroke: var(--text);
+}
+
+.blog-tag-station.active .station-pip {
+    fill: var(--accent);
+    stroke: var(--accent);
+    r: 4.5px;
+}
+
+.station-emblem {
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.blog-tag-station:hover .station-emblem {
+    transform: scale(1.1);
+}
+
+.station-label {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    fill: currentColor;
+}
+
+.station-count {
+    font-weight: 500;
+    opacity: 0.7;
+    font-size: 8.5px;
+}
+
 /* Content Cards */
 .card {
     background: var(--card-bg);
