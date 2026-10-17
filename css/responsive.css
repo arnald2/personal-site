@@ -87,32 +87,6 @@
     .contact-info-card {
         padding: 1.5rem;
     }
-
-    .cf-stage-container {
-        height: 330px;
-    }
-
-    .cf-card {
-        width: 240px;
-        height: 245px;
-    }
-
-    .cf-scrubber-bar {
-        padding: 0.65rem 0.75rem 0.25rem;
-        overflow-x: auto;
-    }
-
-    .cf-story-card {
-        padding: 1.5rem;
-    }
-
-    .cf-story-title {
-        font-size: 1.3rem;
-    }
-
-    .cf-story-year {
-        font-size: 1.4rem;
-    }
 }
 
 @media (max-width: 480px) {
@@ -128,28 +102,6 @@
     .action-btn-primary,
     .action-btn-secondary {
         justify-content: center;
-    }
-
-    .cf-stage-container {
-        height: 290px;
-    }
-
-    .cf-card {
-        width: 205px;
-        height: 215px;
-    }
-
-    .cf-nav-arrow {
-        width: 36px;
-        height: 36px;
-    }
-
-    .cf-prev {
-        left: 0.5rem;
-    }
-
-    .cf-next {
-        right: 0.5rem;
     }
 }
 
