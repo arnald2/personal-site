@@ -946,6 +946,344 @@
     color: var(--text);
 }
 
+.blog-post-content iframe {
+    max-width: 100%;
+    border-radius: var(--radius-md);
+    display: block;
+}
+
+.blog-post-content .media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0 2.5rem;
+}
+
+.blog-post-content .media-grid > div {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-md) !important;
+    overflow: hidden;
+    padding: 0.85rem !important;
+    transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.blog-post-content .media-grid > div:hover {
+    border-color: var(--accent) !important;
+}
+
+.blog-post-content .media-grid img {
+    margin: 0 !important;
+    border: none !important;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: calc(var(--radius-md) - 4px);
+}
+
+/* --------------------------------------------------
+   "Bark" — Morphing Vector & Atmosphere Blog Experience
+-------------------------------------------------- */
+body.bark-mode-active {
+    --primary: var(--bark-bg, #0d160e);
+    --secondary: var(--bark-surface, rgba(18, 33, 20, 0.78));
+    --card-bg: var(--bark-surface, rgba(18, 33, 20, 0.78));
+    --border: var(--bark-border, rgba(120, 196, 86, 0.28));
+    --accent: var(--bark-accent, #80e055);
+    --accent-glow: var(--bark-glow, rgba(128, 224, 85, 0.22));
+    --text: var(--bark-text, #eef7ea);
+    --text-muted: var(--bark-muted, #9ab892);
+    background-color: var(--bark-bg, #0d160e) !important;
+    background-image: radial-gradient(
+        circle at 50% 38%,
+        var(--bark-glow, rgba(128, 224, 85, 0.2)) 0%,
+        transparent 72%
+    ) !important;
+    color: var(--bark-text, #eef7ea);
+    transition: background-color 0.75s cubic-bezier(0.22, 1, 0.36, 1), color 0.55s ease;
+}
+
+body.bark-mode-active::before {
+    opacity: 0.25;
+}
+
+/* Full-Viewport Fixed Vector Stage Behind the Blog */
+.bark-ambient-stage {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.bark-stage-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.bark-bg-layer {
+    opacity: 0;
+    transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity;
+}
+
+.bark-bg-layer.active {
+    opacity: 1;
+}
+
+.bark-bg-layer .warp-group-a,
+.bark-bg-layer .warp-group-b {
+    transition: transform 0.14s ease-out;
+    will-change: transform;
+}
+
+/* Floating Bottom-Right Bark Specimen HUD Pill */
+.bark-floating-hud {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 25;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+    background: var(--bark-surface, rgba(15, 23, 18, 0.82));
+    border: 1px solid var(--bark-border, rgba(128, 224, 85, 0.35));
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45), 0 0 18px var(--bark-glow, rgba(128, 224, 85, 0.18));
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--bark-text, #f4f4f7);
+    pointer-events: none;
+    transition: background 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease, color 0.6s ease;
+}
+
+.bark-hud-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--bark-accent, #80e055);
+    box-shadow: 0 0 10px var(--bark-accent, #80e055);
+    transition: background 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Widen the single-post container in Bark mode so photos and side vectors breathe */
+body.bark-mode-active .blog-post-header,
+body.bark-mode-active .blog-post-content {
+    max-width: 880px;
+    position: relative;
+    z-index: 2;
+}
+
+.bark-experience-intro {
+    background: var(--bark-surface, rgba(18, 33, 20, 0.72));
+    border: 1px solid var(--bark-border, rgba(128, 224, 85, 0.25));
+    border-radius: var(--radius-lg);
+    padding: 1.75rem 2rem;
+    margin-bottom: 3.5rem;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.45);
+    transition: background 0.65s ease, border-color 0.65s ease;
+}
+
+.bark-experience-intro .bark-lead {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--bark-text, var(--text));
+    margin-bottom: 1rem;
+}
+
+.bark-experience-intro p:last-child {
+    margin-bottom: 0;
+}
+
+.bark-gallery-stream {
+    display: flex;
+    flex-direction: column;
+    gap: 6.5rem;
+    padding-bottom: 5rem;
+}
+
+.bark-specimen {
+    scroll-margin-top: 6rem;
+    perspective: 1000px;
+}
+
+.bark-specimen-card {
+    background: var(--bark-surface, rgba(18, 24, 20, 0.78));
+    border: 1px solid var(--bark-border, rgba(255, 255, 255, 0.14));
+    border-radius: 20px;
+    padding: 1.85rem;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow:
+        0 24px 55px -15px rgba(0, 0, 0, 0.6),
+        0 0 42px -8px var(--bark-glow, rgba(128, 224, 85, 0.18));
+    transform: scale(0.965) translateY(10px);
+    opacity: 0.78;
+    transition:
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.65s ease,
+        background-color 0.65s ease,
+        border-color 0.65s ease,
+        box-shadow 0.65s ease;
+}
+
+.bark-specimen.in-focus .bark-specimen-card {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+.bark-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    padding-bottom: 1.35rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--bark-border, rgba(255, 255, 255, 0.12));
+    transition: border-color 0.65s ease;
+}
+
+.bark-specimen-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1 1 240px;
+}
+
+.bark-specimen-num {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--bark-accent, var(--accent));
+    transition: color 0.5s ease;
+}
+
+.blog-post-content .bark-specimen-title {
+    font-size: 1.65rem;
+    font-weight: 800;
+    margin: 0.1rem 0 0.15rem;
+    padding-bottom: 0;
+    color: var(--bark-text, var(--text));
+    letter-spacing: -0.02em;
+}
+
+.blog-post-content .bark-specimen-title::after {
+    display: none;
+}
+
+.bark-specimen-subtitle {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--bark-muted, var(--text-muted));
+}
+
+/* Extracted Bark Color Swatches */
+.bark-swatch-strip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.28);
+    border: 1px solid var(--bark-border, rgba(255, 255, 255, 0.12));
+}
+
+.bark-swatch-strip span {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Bespoke Vector Bark Study Badge in Header */
+.bark-badge-wrap {
+    flex-shrink: 0;
+}
+
+.bark-vector-badge {
+    width: 112px;
+    height: 60px;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    transition: transform 0.35s ease;
+}
+
+.bark-specimen-card:hover .bark-vector-badge {
+    transform: scale(1.05);
+}
+
+/* Photograph Frame */
+.bark-media-frame {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--bark-border, rgba(255, 255, 255, 0.14));
+    box-shadow: 0 14px 34px -8px rgba(0, 0, 0, 0.55);
+}
+
+.blog-post-content .bark-media-frame img {
+    margin: 0 !important;
+    border: none !important;
+    width: 100%;
+    max-height: 76vh;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bark-specimen-card:hover .bark-media-frame img {
+    transform: scale(1.018);
+}
+
+.bark-card-footer {
+    margin-top: 1.35rem;
+    padding-top: 1.1rem;
+    border-top: 1px dashed var(--bark-border, rgba(255, 255, 255, 0.12));
+}
+
+.blog-post-content .bark-card-footer p {
+    margin-bottom: 0;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: var(--bark-text, var(--text));
+    opacity: 0.92;
+}
+
+@media (max-width: 768px) {
+    .bark-gallery-stream {
+        gap: 4rem;
+    }
+
+    .bark-specimen-card {
+        padding: 1.25rem;
+    }
+
+    .bark-floating-hud {
+        bottom: 1rem;
+        right: 1rem;
+        font-size: 0.66rem;
+        padding: 0.45rem 0.8rem;
+    }
+}
+
 /* --------------------------------------------------
    Contact Section
 -------------------------------------------------- */

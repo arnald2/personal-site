@@ -28,6 +28,8 @@ function handleRoute() {
             const activeTag = tagMatch ? decodeURIComponent(tagMatch[1]) : 'All';
             if (typeof showBlogList === 'function') showBlogList(activeTag);
         }
+    } else if (typeof window.cleanupBarkExperience === 'function') {
+        window.cleanupBarkExperience();
     }
 
     // Scroll to top if mostly a page change
