@@ -23,7 +23,7 @@ Here is a showcase of real photographs enhanced and reimagined into painterly st
 
 ### 1. Cardinal Dot
 
-Last winter i saw a beutiful cardianad perched on the neighbors snow covered evergreen tree. I quickly ran to capture the beutiful contrast of the caridnals bright red surrounded by the white snow. When i looked at the picture, i was disapointed, as it has ofeten happend in the past, when i take a moon photo, the photo does not do justice to what my eyes see. So i decided to try the old enhance, enhance, ehnhance technique with AI to see if i could get it to match my view, and i think it did a descent job. 
+Last winter I saw a beautiful cardinal perched on the neighbor's snow-covered evergreen tree. I quickly ran to capture the contrast of the cardinal's bright red feathers surrounded by the white snow. When I looked at the picture, I was disappointed—just like when I try to take a photo of the moon, the camera didn't do justice to what my eyes actually saw. So I decided to try the old "enhance, enhance, enhance" technique with AI to see if I could get it to match my view, and I think it did a decent job.
 
 <div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0 2.5rem;">
     <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; overflow: hidden; padding: 0.75rem;">
@@ -43,7 +43,7 @@ Last winter i saw a beutiful cardianad perched on the neighbors snow covered eve
 ### 2. Coastal Wildflowers (Carmel Beach)
 **Real Photo vs. AI Impressionist Painting**
 
-One of my favorite places on earth is Carmel Beach. The beautiful white sand beaches, landscape and houses make for some incredible photos. I probably have thousands of pictures over all my visits while living in the bay area. This picture of a vibrant field of purple Pride of Madeira overlooking the Pacific surf at Carmel Beach is one of my favorites. 
+One of my favorite places on earth is Carmel Beach. The white sand beaches, landscape, and houses make for some incredible photos—I probably have thousands of pictures from all my visits while living in the Bay Area. This picture of a vibrant field of purple Pride of Madeira overlooking the Pacific surf at Carmel Beach is one of my favorites.
 
 <div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0 2.5rem;">
     <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; overflow: hidden; padding: 0.75rem;">
@@ -63,7 +63,7 @@ One of my favorite places on earth is Carmel Beach. The beautiful white sand bea
 ### 3. Sunrise Over the Lake
 **Misty Morning: Optical Capture to Digital Canvas**
 
-Another old picture i like a lot of an early morning mist rising over a tranquil Adirondack lake as the rising sun reflects across glassy water.
+Another old picture I like a lot, capturing early morning mist rising over a tranquil Adirondack lake as the rising sun reflects across the glassy water.
 
 <div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0 2.5rem;">
     <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; overflow: hidden; padding: 0.75rem;">
@@ -80,20 +80,20 @@ Another old picture i like a lot of an early morning mist rising over a tranquil
 
 ---
 
-### 4. Flamingoes in the Snow
+### 4. Flamingos in the Snow
 **Tropical Birds in Winter Wonder**
 
-A rather surreal contrast seeing vibrant pink flamingoes gathered by icy waters with fresh white snow blanketing the foreground. The AI painting renders this unusual moment into a rich oil composition, capturing the feathery warmth against the cool, thick strokes of snow.
+A rather surreal contrast seeing vibrant pink flamingos gathered by icy waters with fresh white snow blanketing the foreground. The AI painting renders this unusual moment into a rich oil composition, capturing the feathery warmth against the cool, thick strokes of snow.
 
 <div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0 2.5rem;">
     <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; overflow: hidden; padding: 0.75rem;">
         <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; margin-bottom: 0.5rem;">📷 Real Photo</div>
-        <img src="assets/Enhance/famingoes_in_the_snow_pic.JPG" alt="Flamingoes in the Snow Real Photo" loading="lazy" style="width: 100%; border-radius: 6px; display: block;">
+        <img src="assets/Enhance/famingoes_in_the_snow_pic.JPG" alt="Flamingos in the Snow Real Photo" loading="lazy" style="width: 100%; border-radius: 6px; display: block;">
         <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.6rem; line-height: 1.4;">Flamingo flock in winter snow.</p>
     </div>
     <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; overflow: hidden; padding: 0.75rem;">
         <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #38bdf8; margin-bottom: 0.5rem;">✨ AI Enhanced</div>
-        <img src="assets/Enhance/flamingoes_in_the_snow_painting.PNG" alt="Flamingoes in the Snow AI Painting" loading="lazy" style="width: 100%; border-radius: 6px; display: block;">
+        <img src="assets/Enhance/flamingoes_in_the_snow_painting.PNG" alt="Flamingos in the Snow AI Painting" loading="lazy" style="width: 100%; border-radius: 6px; display: block;">
         <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.6rem; line-height: 1.4;">Oil painting interpretation with thick impasto palette knife textures.</p>
     </div>
 </div>
@@ -140,7 +140,7 @@ A close-up black-and-white study of lush tropical banana and palm leaves overlap
 
 ---
 
-### In Conclusion
+### In Closing
 
-I really have been enjoying mixing A.I with real photos I have taken. It can work both as a second chance to unblock the original potential seen in the photographer's mind, but not quite captured by actual photograp, and also allows for adding playful subtle, or not so subtle elements to a picutre. 
+I have really been enjoying mixing AI with real photos I've taken. It works both as a second chance to unlock the original potential seen in the photographer's mind—when it wasn't quite captured by the actual photograph—and also allows for adding playful, subtle (or not-so-subtle) elements to a picture. Sometimes I actually prefer the original photo. For example, in this case I like the photo of the flamingos more, as the picture's sharpness shows off the coldness of the day better. I also think the original picture from Carmel is better than the "painting" version, since I feel it better captures the haze that frequently seems to permeate the beach. It gives it those unique Northern California cool beach vibes that are distinct from the warm beaches I am used to in South Florida and the Caribbean.
 

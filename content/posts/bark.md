@@ -3,15 +3,15 @@ title: Bark
 date: Oct 18, 2026
 readTime: 6 min
 tags: [Photography]
-excerpt: "As promised on the home page: a place to put all the pictures of random trees I have been taking — where the site itself morphs to match the bark."
+excerpt: "As advertised: this blog is a place to put all the pictures of random trees I've been taking."
 ---
 
 <div class="bark-experience-intro">
 <p class="bark-lead">
-On the home page, I mentioned that this site is partly an excuse to have a place for all the pictures of random trees I have been taking. Most people look at the canopy when they take a picture of a tree. I usually end up staring at the bark.
+From ages 5 to 22, I don't remember giving trees much thought. Then over the last 15 years I have slowly gotten more and more obsessed with them. It started when i moved to the D.C area after college. I had never experienced real fall and spring before. Coming from South Florida, we just have hot and hotter season. I had moved in early February, and snow had quickly lost it's novelty on me after having to dig my car out for the 4th time. I was starting to think i had made a huge mistake moving. But then the  spring came—and all the cherry blossoms bloomed, and the city came alive with activity, and i startd to feel better about my decision. 
 </p>
 <p>
-Up close, tree bark stops looking like "wood" and starts looking like alien armor, topographic maps, oil paintings, or gothic architecture. As you scroll down through these eight trees, the vector geometry and atmosphere of the entire page will warp and morph to match the bark in front of you.
+Then in California, my love of trees went to another level. The coastal redwoods are just in a league of their own when it comes to trees. Walking among the massive red trunks, soft mulchy forest grounds, and fern undergrowth will forever be my happy place. Finally, after moving back to the East Coast and buying my first home, I got even more into trees as I tried to add some shade and landscaping to my barren backyard. I wish I could plant a billion trees—sadly, I think I already ran out of space after planting about seven skinny trees. Still, the search for the perfect trees has really awakened a new passion of mine.
 </p>
 </div>
 
@@ -36,7 +36,7 @@ Up close, tree bark stops looking like "wood" and starts looking like alien armo
 </div>
 <div class="bark-card-footer">
 <p>
-A young trunk completely studded in conical, rose-like thorns over a bright chlorophyll-green cortex—probably evolved to keep climbing mammals off, though clearly the vines didn't get the memo. The contrast between the sharp geometric cones and the fluid, weaving ochre roots looks like something straight out of a fantasy illustration.
+This young Ceiba trunk at the Naples Botanical Garden is covered in what looks like armor plating. The bright green bark is completely studded in conical, rose-like thorns—probably evolved to keep climbing mammals off, though clearly the vines didn't get the memo.
 </p>
 </div>
 </div>
@@ -62,7 +62,7 @@ A young trunk completely studded in conical, rose-like thorns over a bright chlo
 </div>
 <div class="bark-card-footer">
 <p>
-Zero saturation slider required. As the outer grey strips shed in vertical ribbons, the freshly exposed inner bark flashes electric lime green before oxidizing through cinnamon red, burnt orange, and violet-brown.
+As mentioned, I grew up in South Florida, but I never noticed these trees until a recent visit back home. The outer grey strips shed in vertical ribbons, revealing freshly exposed inner bark that flashes electric lime green before oxidizing through cinnamon red, burnt orange, and violet-brown. Zero saturation slider required.
 </p>
 </div>
 </div>
@@ -88,7 +88,7 @@ Zero saturation slider required. As the outer grey strips shed in vertical ribbo
 </div>
 <div class="bark-card-footer">
 <p>
-Everywhere an old lower branch self-prunes on an aspen, the chalk-white bark heals around the knot in a dark, almond-shaped scar that looks unmistakably like a staring eye. Walk through an aspen grove in late October with the yellow leaves blurred in the foreground and it feels like the whole woods is quietly keeping tabs on you.
+A picture from my recent trip to Colorado—I probably took a thousand pictures of the aspen trees, and this one is my favorite. Everywhere an old lower branch drops off an aspen, the chalk-white bark heals around the knot in a dark, almond-shaped scar that looks like a staring eye. Walk through an aspen grove in October with the yellow leaves blurred in the background, and it feels like the whole woods is quietly watching you.
 </p>
 </div>
 </div>
@@ -114,7 +114,7 @@ Everywhere an old lower branch self-prunes on an aspen, the chalk-white bark hea
 </div>
 <div class="bark-card-footer">
 <p>
-Stand with your camera pressed right against the base of an old deciduous trunk and point straight up: the braided, two-inch-deep bark furrows turn into mountain ranges converging at a single vanishing point in the sky.
+On every vacation I go on, I probably end up with about five close-up pictures of tree bark from this angle. I particularly love this kind of tree—the deep textures look like mountains and valleys from this perspective.
 </p>
 </div>
 </div>
@@ -166,7 +166,7 @@ Stepping inside a living redwood that was hollowed out by forest fires centuries
 </div>
 <div class="bark-card-footer">
 <p>
-From the outside, the fibrous, foot-thick bark of an old-growth giant twists upward like braided cables supporting massive burls high up on the trunk.
+From the outside, the fibrous, foot-thick bark of an old-growth giant twists upward like braided cables supporting massive burls high up on the trunk. Against the grey skies of a cold Northern California winter, the pillar shape evokes a sense of Gothic architecture, and the spiraling fibers look like buttresses holding up the sky.
 </p>
 </div>
 </div>
@@ -192,7 +192,7 @@ From the outside, the fibrous, foot-thick bark of an old-growth giant twists upw
 </div>
 <div class="bark-card-footer">
 <p>
-When a tree grows slowly enough over hundreds of years, wood stops looking rigid and starts looking like a viscous liquid—folding over itself like cooled pahoehoe lava or melted wax.
+I visited Mallorca in 2025, and one of my favorite things there was the massive, twisted bark of the old olive trees. It almost reminds me of a dark children's fantasy novel. When a tree grows slowly enough over hundreds of years, wood stops looking rigid and starts looking like a thick liquid—folding over itself like cooled lava or melted wax.
 </p>
 </div>
 </div>
@@ -218,7 +218,7 @@ When a tree grows slowly enough over hundreds of years, wood stops looking rigid
 </div>
 <div class="bark-card-footer">
 <p>
-Water-resistant paper-birch bark is famously the last part of the tree to rot—long after the inner heartwood has hollowed out into a dark tunnel, the white outer cylinder holds its shape while radial checks fan around the rim and new forest-floor shoots spring up right at the entrance.
+A picture taken on a cold December morning walk in the woods in Virginia in 2024. Water-resistant paper-birch bark is famously the last part of the tree to rot—long after the inner heartwood has hollowed out into a dark tunnel, the white outer cylinder holds its shape while radial cracks fan around the rim and new forest-floor shoots spring up right at the entrance.
 </p>
 </div>
 </div>
