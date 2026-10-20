@@ -7,7 +7,7 @@ excerpt: "As advertised: this blog is a place to put all the pictures of random 
 ---
 
 <div class="bark-experience-intro">
-<p class="bark-lead">
+<p>
 From ages 5 to 22, I don't remember giving trees much thought. Then over the last 15 years I have slowly gotten more and more obsessed with them. It started when i moved to the D.C area after college. I had never experienced real fall and spring before. Coming from South Florida, we just have hot and hotter season. I had moved in early February, and snow had quickly lost it's novelty on me after having to dig my car out for the 4th time. I was starting to think i had made a huge mistake moving. But then the  spring came—and all the cherry blossoms bloomed, and the city came alive with activity, and i startd to feel better about my decision. 
 </p>
 <p>
