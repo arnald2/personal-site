@@ -497,12 +497,6 @@ function buildFullViewportBarkSVG() {
     return `
         <svg class="bark-stage-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
             <defs>
-                <!-- Subtle Organic Bark Warp Filter -->
-                <filter id="bark-organic-warp" x="-10%" y="-10%" width="120%" height="120%">
-                    <feTurbulence id="bark-turbulence" type="fractalNoise" baseFrequency="0.004 0.008" numOctaves="2" result="noise" />
-                    <feDisplacementMap id="bark-displacement" in="SourceGraphic" in2="noise" scale="18" xChannelSelector="R" yChannelSelector="G" />
-                </filter>
-
                 <radialGradient id="oculus-center-glow" cx="50%" cy="50%" r="45%">
                     <stop offset="0%" stop-color="#6ee7b7" stop-opacity="0.38"/>
                     <stop offset="35%" stop-color="#e0723c" stop-opacity="0.22"/>
@@ -517,7 +511,7 @@ function buildFullViewportBarkSVG() {
             </defs>
 
             <!-- 01: THORNS & VINES LAYER -->
-            <g class="bark-bg-layer active" data-layer="thorns" filter="url(#bark-organic-warp)">
+            <g class="bark-bg-layer active" data-layer="thorns">
                 <!-- Chlorophyll Vertical Bark Striations -->
                 <g opacity="0.25" stroke="#4d8c3a" stroke-width="2" stroke-dasharray="18 10">
                     <line x1="120" y1="0" x2="120" y2="900"/>
@@ -539,7 +533,7 @@ function buildFullViewportBarkSVG() {
             </g>
 
             <!-- 02: RAINBOW EUCALYPTUS LAYER -->
-            <g class="bark-bg-layer" data-layer="rainbow" filter="url(#bark-organic-warp)">
+            <g class="bark-bg-layer" data-layer="rainbow">
                 <g class="warp-group-a" opacity="0.36">
                     <path d="M40,-100 C95,220 -10,560 55,1000 L175,1000 C115,560 215,220 160,-100 Z" fill="#5b6059"/>
                     <path d="M175,-100 C235,240 130,580 190,1000 L275,1000 C215,580 315,240 255,-100 Z" fill="#8ec947"/>
@@ -609,7 +603,7 @@ function buildFullViewportBarkSVG() {
             </g>
 
             <!-- 06: CATHEDRAL REDWOOD BUTTRESS LAYER -->
-            <g class="bark-bg-layer" data-layer="cathedral" filter="url(#bark-organic-warp)">
+            <g class="bark-bg-layer" data-layer="cathedral">
                 <g class="warp-group-a" fill="none" stroke-linecap="round" opacity="0.42">
                     <path d="M60,920 C140,620 340,420 560,40" stroke="#c86432" stroke-width="4.5"/>
                     <path d="M180,920 C250,640 420,440 620,40" stroke="#e07a47" stroke-width="3"/>
@@ -626,7 +620,7 @@ function buildFullViewportBarkSVG() {
             </g>
 
             <!-- 07: GNARLED MOLTEN BURL TOPOGRAPHY LAYER -->
-            <g class="bark-bg-layer" data-layer="gnarled" filter="url(#bark-organic-warp)">
+            <g class="bark-bg-layer" data-layer="gnarled">
                 <g class="warp-group-a" fill="none" opacity="0.38">
                     <path d="M-80,220 C240,40 480,420 760,210 C1040,0 1240,360 1520,180" stroke="#deb07c" stroke-width="2.5"/>
                     <path d="M-80,360 C260,180 510,560 790,350 C1070,140 1260,500 1520,320" stroke="#9c8268" stroke-width="2"/>
@@ -665,6 +659,61 @@ function buildFullViewportBarkSVG() {
     `;
 }
 
+// Parse any '#rrggbb' or 'rgba(r, g, b, a)' string into [r, g, b, a]
+function parseBarkColor(str) {
+    if (!str) return [13, 22, 14, 1];
+    const trimmed = str.trim();
+    if (trimmed.startsWith('#')) {
+        const hex = trimmed.slice(1);
+        const full = hex.length === 3
+            ? hex.split('').map(c => c + c).join('')
+            : hex;
+        const num = parseInt(full, 16);
+        return [(num >> 16) & 255, (num >> 8) & 255, num & 255, 1];
+    }
+    const m = trimmed.match(/rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)(?:\s*,\s*([\d.]+))?\s*\)/i);
+    if (m) {
+        return [
+            parseFloat(m[1]),
+            parseFloat(m[2]),
+            parseFloat(m[3]),
+            m[4] !== undefined ? parseFloat(m[4]) : 1
+        ];
+    }
+    return [13, 22, 14, 1];
+}
+
+const PARSED_BARK_THEMES = {};
+Object.keys(BARK_THEMES).forEach(key => {
+    const t = BARK_THEMES[key];
+    PARSED_BARK_THEMES[key] = {
+        bg: parseBarkColor(t.bg),
+        surface: parseBarkColor(t.surface),
+        border: parseBarkColor(t.border),
+        accent: parseBarkColor(t.accent),
+        secondary: parseBarkColor(t.secondary),
+        text: parseBarkColor(t.text),
+        muted: parseBarkColor(t.muted),
+        glow: parseBarkColor(t.glow)
+    };
+});
+
+function mixColorString(c1, c2, t) {
+    const r = Math.round(c1[0] + (c2[0] - c1[0]) * t);
+    const g = Math.round(c1[1] + (c2[1] - c1[1]) * t);
+    const b = Math.round(c1[2] + (c2[2] - c1[2]) * t);
+    const a = c1[3] + (c2[3] - c1[3]) * t;
+    if (a >= 0.999) {
+        return `rgb(${r}, ${g}, ${b})`;
+    }
+    return `rgba(${r}, ${g}, ${b}, ${a.toFixed(3)})`;
+}
+
+function smoothstep(x) {
+    const c = Math.max(0, Math.min(1, x));
+    return c * c * (3 - 2 * c);
+}
+
 function initBarkExperience() {
     cleanupBarkExperience();
 
@@ -693,105 +742,163 @@ function initBarkExperience() {
     document.body.prepend(stage);
 
     const bgLayers = Array.from(stage.querySelectorAll('.bark-bg-layer'));
+    const layerMap = {};
+    bgLayers.forEach(layer => {
+        const key = layer.getAttribute('data-layer');
+        layerMap[key] = {
+            el: layer,
+            groupA: layer.querySelector('.warp-group-a'),
+            groupB: layer.querySelector('.warp-group-b')
+        };
+    });
+
     const hudLabel = stage.querySelector('#bark-hud-label');
-    const displacement = stage.querySelector('#bark-displacement');
+    let currentHudText = '';
 
-    let currentActiveTheme = '';
+    // Smooth inertial scroll state (damped lerp loop)
+    let targetScrollY = window.scrollY || window.pageYOffset || 0;
+    let smoothedScrollY = targetScrollY;
+    let isTicking = false;
 
-    function applyBarkPalette(themeKey, labelText) {
-        if (currentActiveTheme === themeKey) return;
-        currentActiveTheme = themeKey;
+    function applyLayerWarp(themeKey, p) {
+        const entry = layerMap[themeKey];
+        if (!entry) return;
+        const { groupA, groupB } = entry;
 
-        const palette = BARK_THEMES[themeKey] || BARK_THEMES.thorns;
-        const root = document.body;
-        root.style.setProperty('--bark-bg', palette.bg);
-        root.style.setProperty('--bark-surface', palette.surface);
-        root.style.setProperty('--bark-border', palette.border);
-        root.style.setProperty('--bark-accent', palette.accent);
-        root.style.setProperty('--bark-secondary', palette.secondary);
-        root.style.setProperty('--bark-text', palette.text);
-        root.style.setProperty('--bark-muted', palette.muted);
-        root.style.setProperty('--bark-glow', palette.glow);
-
-        bgLayers.forEach(layer => {
-            layer.classList.toggle('active', layer.getAttribute('data-layer') === themeKey);
-        });
-
-        if (hudLabel && labelText) {
-            hudLabel.textContent = labelText;
+        if (groupA) {
+            if (themeKey === 'oculus' || themeKey === 'portal') {
+                groupA.style.transform = `translate3d(0, ${(p * -18).toFixed(2)}px, 0) rotate(${(p * 14).toFixed(2)}deg)`;
+                groupA.style.transformOrigin = '720px 450px';
+            } else if (themeKey === 'furrowed') {
+                groupA.style.transform = `translate3d(0, ${(p * -28).toFixed(2)}px, 0)`;
+                groupA.style.transformOrigin = '720px 80px';
+            } else if (themeKey === 'rainbow') {
+                groupA.style.transform = `translate3d(0, ${(p * -42).toFixed(2)}px, 0)`;
+                groupA.style.transformOrigin = '720px 450px';
+            } else {
+                groupA.style.transform = `translate3d(${(p * -24).toFixed(2)}px, ${(p * -22).toFixed(2)}px, 0)`;
+                groupA.style.transformOrigin = '720px 450px';
+            }
+        }
+        if (groupB) {
+            groupB.style.transform = `translate3d(${(p * 28).toFixed(2)}px, ${(p * -30).toFixed(2)}px, 0) rotate(${(p * -4).toFixed(2)}deg)`;
+            groupB.style.transformOrigin = '720px 450px';
         }
     }
 
-    function onScrollBark() {
+    function renderBarkFrame() {
+        const delta = targetScrollY - smoothedScrollY;
+        if (Math.abs(delta) > 0.15) {
+            smoothedScrollY += delta * 0.14;
+            barkAnimFrame = requestAnimationFrame(renderBarkFrame);
+            isTicking = true;
+        } else {
+            smoothedScrollY = targetScrollY;
+            isTicking = false;
+            barkAnimFrame = null;
+        }
+
         const vh = window.innerHeight || 800;
-        const viewportCenter = vh * 0.5;
-        const scrollY = window.scrollY || window.pageYOffset;
+        const viewportCenter = smoothedScrollY + vh * 0.5;
+        const rawScrollY = window.scrollY || window.pageYOffset || 0;
 
-        let closestSpecimen = specimens[0];
-        let minDistance = Infinity;
-        let activeProgress = 0;
-
-        specimens.forEach(sec => {
+        // Compute each specimen's document-space center
+        const centers = specimens.map(sec => {
             const rect = sec.getBoundingClientRect();
-            const secCenter = rect.top + rect.height * 0.5;
-            const dist = Math.abs(secCenter - viewportCenter);
-            const isFocused = dist < vh * 0.48;
-            sec.classList.toggle('in-focus', isFocused);
-
-            if (dist < minDistance) {
-                minDistance = dist;
-                closestSpecimen = sec;
-                // Continuous progress p in [-1, 1] as specimen travels across the viewport
-                activeProgress = Math.max(-1, Math.min(1, (viewportCenter - secCenter) / (vh * 0.7)));
-            }
+            const docTop = rect.top + rawScrollY;
+            const center = docTop + rect.height * 0.5;
+            return {
+                sec,
+                center,
+                themeKey: sec.getAttribute('data-bark-theme') || 'thorns',
+                themeName: sec.getAttribute('data-bark-name') || 'Bark Specimen'
+            };
         });
 
-        const themeKey = closestSpecimen.getAttribute('data-bark-theme') || 'thorns';
-        const themeName = closestSpecimen.getAttribute('data-bark-name') || 'Bark Specimen';
-        applyBarkPalette(themeKey, themeName);
+        // Find the bracketing pair [idxA, idxB] around viewportCenter for continuous blending
+        let idxA = 0;
+        let idxB = 0;
+        let rawT = 0;
 
-        // Continuously warp the active background vector layer based on scroll progress!
-        const activeLayer = stage.querySelector(`.bark-bg-layer[data-layer="${themeKey}"]`);
-        if (activeLayer) {
-            const groupA = activeLayer.querySelector('.warp-group-a');
-            const groupB = activeLayer.querySelector('.warp-group-b');
-            const p = activeProgress;
-
-            if (groupA) {
-                if (themeKey === 'oculus' || themeKey === 'portal') {
-                    groupA.style.transform = `translate3d(0, 0, 0) scale(${(1.06 + p * 0.16).toFixed(3)}) rotate(${(p * 24).toFixed(1)}deg)`;
-                    groupA.style.transformOrigin = '720px 450px';
-                } else if (themeKey === 'furrowed') {
-                    groupA.style.transform = `translate3d(0, ${(p * -35).toFixed(1)}px, 0) scale(${(1.08 + (1 - Math.abs(p)) * 0.14).toFixed(3)})`;
-                    groupA.style.transformOrigin = '720px 80px';
-                } else if (themeKey === 'rainbow') {
-                    groupA.style.transform = `translate3d(0, ${(p * -70).toFixed(1)}px, 0) scaleX(${(1 + Math.sin(scrollY * 0.006) * 0.05).toFixed(3)})`;
-                    groupA.style.transformOrigin = '720px 450px';
-                } else {
-                    groupA.style.transform = `translate3d(${(p * -42).toFixed(1)}px, ${(p * 30).toFixed(1)}px, 0) scale(${(1.04 + Math.abs(p) * 0.05).toFixed(3)})`;
-                    groupA.style.transformOrigin = '720px 450px';
+        if (viewportCenter <= centers[0].center) {
+            idxA = 0;
+            idxB = 0;
+            rawT = 0;
+        } else if (viewportCenter >= centers[centers.length - 1].center) {
+            idxA = centers.length - 1;
+            idxB = centers.length - 1;
+            rawT = 0;
+        } else {
+            for (let i = 0; i < centers.length - 1; i++) {
+                if (viewportCenter >= centers[i].center && viewportCenter <= centers[i + 1].center) {
+                    idxA = i;
+                    idxB = i + 1;
+                    const span = Math.max(1, centers[i + 1].center - centers[i].center);
+                    rawT = (viewportCenter - centers[i].center) / span;
+                    break;
                 }
-            }
-            if (groupB) {
-                groupB.style.transform = `translate3d(${(p * 55).toFixed(1)}px, ${(p * -45).toFixed(1)}px, 0) rotate(${(p * -8).toFixed(1)}deg)`;
-                groupB.style.transformOrigin = '720px 450px';
             }
         }
 
-        // Modulate organic SVG displacement scale with scroll position
-        if (displacement) {
-            const warpScale = 14 + Math.abs(Math.sin(scrollY * 0.004)) * 22;
-            displacement.setAttribute('scale', warpScale.toFixed(1));
+        // Smooth S-curve interpolation between specimen A and specimen B
+        const blendT = smoothstep(rawT);
+        const itemA = centers[idxA];
+        const itemB = centers[idxB];
+        const palA = PARSED_BARK_THEMES[itemA.themeKey] || PARSED_BARK_THEMES.thorns;
+        const palB = PARSED_BARK_THEMES[itemB.themeKey] || PARSED_BARK_THEMES.thorns;
+
+        const root = document.body;
+        root.style.setProperty('--bark-bg', mixColorString(palA.bg, palB.bg, blendT));
+        root.style.setProperty('--bark-surface', mixColorString(palA.surface, palB.surface, blendT));
+        root.style.setProperty('--bark-border', mixColorString(palA.border, palB.border, blendT));
+        root.style.setProperty('--bark-accent', mixColorString(palA.accent, palB.accent, blendT));
+        root.style.setProperty('--bark-secondary', mixColorString(palA.secondary, palB.secondary, blendT));
+        root.style.setProperty('--bark-text', mixColorString(palA.text, palB.text, blendT));
+        root.style.setProperty('--bark-muted', mixColorString(palA.muted, palB.muted, blendT));
+        root.style.setProperty('--bark-glow', mixColorString(palA.glow, palB.glow, blendT));
+
+        // Update HUD label with soft fade when crossing midpoint
+        const dominantItem = blendT < 0.5 ? itemA : itemB;
+        if (hudLabel && dominantItem.themeName !== currentHudText) {
+            currentHudText = dominantItem.themeName;
+            hudLabel.textContent = currentHudText;
+        }
+
+        // Cross-fade vector background layers & warp visible layers smoothly
+        bgLayers.forEach(layer => {
+            const key = layer.getAttribute('data-layer');
+            let opacity = 0;
+            if (idxA === idxB) {
+                opacity = key === itemA.themeKey ? 1 : 0;
+            } else if (key === itemA.themeKey) {
+                opacity = 1 - blendT;
+            } else if (key === itemB.themeKey) {
+                opacity = blendT;
+            }
+            layer.style.opacity = opacity.toFixed(3);
+            layer.classList.toggle('active', opacity > 0.01);
+        });
+
+        // Apply continuous scroll warp to active layer(s)
+        const progressA = Math.max(-1.2, Math.min(1.2, (viewportCenter - itemA.center) / (vh * 0.85)));
+        applyLayerWarp(itemA.themeKey, progressA);
+
+        if (idxB !== idxA) {
+            const progressB = Math.max(-1.2, Math.min(1.2, (viewportCenter - itemB.center) / (vh * 0.85)));
+            applyLayerWarp(itemB.themeKey, progressB);
         }
     }
 
     barkScrollHandler = () => {
-        if (barkAnimFrame) cancelAnimationFrame(barkAnimFrame);
-        barkAnimFrame = requestAnimationFrame(onScrollBark);
+        targetScrollY = window.scrollY || window.pageYOffset || 0;
+        if (!isTicking) {
+            isTicking = true;
+            barkAnimFrame = requestAnimationFrame(renderBarkFrame);
+        }
     };
 
     window.addEventListener('scroll', barkScrollHandler, { passive: true });
-    onScrollBark();
+    renderBarkFrame();
 }
 
 function cleanupBarkExperience() {

@@ -8,7 +8,7 @@ excerpt: "As advertised: this blog is a place to put all the pictures of random 
 
 <div class="bark-experience-intro">
 <p>
-From ages 5 to 22, I don't remember giving trees much thought. Then over the last 15 years I have slowly gotten more and more obsessed with them. It started when i moved to the D.C area after college. I had never experienced real fall and spring before. Coming from South Florida, we just have hot and hotter season. I had moved in early February, and snow had quickly lost it's novelty on me after having to dig my car out for the 4th time. I was starting to think i had made a huge mistake moving. But then the  spring came—and all the cherry blossoms bloomed, and the city came alive with activity, and i startd to feel better about my decision. 
+From ages 5 to 22, I don't remember giving trees much thought. Then over the last 15 years I have slowly gotten more and more obsessed with them. It started when I moved to the D.C. area after college. I had never experienced real fall and spring before. Coming from South Florida, we just have hot and hotter season. I had moved in early February, and snow had quickly lost its novelty on me after having to dig my car out for the 4th time. I was starting to think I had made a huge mistake moving. But then the spring came—and all the cherry blossoms bloomed, and the city came alive with activity, and I started to feel better about my decision.
 </p>
 <p>
 Then in California, my love of trees went to another level. The coastal redwoods are just in a league of their own when it comes to trees. Walking among the massive red trunks, soft mulchy forest grounds, and fern undergrowth will forever be my happy place. Finally, after moving back to the East Coast and buying my first home, I got even more into trees as I tried to add some shade and landscaping to my barren backyard. I wish I could plant a billion trees—sadly, I think I already ran out of space after planting about seven skinny trees. Still, the search for the perfect trees has really awakened a new passion of mine.
@@ -32,7 +32,7 @@ Then in California, my love of trees went to another level. The coastal redwoods
 </div>
 </div>
 <div class="bark-media-frame">
-<img src="assets/bark/thorny-vines.jpg" alt="Close-up of thorny green tree trunk wrapped in twisting vines" loading="lazy">
+<img src="assets/bark/thorny-vines.jpg" alt="Close-up of thorny green tree trunk wrapped in twisting vines" decoding="async">
 </div>
 <div class="bark-card-footer">
 <p>
@@ -58,7 +58,7 @@ This young Ceiba trunk at the Naples Botanical Garden is covered in what looks l
 </div>
 </div>
 <div class="bark-media-frame">
-<img src="assets/bark/rainbow-eucalyptus.jpg" alt="Close-up of colorful peeling bark with bright green and cinnamon red vertical stripes" loading="lazy">
+<img src="assets/bark/rainbow-eucalyptus.jpg" alt="Close-up of colorful peeling bark with bright green and cinnamon red vertical stripes" decoding="async">
 </div>
 <div class="bark-card-footer">
 <p>
@@ -84,7 +84,7 @@ As mentioned, I grew up in South Florida, but I never noticed these trees until 
 </div>
 </div>
 <div class="bark-media-frame">
-<img src="assets/bark/aspen-eyes.jpg" alt="White aspen tree trunks with dark eye-shaped knots and yellow autumn leaves" loading="lazy">
+<img src="assets/bark/aspen-eyes.jpg" alt="White aspen tree trunks with dark eye-shaped knots and yellow autumn leaves" decoding="async">
 </div>
 <div class="bark-card-footer">
 <p>
@@ -110,7 +110,7 @@ A picture from my recent trip to Colorado—I probably took a thousand pictures 
 </div>
 </div>
 <div class="bark-media-frame">
-<img src="assets/bark/furrowed-canopy.jpg" alt="Looking straight up a deeply furrowed tree trunk toward a blue sky and yellow leaves" loading="lazy">
+<img src="assets/bark/furrowed-canopy.jpg" alt="Looking straight up a deeply furrowed tree trunk toward a blue sky and yellow leaves" decoding="async">
 </div>
 <div class="bark-card-footer">
 <p>
@@ -136,7 +136,7 @@ On every vacation I go on, I probably end up with about five close-up pictures o
 </div>
 </div>
 <div class="bark-media-frame">
-<img src="assets/bark/redwood-oculus.jpg" alt="Looking up inside a hollowed-out charred redwood tree toward a small circle of green light" loading="lazy">
+<img src="assets/bark/redwood-oculus.jpg" alt="Looking up inside a hollowed-out charred redwood tree toward a small circle of green light" decoding="async">
 </div>
 <div class="bark-card-footer">
 <p>
@@ -162,7 +162,7 @@ Stepping inside a living redwood that was hollowed out by forest fires centuries
 </div>
 </div>
 <div class="bark-media-frame">
-<img src="assets/bark/redwood-cathedral.jpg" alt="Towering redwood trunk with twisting fibrous bark and massive burls against green forest canopy" loading="lazy">
+<img src="assets/bark/redwood-cathedral.jpg" alt="Towering redwood trunk with twisting fibrous bark and massive burls against green forest canopy" decoding="async">
 </div>
 <div class="bark-card-footer">
 <p>
@@ -188,7 +188,7 @@ From the outside, the fibrous, foot-thick bark of an old-growth giant twists upw
 </div>
 </div>
 <div class="bark-media-frame">
-<img src="assets/bark/gnarled-olive.jpg" alt="Massively gnarled and twisted ancient tree trunk with swirling wood folds" loading="lazy">
+<img src="assets/bark/gnarled-olive.jpg" alt="Massively gnarled and twisted ancient tree trunk with swirling wood folds" decoding="async">
 </div>
 <div class="bark-card-footer">
 <p>
@@ -214,7 +214,7 @@ I visited Mallorca in 2025, and one of my favorite things there was the massive,
 </div>
 </div>
 <div class="bark-media-frame">
-<img src="assets/bark/hollow-birch-log.jpg" alt="Hollowed fallen birch log with radial wood cracks and a single green plant stem growing in front of the dark opening" loading="lazy">
+<img src="assets/bark/hollow-birch-log.jpg" alt="Hollowed fallen birch log with radial wood cracks and a single green plant stem growing in front of the dark opening" decoding="async">
 </div>
 <div class="bark-card-footer">
 <p>
